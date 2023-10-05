@@ -1,0 +1,76 @@
+
+.navlist1{
+    /* border: 1px solid red; */
+    margin-right: 290px;
+}
+.navlist2{
+    /* border: 1px solid red; */
+    position: relative;
+    right: 170px;
+}
+.navitems{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+     color: black !important;
+}
+.navbtns{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: bla;
+}
+.navbtns:hover{
+    /* background-color: rgb(196, 220, 17) !important; */
+    /* background-color: rgb(241, 50, 69) !important; */
+    border-bottom: 3px solid red;
+  
+}
+.navbtns2:hover{
+     background-color: rgb(196, 220, 17) !important;
+     color: white;
+}
+.search-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.search-input{
+    border: none;
+    margin-left: 15px;
+}
+/* .navbar-typography{
+    display: flex !important;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap;
+} */
+
+
+/* downward arrow in navbar*/
+
+.dashboard-span{
+    font-size: 1px;
+}
+
+.nav-header-mobileview{
+    background-color: yellow !important;
+    display: flex !important;
+    justify-content: center;
+   
+     gap: 20px;
+}
+.menuAndCategories{
+    padding: 10px;
+    background-color: red !important;
+}
+@media screen and (max-width:360px) {
+    .logo-image{
+        height: 50px ;
+        width: 155px;
+         position:relative;
+         right: 140px;
+         margin-top: 5px;
+         margin-bottom: 1px
+    }
+   
+}

@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Gurushop/LandingPage/Navbar/Navbar";
+import Slider from "./Gurushop/LandingPage/Slider/MainSlider";
+import Shop from "./Gurushop/LandingPage/Shop/Shop";
+import About from "./Gurushop/LandingPage/About/About";
+import Contact from "./Gurushop/LandingPage/Contact/Contact";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing1 from "./Gurushop/LandingPage/Landing1";
+import Section1 from "./Gurushop/LandingPage/Card-section1/Section1";
+import Card1 from './Gurushop/LandingPage/Card/Card1'
+import Login from "./Gurushop/LandingPage/Forms/Login";
+import Signup from "./Gurushop/LandingPage/Forms/Signup";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Landing1/> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing1/>} />
+          <Route path="/shop" element={<Shop/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="/card" element={<Card1/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Signup/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
+
+
+
+
+// import React from "react";
+// import Navbar from "./Gurushop/LandingPage/Navbar/Navbar";
+// import Slider from "./Gurushop/LandingPage/Slider/MainSlider";
+// import Shop from "./Gurushop/LandingPage/Shop/Shop";
+// import About from "./Gurushop/LandingPage/About/About";
+// import Contact from "./Gurushop/LandingPage/Contact/Contact";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Landing1 from "./Gurushop/LandingPage/Landing1";
+// import Section1 from "./Gurushop/LandingPage/Card-section1/Section1";
+// const App = () => {
+//   return (
+//     <div>
+//       {/* <Landing1/> */}
+//       <BrowserRouter>
+//         <Routes>
+//           <Route path="/" element={<Landing1 />}></Route>
+//           <Route path='/shop' element={<Shop/>}></Route>
+//             <Route path='/about' element={<About/>}></Route>
+//             <Route path='/Contact' element={<Contact/>}></Route>
+//         </Routes>
+//       </BrowserRouter>
+//     </div>
+//   );
+// };
+
+// export default App;
