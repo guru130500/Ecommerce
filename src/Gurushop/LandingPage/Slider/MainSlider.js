@@ -46,7 +46,7 @@ function SwipeableTextMobileStepper() {
     fetch('http://localhost:9000/products')
     .then(res=>res.json())
     .then(data1=>setData(data1))
-  })
+  },[])
 
   const theme = useTheme();
   const [activeStep, setActiveStep] = useState(0);

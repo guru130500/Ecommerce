@@ -45,13 +45,13 @@ import './Card.css'
 import { Button } from '@mui/material'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
-const Card1 = ({item}) => {
+const Card1 = ({item,addtoCart}) => {
   return (
     <div>
       <div className='main-card-div'>
           <div className='image-card'>
             <img className='image-data' src={item.image} alt='dummy'></img>
-            <div className='add-to-cart-btn'><Button className='add-to-cart-innerbtn' sx={{color:'#fff'}}> ADD TO CART<ShoppingCartOutlinedIcon className='shopping-cart-div'/></Button></div>
+            <div className='add-to-cart-btn'><Button onClick={()=>addtoCart(item)} className='add-to-cart-innerbtn' sx={{color:'#fff'}}> ADD TO CART<ShoppingCartOutlinedIcon className='shopping-cart-div'/></Button></div>
           </div>
           <div className='card--div'>
              <p className='card-para1'>{item.title}</p>

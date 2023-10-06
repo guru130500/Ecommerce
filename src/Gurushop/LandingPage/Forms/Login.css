@@ -1,0 +1,100 @@
+.login-body{
+
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.login-main-div{
+    border: 1px solid red;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+    
+}
+.guide-div{
+    height: 500px;
+    width: 500px;
+    /* background-color: red; */
+}
+.form-div1{
+    height: 500px;
+    width: 500px;
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.form-div1-updated{
+  
+    height: 500px;
+    width: 500px;
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-div2{
+   
+    height: 500px;
+    width: 500px;
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.form-div2-updated{
+   
+    height: 500px;
+    width: 500px;
+    border: 1px solid yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.input1{
+    height: 45px;
+    width: 400px;
+    margin-bottom: 25px;
+    border:0.2px solid rgb(204, 196, 196);
+   padding: 20px;
+    
+}
+
+.input2{
+    height: 45px;
+    width: 400px;
+    margin-bottom: 25px;
+    border:0.2px solid rgb(204, 196, 196);
+    padding: 20px;
+}
+.input3{
+    height: 45px;
+    width: 400px;
+    background-color: rgba(227, 28, 28, 0.905);
+    color: white;
+    border: none;
+}
+.lable1,.lable2,.lable3{
+       font-size: 14px;
+}
+.form-heading{
+    font-size: 22px;
+    font-weight:bolder;
+}
+.form-bottom-heading{
+    margin-left: 80px;
+    font-size: 14px;
+}
+.handle-register-btn{
+    border: 1px solid red !important;
+    color: red !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+   margin-left:170px!important;
+}

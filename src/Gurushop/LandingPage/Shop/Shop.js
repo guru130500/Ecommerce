@@ -4,6 +4,7 @@ import './Shop.css'
 import { Box, Card } from '@mui/material'
 import Card1 from '../Card/Card1'
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
+import axios from 'axios'
 const Shop = () => {
   const[data,setData]=useState([])
   const[search,setSearch]=useState('')
@@ -49,6 +50,19 @@ const Shop = () => {
   function handleClick1(){
     alert("hello")
   }
+
+
+  function addtoCart(product){
+    product["userId"]=sessionStorage.getItem("userId")
+    console.log(product)
+    axios.post(`http://localhost:9000/cart`, product)
+    .then((response)=>{
+      console.log(response)
+    })
+    .catch((err)=>{
+      alert(err)
+    })
+  }
   return (
     <div>
       <Navbar handleClick1={handleClick1}/>
@@ -77,7 +91,7 @@ const Shop = () => {
               {
                 data.map((item)=>{
                      return(
-                      <Card1 item={item}/>
+                      <Card1 item={item}  addtoCart={addtoCart} />
                      )
                       
                      

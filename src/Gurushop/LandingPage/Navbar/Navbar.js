@@ -68,6 +68,10 @@ const handleClick = (event) => {
   
   };
 
+  function logOut(){
+    sessionStorage.clear();
+  }
+
 
 
 
@@ -118,7 +122,8 @@ const handleClick = (event) => {
             <Button className='navbtns' sx={{color:'black'}}>ABOUT US</Button>
             <Button className='navbtns' sx={{color:'black'}}>CONTACT US</Button>
             
-            <Button className='navbtns2' sx={{color:'black',m:'2px'}}><PersonOutlinedIcon/></Button>
+            <Button className='navbtns2' sx={{color:'black',m:'2px'}}><PersonOutlinedIcon/>  {sessionStorage.getItem("userName")}</Button>
+            <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>logOut()} >Log Out</Button>
             <Button className='navbtns2' sx={{color:'black',m:'2px'}}><ShoppingCartOutlinedIcon/></Button>
       </List>
     </Box>
@@ -192,10 +197,14 @@ const handleClick = (event) => {
 
           <Box className='navlist2' sx={{display:{xs:'none',sm:'block'}}}>
               <Button className='navbtns2' sx={{color:'black',m:'2px'}}><SearchOutlinedIcon/></Button>
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>navigate('/login')} ><PersonOutlinedIcon/></Button>
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}}><ShoppingCartOutlinedIcon/></Button>
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>navigate('/login')} ><PersonOutlinedIcon/>  {sessionStorage.getItem("userName")}</Button>
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>logOut()} >Log Out</Button>
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/></Button>
           </Box>
          </Toolbar>
+         <div>
+       
+         </div>
       </AppBar>
       <nav>
         <Drawer
