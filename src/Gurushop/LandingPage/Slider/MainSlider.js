@@ -91,7 +91,7 @@ function SwipeableTextMobileStepper() {
         onChangeIndex={handleStepChange}
         enableMouseEvents
       >
-        {data.map((step, index) => 
+        {  data.map((step, index) => 
                           
           (
             <div key={step.id}>
@@ -110,7 +110,7 @@ function SwipeableTextMobileStepper() {
                 // />
                 <div className='slider-div1' style={{height:'700px',display:'block',width:'100%'}}>
                      <div style={{height:'700px',display:'block',width:'100%'}}>
-                       <img className='slider-inner-image' src={step.image} alt='step.label' style={{height:'700px',display:'block',width:'100%',overflow:'hidden'}}></img>
+                       <img className='slider-inner-image' src={step.image} alt='step.label' style={{height:'700px',display:'block',width:'90%',overflow:'hidden',marginLeft:'45px'}}></img>
                      </div>
                      <div className='slider-content'>
                         {/* <p className='slider-para1' >COLOR</p>

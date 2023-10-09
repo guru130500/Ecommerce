@@ -51,6 +51,7 @@ const navItems = ['Home', 'About', 'Contact'];
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const[search,setSearch]=React.useState('')
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleDrawerToggle = () => {
@@ -64,15 +65,32 @@ const handleClick = (event) => {
   };
   const handleClose = () => {
     setAnchorEl(null);
-    navigate('/shop')
+
   
   };
 
   function logOut(){
     sessionStorage.clear();
+     navigate('/')
+  
   }
 
+  function men(){
+    setSearch(`men's clothing`)
+    
+  }
+  function women(){
+    setSearch(`women's clothing`)
+   
+  }
+  function jewelery(){
+     setSearch('jewelery')
+  
+  }
+  function electronics(){
+    setSearch('electronics')
 
+  }
 
 
 
@@ -88,7 +106,7 @@ const handleClick = (event) => {
       </div> */}
       <Divider />
       <List sx={{display:'flex',flexDirection:'column'}}>
-        <Button className='navbtns' sx={{color:'black'}}>HOME</Button>
+        <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/')}>HOME</Button>
         <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/shop')} >SHOP</Button>
             
          <Button
@@ -101,7 +119,7 @@ const handleClick = (event) => {
         
         sx={{color:'black'}}
       >
-        Dashboard
+        CATEGORIES
         <span className='dashboard-span'><KeyboardArrowDownOutlined  sx={{fontSize:'19px'}}/></span>
       </Button>
       {/* <Menu
@@ -122,9 +140,9 @@ const handleClick = (event) => {
             <Button className='navbtns' sx={{color:'black'}}>ABOUT US</Button>
             <Button className='navbtns' sx={{color:'black'}}>CONTACT US</Button>
             
-            <Button className='navbtns2' sx={{color:'black',m:'2px'}}><PersonOutlinedIcon/>  {sessionStorage.getItem("userName")}</Button>
+            <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/login')}><PersonOutlinedIcon/>  {sessionStorage.getItem("userName")}</Button>
             <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>logOut()} >Log Out</Button>
-            <Button className='navbtns2' sx={{color:'black',m:'2px'}}><ShoppingCartOutlinedIcon/></Button>
+            <Button className='navbtns2' sx={{color:'black',m:'2px'}}  onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/></Button>
       </List>
     </Box>
   );
@@ -159,7 +177,7 @@ const handleClick = (event) => {
           </Typography>
           <Box className='navlist1' sx={{ display: { xs: 'none', sm: 'block' },ml:'40px', }}>
                  <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/')} >HOME</Button>
-                <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/shop')}  >SHOP</Button>
+                <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/shop')}>SHOP</Button>
             {/* <Button className='navbtns' sx={{color:'black'}}> */}
 
          <Button
@@ -172,7 +190,7 @@ const handleClick = (event) => {
        
         sx={{color:'black'}}
       >
-        Dashboard
+        CATEGORIES
         <span className='dashboard-span'><KeyboardArrowDownOutlined  sx={{fontSize:'19px'}}/></span>
       </Button>
       <Menu
@@ -185,10 +203,10 @@ const handleClick = (event) => {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>Mens</MenuItem>
-        <MenuItem onClick={handleClose}>Womens</MenuItem>
-        <MenuItem onClick={handleClose}>Electronics</MenuItem>
-        <MenuItem onClick={handleClose}>Jewelery</MenuItem>
+        <MenuItem onClick={()=>{handleClose();men();navigate(`/shop`)}}>Mens</MenuItem>
+        <MenuItem onClick={()=>{handleClose();women();navigate('/shop')}}>Womens</MenuItem>
+        <MenuItem onClick={()=>{handleClose();jewelery();navigate('/shop')}}>Electronics</MenuItem>
+        <MenuItem onClick={()=>{handleClose();electronics();navigate('/shop')}}>Jewelery</MenuItem>
       </Menu>
             {/* </Button> */}
             <Button className='navbtns' sx={{color:'black'} } onClick={()=>navigate('/card')}>ABOUT US</Button>
@@ -198,14 +216,19 @@ const handleClick = (event) => {
           <Box className='navlist2' sx={{display:{xs:'none',sm:'block'}}}>
               <Button className='navbtns2' sx={{color:'black',m:'2px'}}><SearchOutlinedIcon/></Button>
               <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>navigate('/login')} ><PersonOutlinedIcon/>  {sessionStorage.getItem("userName")}</Button>
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>logOut()} >Log Out</Button>
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/></Button>
+              
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/> {sessionStorage.getItem("cartlength")}</Button>
           </Box>
+          
          </Toolbar>
+         
          <div>
        
          </div>
       </AppBar>
+      <div className='hoverDiv'>
+                <Button className='navbtns5' sx={{color:'black',m:'2px'}}onClick={()=>logOut()} >Log Out</Button>
+              </div>
       <nav>
         <Drawer
           container={container}

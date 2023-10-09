@@ -5,10 +5,15 @@ import { Box, Card } from '@mui/material'
 import Card1 from '../Card/Card1'
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import axios from 'axios'
+import { useNavigate,useParams } from 'react-router-dom'
 const Shop = () => {
   const[data,setData]=useState([])
   const[search,setSearch]=useState('')
   const[head,setHead]=useState('Shop')
+  const navigate=useNavigate();
+  const route=useParams()
+
+
   useEffect(()=>{
  
   //  (search=='')?fetch('https://fakestoreapi.com/products'):fetch(`https://fakestoreapi.com/products/category/${search}`)
@@ -51,17 +56,24 @@ const Shop = () => {
     alert("hello")
   }
 
-
+  let isLoggedIn = sessionStorage.getItem("userName");
   function addtoCart(product){
-    product["userId"]=sessionStorage.getItem("userId")
-    console.log(product)
-    axios.post(`http://localhost:9000/cart`, product)
-    .then((response)=>{
-      console.log(response)
-    })
-    .catch((err)=>{
-      alert(err)
-    })
+        if(isLoggedIn)
+        {
+          product["userId"]=sessionStorage.getItem("userId");
+          product["qty"]=1
+          axios.post(`http://localhost:9000/cart`, product)
+          .then((response)=>{
+            console.log(response);      
+          })
+          .catch((err)=>{
+            console.log(err);
+          })
+          navigate('/cart');
+        }
+        else{
+          navigate('/login');
+        }
   }
   return (
     <div>

@@ -102,6 +102,13 @@
 
   
 }
+.quick{
+    position: relative;
+
+    left: 90px;
+    
+    z-index: 5;
+}
 @media screen  and (max-width:360px){
     .main-card-div{
         height:300px;

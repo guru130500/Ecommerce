@@ -28,6 +28,9 @@
      background-color: rgb(196, 220, 17) !important;
      color: white;
 }
+/* .navbtns5{
+    display: none !important;
+} */
 .search-div{
   display: flex;
   justify-content: center;
@@ -62,6 +65,20 @@
 .menuAndCategories{
     padding: 10px;
     background-color: red !important;
+}
+.hoverDiv{
+    /* display: none; */
+    height: 50px;
+    width: 100px;
+    border: 1px solid red !important;
+    transform: translateY(100px);
+    color: black;
+    background: white;
+    position: relative;
+    left: 78%;
+}
+.navbtns2:hover .hoverDiv{
+    display: block !important;
 }
 @media screen and (max-width:360px) {
     .logo-image{

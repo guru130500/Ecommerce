@@ -38,6 +38,7 @@ function validateUser(userInput,passInput){
       status=true;
       sessionStorage.setItem("userName", userInput)
       sessionStorage.setItem("userId", e.id)
+      sessionStorage.setItem("qty",1)
     }
   })
   if(status){
@@ -156,7 +157,7 @@ function validateUser(userInput,passInput){
 
       <div className='guide-div'>
                                       
-              <Button  onClick={handleButton} >{btn}</Button>
+              <Button  onClick={handleButton}>{(btn=='Login')?'Register':'Login'}</Button>
       </div>
            
       </div>
