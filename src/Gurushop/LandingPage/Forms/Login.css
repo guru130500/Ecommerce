@@ -6,24 +6,47 @@
 }
 
 .login-main-div{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: auto;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 25px;
     align-items: center;
-    margin-top: 140px;
+    margin-top:0;
     
 }
 .guide-div{
     height: 500px;
     width: 500px;
-    /* background-color: red; */
+    /* background-color:yellow; */
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+}
+.guide-div-para1{
+    margin-top: 60px;
+    font-size: 24px;
+    font-weight: bolder;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.guide-div-para2{
+    width: 450px;
+    text-align: center;
+    font-size: 13.5px;
+    margin-top: 10px;
+}
+
+.guide-div-btn{
+    background-color: rgba(227, 28, 28, 0.905) !important;
+    color: white !important;
 }
 .form-div1{
     height: 500px;
     width: 500px;
-    border: 1px solid yellow;
+    border-right: 1px solid yellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +56,7 @@
   
     height: 500px;
     width: 500px;
-    border: 1px solid yellow;
+    border-right: 1px solid rgb(227, 223, 223);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +65,7 @@
    
     height: 500px;
     width: 500px;
-    border: 1px solid yellow;
+    border-right: 1px solid rgb(227, 223, 223);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +75,7 @@
    
     height: 500px;
     width: 500px;
-    border: 1px solid yellow;
+    border-right: 1px solid rgb(227, 223, 223);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,6 +109,7 @@
 .form-heading{
     font-size: 22px;
     font-weight:bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .form-bottom-heading{
     margin-left: 80px;
@@ -97,4 +121,118 @@
     font-size: 10px !important;
     font-weight: 600 !important;
    margin-left:170px!important;
+}
+
+.header2{
+    background-color: black;
+    height: 360px;
+    margin-top: 50px;
+    
+}
+.login-header-para1{
+    font-size: 60px;
+    font-weight:700;
+    margin-top: 50px
+    ;
+  
+    /* margin-bottom: 80px; */
+}
+.login-span1{
+    font-size: 13px;
+    font-weight: 700;
+ margin-top: 5px;
+
+ margin-bottom: 30px;
+  
+}
+.login-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+   height: 140px;
+  
+    color: white;
+  position: relative;
+  bottom: 300px;
+  left: 35%;
+}
+/* *{
+    border: 1px solid red;
+} */
+
+
+@media screen and (max-width: 768px) {
+    .login-nav {
+        width: 90%; 
+        max-width: 360px; 
+        margin-top: 30px;
+        position: relative;
+        bottom: 300px;
+        left: 5%; 
+    }
+    
+    .login-header-para1 {
+        font-size: 30px;
+        font-weight: 700;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .header2 {
+        height: 330px;
+        margin-top: 30px;
+    }
+    
+    .input1 {
+        height: 35px;
+        width: 90%; 
+        max-width: 300px; 
+        margin-bottom: 25px;
+        border: 0.2px solid rgb(204, 196, 196);
+        padding: 20px;
+    }
+    
+    .input2 {
+        height: 35px;
+        width: 90%; 
+        max-width: 300px; 
+        margin-bottom: 25px;
+        border: 0.2px solid rgb(204, 196, 196);
+        padding: 20px;
+    }
+    
+    .input3 {
+        height: 35px;
+        width: 90%; 
+        max-width: 300px; 
+        background-color: rgba(227, 28, 28, 0.905);
+        color: white;
+        border: none;
+    }
+    
+    .form-bottom-heading {
+        margin-left: 5px;
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    .handle-register-btn {
+       margin-left: 30% !important;
+    }
+    
+    .guide-div-para2 {
+        width: 90%;
+        max-width: 300px; 
+        font-size: 13.5px;
+        margin-top: 10px;
+    }
+    
+    .form-div1-updated,
+    .form-div2,
+    .form-div2-updated {
+        border-right: none;
+        border-bottom: 1px solid rgb(227, 223, 223);
+    }
 }

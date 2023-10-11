@@ -17,6 +17,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Card1 from './Card/Card1'
+import './Landing.css'
 const Landing1 = () => {
   const[data,setData]=useState([])
   const[data2,setData2]=useState([])

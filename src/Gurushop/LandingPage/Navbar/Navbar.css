@@ -25,8 +25,8 @@
   
 }
 .navbtns2:hover{
-     background-color: rgb(196, 220, 17) !important;
-     color: white;
+     /* background-color: rgb(196, 220, 17) !important; */
+     color: black !important;
 }
 /* .navbtns5{
     display: none !important;
@@ -80,6 +80,40 @@
 .navbtns2:hover .hoverDiv{
     display: block !important;
 }
+.navbtns5{
+  font-variant: normal !important;
+}
+.profile-btn{
+ background-color: rgb(231, 26, 26)!important;
+ color: white !important;
+}
+
+/* pop up*/
+.search-div-popup{
+    height: 80px;
+    width: 1200px;
+    
+}
+.input-popup{
+    height: 100%;
+    width: 100%;
+    padding-left: 50px;
+    font-size: 40px;
+     border: none;
+     border-style: none;
+    text-align: center;
+    font-weight: 700;
+}
+.input-popup:focus{
+    outline: none;
+}
+.popup-box{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    justify-content: space-around !important;
+    align-items: center !important;}
+/* 
 @media screen and (max-width:360px) {
     .logo-image{
         height: 50px ;
@@ -89,5 +123,75 @@
          margin-top: 5px;
          margin-bottom: 1px
     }
-   
-}
+    .search-div-popup{
+        height: 80px;
+        width: 240px;
+        
+    }
+    .popup-box{
+        height: 80px !important;
+        width: 340px !important;
+        margin-right: 19px !important;
+    }
+    .input-popup{
+       
+        padding-left: 10px;
+        font-size: 18px;
+         border: none;
+         border-style: none;
+        text-align: center;
+        font-weight: 700;
+    }
+    .search-card-div{
+        width: 342px;
+      
+      
+    }
+ 
+} */
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .logo-image {
+      height: 40px; /* Adjust the logo size for small screens */
+      width: auto; /* Let the width adjust automatically */
+      position: relative;
+      right: 0; /* Reset right position */
+      margin-top: 5px;
+      margin-bottom: 1px;
+    }
+  
+    .navlist1 {
+      margin-right: 0; /* Remove the right margin */
+    }
+  
+    .navlist2 {
+      right: 0; /* Adjust the right position */
+    }
+  
+    .search-div-popup {
+      height: 60px; /* Increase the height of the search box for better touch interaction */
+      width: 100%; /* Make the search box full width */
+    }
+  
+    .popup-box {
+      height: 80px !important;
+      width: 100%; /* Make the popup box full width */
+      margin-right: 0 !important; /* Reset margin */
+    }
+  
+    .input-popup {
+      padding-left: 10px;
+      font-size: 18px;
+      border: none;
+      border-style: none;
+      text-align: center;
+      font-weight: 700;
+      width: 100%; /* Make the input box full width */
+    }
+  
+    .search-card-div {
+      width: 100%; /* Make the search card div full width */
+    }
+  }
+  

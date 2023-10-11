@@ -17,6 +17,9 @@ import Button from '@mui/material/Button';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import Dialog from '@mui/material/Dialog';
+import CloseIcon from '@mui/icons-material/Close';
+import Slide from '@mui/material/Slide';
 /*    Dashboard*/
 
 
@@ -24,7 +27,7 @@ import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDown
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
-
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 
 
@@ -33,14 +36,17 @@ import KeyboardArrowDownOutlined from '@mui/icons-material/KeyboardArrowDownOutl
 import { Link, useNavigate } from 'react-router-dom';
 import Landing1 from '../Landing1';
 import Shop from '../Shop/Shop';
-
+import Card1 from '../Card/Card1';
+import axios from 'axios';
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
 
 // Dashboar part
 
-
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 
 //......................................
@@ -50,7 +56,11 @@ const navItems = ['Home', 'About', 'Contact'];
 
 function DrawerAppBar(props) {
   const { window } = props;
+  const[data,setData]=React.useState([])
+  const[search1,setSearch1]=React.useState('')
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [open1, setOpen1] = React.useState(false);
+  const[length,setLength]=React.useState('')
   const[search,setSearch]=React.useState('')
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -58,8 +68,49 @@ function DrawerAppBar(props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-let navigate= useNavigate();
+  React.useEffect(()=>{
+ 
+    //  (search=='')?fetch('https://fakestoreapi.com/products'):fetch(`https://fakestoreapi.com/products/category/${search}`)
+     
+        fetch(`http://localhost:9000/products?q=${search1}`)
+        .then(res=>res.json())
+        .then(data1=>setData(data1))
     
+   
+    },[search1])
+
+let navigate= useNavigate();
+  
+let isLoggedIn = sessionStorage.getItem("userName");
+function addtoCart(product){
+      if(isLoggedIn)
+      {
+        product["userId"]=sessionStorage.getItem("userId");
+        product["qty"]=1
+        axios.post(`http://localhost:9000/cart`, product)
+        .then((response)=>{
+          console.log(response);      
+        })
+        .catch((err)=>{
+          console.log(err);
+        })
+        navigate('/cart');
+      }
+      else{
+        navigate('/login');
+      }
+}
+
+
+const handleClickOpen = () => {
+  
+  setOpen1(true);
+};
+
+const handleClose1 = () => {
+  setOpen1(false);
+};
+
 const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -71,6 +122,7 @@ const handleClick = (event) => {
 
   function logOut(){
     sessionStorage.clear();
+   
      navigate('/')
   
   }
@@ -91,6 +143,9 @@ const handleClick = (event) => {
     setSearch('electronics')
 
   }
+  function navtoLogin(){
+    navigate('/login')
+  }
 
 
 
@@ -98,7 +153,7 @@ const handleClick = (event) => {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 ,display:{sm:'block',xs:'block'}}}>
-       <div className='search-div'><input type='text' placeholder='Search for products' className='search-input'></input> <Button sx={{color:'grey'}}><SearchOutlinedIcon/></Button></div>
+       <div className='search-div'><input type='text' placeholder='Search for products' className='search-input'></input> <Button sx={{color:'grey'}} onClick={handleClickOpen}><SearchOutlinedIcon/></Button></div>
       </Typography>
       {/* <div className='nav-header-mobileview'>
             <p className='menuAndCategories'>MENU</p>
@@ -140,8 +195,21 @@ const handleClick = (event) => {
             <Button className='navbtns' sx={{color:'black'}}>ABOUT US</Button>
             <Button className='navbtns' sx={{color:'black'}}>CONTACT US</Button>
             
-            <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/login')}><PersonOutlinedIcon/>  {sessionStorage.getItem("userName")}</Button>
-            <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>logOut()} >Log Out</Button>
+            <Button className='navbtns2' sx={{color:'black',m:'2px'}} >       <PopupState variant="popover" popupId="demo-popup-menu">
+                   {(popupState) => (
+                     <React.Fragment>
+                       <Button className='profile-btn' variant="contained" {...bindTrigger(popupState)}>
+                         <PersonOutlinedIcon/>
+                       </Button>
+                       <Menu {...bindMenu(popupState)}>
+                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>My account</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();logOut()}} >Log Out</MenuItem>
+                       </Menu>
+                     </React.Fragment>
+                   )}
+                </PopupState></Button>
+  
             <Button className='navbtns2' sx={{color:'black',m:'2px'}}  onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/></Button>
       </List>
     </Box>
@@ -214,10 +282,68 @@ const handleClick = (event) => {
           </Box>
 
           <Box className='navlist2' sx={{display:{xs:'none',sm:'block'}}}>
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}}><SearchOutlinedIcon/></Button>
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}}onClick={()=>navigate('/login')} ><PersonOutlinedIcon/>  {sessionStorage.getItem("userName")}</Button>
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={handleClickOpen} >
+        <SearchOutlinedIcon/>
+      </Button>
+        
+      <Dialog
+        fullScreen
+        open={open1}
+        onClose={handleClose1}
+        TransitionComponent={Transition}
+      >
+        <AppBar className='popup-box' sx={{height:'100px',backgroundColor:'white',color:'black'}} >
+         
+
+            <div className='search-div-popup'>
+              <input onChange={(e)=>setSearch1(e.target.value)} className='input-popup' type='text' placeholder='Search product here'></input>
+            </div>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleClose1}
+              aria-label="close" 
+            >
+              <CloseIcon />
+            </IconButton>
+            
+            
+       
+        </AppBar>
+        <Box className='search-card-div' sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',justifyContent:'space-around',marginTop:'120px'}}>
+              {
+                data.map((item)=>{
+                     return(
+                      <Card1 item={item}  addtoCart={addtoCart} />
+                     )
+                      
+                     
+                })
+              }
+       </Box>
+      </Dialog>
+
+
+
+
+
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}} >   
+               <PopupState variant="popover" popupId="demo-popup-menu">
+                   {(popupState) => (
+                     <React.Fragment>
+                       <Button className='profile-btn' variant="contained" {...bindTrigger(popupState)}>
+                         <PersonOutlinedIcon/>
+                       </Button>
+                       <Menu {...bindMenu(popupState)}>
+                         <MenuItem onClick={()=>{popupState.close()}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>My account</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();logOut()}} >Log Out</MenuItem>
+                       </Menu>
+                     </React.Fragment>
+                   )}
+                </PopupState></Button>
               
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/> {sessionStorage.getItem("cartlength")}</Button>
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/>{sessionStorage.getItem('cartlength')}</Button>
           </Box>
           
          </Toolbar>
@@ -226,9 +352,7 @@ const handleClick = (event) => {
        
          </div>
       </AppBar>
-      <div className='hoverDiv'>
-                <Button className='navbtns5' sx={{color:'black',m:'2px'}}onClick={()=>logOut()} >Log Out</Button>
-              </div>
+      
       <nav>
         <Drawer
           container={container}

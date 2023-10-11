@@ -83,7 +83,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box sx={{ maxWidth: '100%', flexGrow: 1 ,height:900,marginTop:'100px'}}>
+    <Box className="slider-box-main" sx={{ maxWidth: '100%', flexGrow: 1 ,height:900,marginTop:'100px'}}>
 
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -109,8 +109,8 @@ function SwipeableTextMobileStepper() {
                 //   alt={step.label}
                 // />
                 <div className='slider-div1' style={{height:'700px',display:'block',width:'100%'}}>
-                     <div style={{height:'700px',display:'block',width:'100%'}}>
-                       <img className='slider-inner-image' src={step.image} alt='step.label' style={{height:'700px',display:'block',width:'90%',overflow:'hidden',marginLeft:'45px'}}></img>
+                     <div className='slider-img-div' style={{height:'700px',display:'block',width:'100%'}}>
+                       <img className='slider-inner-image' src={step.image} alt='step.label' style={{height:'700px',display:'block',width:'90%',overflow:'hidden',marginLeft:'75px'}}></img>
                      </div>
                      <div className='slider-content'>
                         {/* <p className='slider-para1' >COLOR</p>

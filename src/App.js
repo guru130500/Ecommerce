@@ -11,7 +11,7 @@ import Card1 from './Gurushop/LandingPage/Card/Card1'
 import Login from "./Gurushop/LandingPage/Forms/Login";
 import Signup from "./Gurushop/LandingPage/Forms/Signup";
 import Cart from "./Gurushop/LandingPage/Cart/Cart";
-
+import Chekout from "./Gurushop/LandingPage/Chekout/Chekout";
 const App = () => {
   return (
     <div>
@@ -26,6 +26,7 @@ const App = () => {
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Signup/>}/>
           <Route path="/cart"   element={<Cart/>}/>
+          <Route path="/chekout"   element={<Chekout/>}/>
         </Routes>
       </BrowserRouter>
     </div>
