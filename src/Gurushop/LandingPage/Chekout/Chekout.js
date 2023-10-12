@@ -4,8 +4,9 @@ import Navbar from '../Navbar/Navbar'
 import axios from 'axios'
 import { json, useParams,useLocation } from 'react-router-dom'
 const Chekout = () => {
-  
+  const [total,setTotal]=useState(0)
     const location = useLocation();
+ 
     const cart = location.state.cart || [];
     // const [cart, setCart] = useState("");
 
@@ -22,7 +23,23 @@ const Chekout = () => {
     //     });
     //  console.log("useparam"+ "    ")
     //   }, []);
-
+    const handleChange = (e) => {
+      console.log(e)
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    };
+   
+    let dummy=0
+    useEffect(()=>{
+     for(let i=0;i<cart.length;i++)
+     {
+          dummy=dummy+(cart[i].qty*cart[i].price)
+     }
+     console.log("cart Total"+" "+dummy)
+     setTotal(dummy)
+    })
+    
+        
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -35,19 +52,66 @@ const Chekout = () => {
         phone: '',
         email: '',
       });
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-      };
-    
+
+      
+    function billingData(){
+             
+        const url="http://localhost:9000/users";
+        axios.get(url)
+        .then(response=>{
+            console.log(response)
+           const users=response.data
+       
+     const targetEmail=formData.email
+     const targetUser=users.find(e=>e.userEmail===targetEmail)
+     if(targetUser)
+     {
+       Object.assign(targetUser,formData)
+       axios.post(`http://localhost:9000/users?userEmail=${formData.email}`,{targetUser})
+       .then(postResponse => {
+         console.log('User data updated:', postResponse.data);
+       })
+       .catch(error => {
+         console.error('Error updating user data:', error);
+       });
+     }
+     else {
+       console.error('User not found with email address:', targetEmail);
+     }
+    })
+    .catch(error => {
+      console.error('Error fetching user data:', error);
+    });
+    }
+     //billing post 
+      // function billingData(){
+      //       user.map((e)=>{
+      //           if(e.userEmail==formData.email)
+      //           {
+                 
+      //             axios.post(`http://localhost:9000/users?userEmail=${formData.email}`, formData)
+      //             .then((response)=>{
+      //               console.log(response)
+      //             })
+      //             .catch((err)=>{
+      //               alert(err)
+      //             })
+                  
+      //           }
+              
+      //       })
+      // }
+
   return (
     <div>
         <Navbar/>
     <div className='chekout-main-div'>
-    <div className="billing-form">
+    {/* <div className="billing-form">
       <h2>BILLING DETAILS</h2>
-      <form>
+      <form  onSubmit={(e)=>{
+      e.preventDefault();
+    billingData();
+     }} method='post'>
         <div className="form-group">
           <label htmlFor="firstName">First name *</label>
           <input
@@ -80,7 +144,7 @@ const Chekout = () => {
             required
           >
             <option value="India">India</option>
-            {/* Add more country options if needed */}
+         
           </select>
         </div>
         <div className="form-group">
@@ -159,9 +223,17 @@ const Chekout = () => {
             required
           />
         </div>
-
+         
+        <div className="form-group">
+          
+          <input className='billing-submit-btn'
+            type="submit"
+            id="submit"
+            name="submit"
+          />
+        </div>
       </form>
-    </div>
+    </div> */}
 
 
     
@@ -188,7 +260,7 @@ const Chekout = () => {
                    cart && cart.map((e)=>{
                         return(
                           <tr>
-                              <td>{e.title} × {e.qty}</td>
+                              <td className='order-title'>{e.title} × {e.qty}</td>
                               <td>₹{e.price * e.qty}</td>
                           </tr>
                         )
@@ -196,15 +268,15 @@ const Chekout = () => {
                 }
                 <tr>
                     <td>Subtotal</td>
-                    <td>₹2,998.00</td>
+                    <td className='order-subtotal'>₹{Math.floor(total)}</td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
-                    <td>Flat Rate: ₹40.00</td>
+                    <td ></td>
                 </tr>
                 <tr class="total-row">
                     <td>Total</td>
-                    <td>₹3,038.00</td>
+                    <td className='order-complete-total'>₹{Math.floor(total)+40}.00</td>
                 </tr>
             </tbody>
         </table>
@@ -213,8 +285,8 @@ const Chekout = () => {
             <p>It uses UPI apps like BHIM, Paytm, Google Pay, PhonePe, or any Banking UPI app to make payment.</p>
             <form>
                 <label for="upiAddress">UPI Address *</label>
-                <input type="text" id="upiAddress" name="upiAddress" required/>
-                <button type="submit">Pay with UPI QR Code</button>
+                <input className='upi-input' type="text" id="upiAddress" name="upiAddress" required/>
+                <button className='upi-submit-btn' type="submit">Pay with UPI QR Code</button>
             </form>
         </div>
     </div>

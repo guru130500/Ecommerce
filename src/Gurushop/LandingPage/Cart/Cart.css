@@ -106,18 +106,18 @@
 }
 
 .incre-btn,.decre-btn{
-    display: inline;
-   border: none;
-    background-color: transparent;
+    display: inline !important;
+   border: none !important;
+    background-color: transparent !important;
 
 }
 .incre-btn:hover{
-    background-color: rgb(202, 5, 5);
+    background-color: rgb(202, 5, 5) !important;
     color: white;
 }
 
 .decre-btn:hover{
-    background-color: rgb(202, 5, 5);
+    background-color: rgb(202, 5, 5) !important;
     color: white;
 }
 .product-qty{

@@ -10,22 +10,19 @@ import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
   const [cart, setCart] = useState("");
   const [input, setInput] = useState(1);
+  const [total,setTotal]=useState(0)
   const navigate=useNavigate()
-//  const navigate=useNavigate()
-  // function increment(id) {
-  //      cart.map((e)=>{
-  //           if(id==e.id)
-  //           { 
-                
-  //           }
-  //      })
-  // }
-  // function decrement() {
-  //   if (input != 0) {
-  //     setInput(input - 1);
-  //   }
-  // }
-  
+ let dummy=0
+ useEffect(()=>{
+  for(let i=0;i<cart.length;i++)
+  {
+       dummy=dummy+(cart[i].qty*cart[i].price)
+  }
+  console.log("cart Total"+" "+dummy)
+  setTotal(dummy)
+ })
+ 
+
   function handleChange(item,d){
     let arr=cart
     let ind=cart.indexOf(item)
@@ -233,7 +230,7 @@ const Cart = () => {
 
         <div className="total-cart-div">
           <div className="total-cart-heading">CART TOTAL</div>
-          <div className="total-cart-div1"><p className="subtotal-para1">Subtotal</p><p className="subtotal-para2"><CurrencyRupeeIcon  fontSize="5px"/>2999.00</p></div>
+          <div className="total-cart-div1"><p className="subtotal-para1">Subtotal</p><p className="subtotal-para2"><CurrencyRupeeIcon  fontSize="5px"/>{Math.floor(total)}</p></div>
           <div className="total-cart-div2">
             <p className="shipping-para">Shipping</p>
           <div className="total-cart-flat-div">
@@ -245,7 +242,7 @@ const Cart = () => {
           </div>
           <div className="total-cart-div3">
             <p className="total-cart-para1">Total</p>
-            <p className="total-cart-para2"><CurrencyRupeeIcon  fontSize="8px"/>39000.00</p>
+            <p className="total-cart-para2"><CurrencyRupeeIcon  fontSize="8px"/>{Math.floor(total)+40}.00</p>
           </div>
            <Button className="total-cart-btn">proceed to chekout</Button>
         </div>

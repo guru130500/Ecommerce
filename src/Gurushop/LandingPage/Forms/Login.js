@@ -226,6 +226,7 @@ function validateUser(userInput,passInput){
                     
                         <input type='password' className='input2'  placeholder='Enter Password' onChange={(e)=>SetUserpass(e.target.value)}></input>
                         <br></br>
+                      
                         <input className='input3' type='submit' name='submit' value={'Register'} ></input>
 
                         <Snackbar open={open2} autoHideDuration={6000} onClose={handleClose}>

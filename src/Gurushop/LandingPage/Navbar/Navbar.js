@@ -20,6 +20,12 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Dialog from '@mui/material/Dialog';
 import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
+
+import Badge from '@mui/material/Badge';
+import { styled } from '@mui/material/styles';
+
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 /*    Dashboard*/
 
 
@@ -59,6 +65,7 @@ function DrawerAppBar(props) {
   const[data,setData]=React.useState([])
   const[search1,setSearch1]=React.useState('')
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const[login,setLogin]=React.useState(0)
   const [open1, setOpen1] = React.useState(false);
   const[length,setLength]=React.useState('')
   const[search,setSearch]=React.useState('')
@@ -69,6 +76,9 @@ function DrawerAppBar(props) {
   };
 
   React.useEffect(()=>{
+    setLogin(sessionStorage.length)
+  })
+  React.useEffect(()=>{
  
     //  (search=='')?fetch('https://fakestoreapi.com/products'):fetch(`https://fakestoreapi.com/products/category/${search}`)
      
@@ -78,6 +88,16 @@ function DrawerAppBar(props) {
     
    
     },[search1])
+
+
+    const StyledBadge = styled(Badge)(({ theme }) => ({
+      '& .MuiBadge-badge': {
+        right: -3,
+        top: 13,
+        border: `2px solid ${theme.palette.background.paper}`,
+        padding: '0 4px',
+      },
+    }));
 
 let navigate= useNavigate();
   
@@ -122,8 +142,14 @@ const handleClick = (event) => {
 
   function logOut(){
     sessionStorage.clear();
-   
-     navigate('/')
+     if(login==0)
+     {
+      navigate('/login')
+     }
+     else{
+      navigate('/')
+     }
+    
   
   }
 
@@ -203,14 +229,18 @@ const handleClick = (event) => {
                        </Button>
                        <Menu {...bindMenu(popupState)}>
                          <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>My account</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();logOut()}} >Log Out</MenuItem>
+                         {/* <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>My account</MenuItem> */}
+                         <MenuItem onClick={()=>{popupState.close();logOut()}} >{login==0?'Login':'logout'}</MenuItem>
                        </Menu>
                      </React.Fragment>
                    )}
                 </PopupState></Button>
   
-            <Button className='navbtns2' sx={{color:'black',m:'2px'}}  onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/></Button>
+            <Button className='navbtns2' sx={{color:'black',m:'2px'}}  onClick={()=>navigate('/cart')}>       <IconButton aria-label="cart">
+                  <StyledBadge badgeContent={sessionStorage.getItem('cartlength')} color="secondary">
+                    <ShoppingCartIcon />
+                  </StyledBadge>
+                </IconButton></Button>
       </List>
     </Box>
   );
@@ -335,15 +365,20 @@ const handleClick = (event) => {
                          <PersonOutlinedIcon/>
                        </Button>
                        <Menu {...bindMenu(popupState)}>
-                         <MenuItem onClick={()=>{popupState.close()}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();navigate('/profile')}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
                          <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>My account</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();logOut()}} >Log Out</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();logOut()}} >{login==0?'Login':'logout'}</MenuItem>
                        </Menu>
                      </React.Fragment>
                    )}
                 </PopupState></Button>
               
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}><ShoppingCartOutlinedIcon/>{sessionStorage.getItem('cartlength')}</Button>
+              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}> 
+                          <IconButton aria-label="cart">
+                  <StyledBadge badgeContent={sessionStorage.getItem('cartlength')} color="secondary">
+                    <ShoppingCartIcon />
+                  </StyledBadge>
+                </IconButton></Button>
           </Box>
           
          </Toolbar>

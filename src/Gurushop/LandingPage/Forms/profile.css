@@ -1,0 +1,28 @@
+.input-name-profile,.input-email-profile,.input-last-name{
+     height: 30px;
+    width: 98% !important ;
+    margin-bottom: 20px;
+}
+.input-last-name{
+    margin-top: 5px !important;
+    
+}
+.input4{
+    height: 50px;
+    margin-bottom: 10px;
+ 
+    width: 100% ;
+}
+.input4:focus{
+    outline: none;
+}
+.input-name-profile:focus{
+    outline: none;
+}
+.input-email-profile:focus{
+    outline: none;
+}
+.last-name-lable{
+    margin-bottom:none !important
+}
+
