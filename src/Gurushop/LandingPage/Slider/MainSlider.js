@@ -83,7 +83,7 @@ function SwipeableTextMobileStepper() {
   };
 
   return (
-    <Box className="slider-box-main" sx={{ maxWidth: '100%', flexGrow: 1 ,height:900,marginTop:'100px'}}>
+    <Box className="slider-box-main" sx={{ maxWidth: '100%', flexGrow: 1 ,height:710,marginTop:'100px'}}>
 
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}

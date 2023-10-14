@@ -373,12 +373,12 @@ const handleClick = (event) => {
                    )}
                 </PopupState></Button>
               
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={()=>navigate('/cart')}> 
-                          <IconButton aria-label="cart">
-                  <StyledBadge badgeContent={sessionStorage.getItem('cartlength')} color="secondary">
+      
+                    <IconButton aria-label="cart" onClick={()=>navigate('/cart')}>
+                  <StyledBadge badgeContent={sessionStorage.getItem('cartlength')} color="warning">
                     <ShoppingCartIcon />
                   </StyledBadge>
-                </IconButton></Button>
+                </IconButton>
           </Box>
           
          </Toolbar>

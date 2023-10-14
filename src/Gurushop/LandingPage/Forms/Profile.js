@@ -183,63 +183,8 @@ const Profile = () => {
                   },
                 }}
               >
-                           <TableContainer component={Paper}>
-                             <Table sx={{ minWidth: '100%',display:'inline' }} aria-label="simple table">
-                               <TableHead>
-                                {
-                                  headings.map((e)=>{
-                                    return(
-                                      <TableRow>
-                                      <TableCell>{e}</TableCell>
-                                    </TableRow>
-                                    )
-                                  })
-                                }
-
-                               </TableHead>
-                             </Table>
-                             <Table sx={{ minWidth: '100%',display:'inline' ,marginLeft:'30px'}} aria-label="simple table">
-                               <TableHead>
-                                {
-                                  profile.map((e)=>{
-                                    return(
-                                      <tbody>
-                                      <TableRow>
-                                      <TableCell>{e.firstName}</TableCell>
-                                    </TableRow>
-                                      <TableRow>
-                                      <TableCell>{e.lastName}</TableCell>
-                                    </TableRow>
-                                    <TableRow>
-                                    <TableCell>{e.email}</TableCell>
-                                  </TableRow>
-                                  <TableRow>
-                                  <TableCell>{e.country}</TableCell>
-                                </TableRow>
-                                <TableRow>
-                                <TableCell>{e.state}</TableCell>
-                              </TableRow>
-                              <TableRow>
-                              <TableCell>{e.city}</TableCell>
-                            </TableRow>
-                            <TableRow>
-                            <TableCell>{e.pinCode}</TableCell>
-                        
-                      </TableRow>
-                      </tbody>
-                                    )
-                                  })
-                                }
-
-                               </TableHead>
-                             </Table>
-                           </TableContainer>
-                           <TableContainer component={Paper}>
-                       
-                           </TableContainer>
-                                    
-                                    
-                   </Box>
+                              
+               </Box>
 
 </div>
         </TabPanel>

@@ -13,6 +13,7 @@ import Signup from "./Gurushop/LandingPage/Forms/Signup";
 import Cart from "./Gurushop/LandingPage/Cart/Cart";
 import Chekout from "./Gurushop/LandingPage/Chekout/Chekout";
 import Profile from "./Gurushop/LandingPage/Forms/Profile";
+import Detail from "./Gurushop/LandingPage/Detail/Detail";
 const App = () => {
   return (
     <div>
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/cart"   element={<Cart/>}/>
           <Route path="/chekout"   element={<Chekout/>}/>
           <Route path="/profile"   element={<Profile/>}/>
+          <Route path="/detail"   element={<Detail/>}/>
         </Routes>
       </BrowserRouter>
     </div>

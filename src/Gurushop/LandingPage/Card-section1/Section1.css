@@ -1,179 +1,32 @@
-.main-card{
-    height: auto;
+.section-card-main-div{
+   /* border: 1px solid red; */
     width: 100%;
-
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   position: relative;
-   bottom: 100px;
+    align-items: center;
     justify-content: space-around;
     margin-top: 0px;
-    padding: 0px;
-}
-.card-div1{
-    height: 300px;
-    width: 500px;
-    background-color: rgb(246, 172, 62);
-    /* display: flex;
-    justify-content: center;
-    align-items:center ; */
 
-    justify-content: space-evenly;
-    /* background-image: url('https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRHATWi3V0B6qKdL3o5m7-auv7LJMU05dcTDu02KEzs-wuKY9PV');
-    background-size: cover; */
 }
-.card-div2{
-    height: 300px;
-    width: 500px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* background-color: rgb(28, 164, 237); */
-    /* background-image: url('https://media.istockphoto.com/id/1470808186/photo/handsome-hispanic-guy-is-using-smartphone-for-messaging-texting-young-dark-haired-man-in.webp?b=1&s=612x612&w=0&k=20&c=yIEbaXBOnkhPNqriiIK-tipff9T4WpqNW0cZxzHYtU0=');
-    background-size: cover; */
-    
-}
-.card-div3{
-    height: 300px;
-    width: 500px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    background-color: rgb(248, 177, 251);
-    /* background-image: url('https://cdn.pixabay.com/photo/2017/10/19/11/00/pendant-2867205_640.jpg');
-    background-size: cover; */
-}
-.card-div1-content{
-    width: auto;
+.section-card1,.section-card2,.section-card3,.section-card4,.section-card5{
  
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:column ;
-    justify-content: center;
-    align-items: center;
-    color: white        ;
-    position: relative;
-    bottom: 260px ;
-  
- 
-    
+    height: 400px;
+    width: 280px;
+    /* background-color: red; */
 }
-.card-div1-para1:hover{
-    scale: 1.4;
+/* .section-card1-img1{
+    border: 1px solid blue;
+} */
+.section-card1-para1,.section-card2-para2,.section-card3-para3,.section-card4-para4,.section-card5-para5{
+    color: rgb(1, 1, 90);
+    margin-top:3px ;
 }
-.card-div2-para1:hover{
-    scale: 1.4;
-}
-.card-div3-para1:hover{
-    scale: 1.4;
-}
-
-.card-div1-para1,.card-div2-para1,.card-div3-para1{
-    transition: all;
-    transition-duration: 0.3s;
-}
-.card-div2-content{
-  
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:column ;
-    justify-content: center;
-    align-items: center;
-    color: white        ;
-    position: relative;
-    bottom: 260px ;
-  
-    opacity: 1.5;
-}
-
-.card-div3-content{
-      
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction:column ;
-    justify-content: center;
-    align-items: center;
-    color: white        ;
-    position: relative;
-    bottom: 260px ;
-  
-}
-
-.card-img1{
-    border-image-slice:fill;
-    height: 300px;
-    border-radius: 10px;
+.section-main-div{
     width: 100%;
-    position: relative;
-   opacity: 1;
-   margin-left: 0px;
-}
-.card-img2{
-    border-image-slice:fill;
-    height: 300px;
-    border-radius: 10px;
-    width: 100%;
-    position: relative;
-   /* opacity: 0.8; */
-   margin-left: 0px;
-}
-.card-img1:hover{
-    opacity: 0.7;
+   padding: 2.5%;
+    /* border:  1px solid red; */
 
-}
-.card-img2:hover{
-    opacity: 0.7;
-}
-.card-div1:hover{
-     
-    border-radius: 10px;
-    
-}
-.card-div2:hover{
-
-    border-radius: 10px;
-    
-}
-.card-div3:hover{
-  
-    border-radius: 10px;
-    
-}
-
-
-
-.card-div1{
-    transition: all;
-    transition-duration: 0.3s;
-}
-
-.card-div2{
-    transition: all;
-    transition-duration: 0.3s;
-}
-
-.card-div3{
-    transition: all;
-    transition-duration: 0.3s;
-}
-
-
-
-
-.card-div1-btn{
-    background-color: white !important;
-    border: 1px solid white !important;
-    color: black !important;
-}
-.card-div1-btn:hover{
-    color: rgb(244, 8, 8) !important;
-    font-weight: 500 !important;
-}
-@media screen and (max-width:360){
-    .main-card{
-        margin-top: 50px !important;
-      border:  1px solid blue;
-       
-    }
+   margin-bottom: 40px;
 }

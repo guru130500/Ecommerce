@@ -46,23 +46,41 @@ import { Button } from '@mui/material'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import SearchIcon from '@mui/icons-material/Search';
-const Card1 = ({item,addtoCart}) => {
+
+import AspectRatio from '@mui/joy/AspectRatio';
+
+import Card from '@mui/joy/Card';
+import CardContent from '@mui/joy/CardContent';
+import CardOverflow from '@mui/joy/CardOverflow';
+import Chip from '@mui/joy/Chip';
+import Link from '@mui/joy/Link';
+import Typography from '@mui/joy/Typography';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import { useNavigate } from 'react-router-dom';
+const Card1 = ({item,addtoCart,handleclick}) => {
+ const navigate=useNavigate()
+  function handleclick(item){
+    navigate('/detail',{item})
+}
   return (
     <div>
-      <div className='main-card-div'>
+      <div className='main-card-div' onClick={()=>{handleclick(item)}}>
           <div className='image-card'>
          
             <img className='image-data' src={item.image} alt='dummy'></img>
-            <div className='add-to-cart-btn'><Button onClick={()=>addtoCart(item)} className='add-to-cart-innerbtn' sx={{color:'#fff'}}> ADD TO CART<ShoppingCartOutlinedIcon className='shopping-cart-div'/></Button></div>
-          </div>
-          <div className='card-div'>
-             <p className='card-para1'>{item.title}</p>
-             <p className='card-para2'>{item.category}</p>
-             <p className='card-para3'><CurrencyRupeeIcon sx={{fontSize:'19px'}}/>{item.price}</p>
-           
-          </div>
+            </div>
+            <div className='card-content-updated'>
+              <p className='card-content-para1-updated'>{item.title}</p>
+              <p></p>
+             
+            </div>
+            <div className='card-price-updated'>
+                <p className='card-price-para1'>₹ {item.price}.00</p>
+                <Button className='card-shop-btn' onClick={()=>{addtoCart();}} >SHOP NOW</Button>
+              </div>
       </div>
     </div>
+
   )
 }
 

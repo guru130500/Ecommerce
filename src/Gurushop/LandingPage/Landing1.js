@@ -88,34 +88,7 @@ const Landing1 = () => {
        </Box>
             
 
-       <div className='feature-box-heading' style={{marginTop:'80px'}}>
-        <p className='feature-box-par1'>SEE OUR COLLECTION</p>
-        <p className='feature-box-par2'>TOP VISITED CATEGORIES</p>
-        <p className='feature-box-par3'>Street art salvia irony wolf waistcoat actually lomo meh fap jean shorts.</p>
-        </div>
-
-        <div className='visited-category'>
-          <div className='category-div1'>
-              <img className='visted-img' src='https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg' alt='img1' height='100%' width='100%'></img>
-              <p className='visited-para1'>MENS</p>
-          </div>
-          <div className='category-div2'>
-             <img className='visted-img' src='https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg' height='100%' width='100%'></img>
-             <p className='visited-para2'>WOMENS</p>
-          </div>
-          <div className='category-div3'>
-             <img className='visted-img' src='https://m.media-amazon.com/images/I/71SZ7g7hH4L._AC_UY327_FMwebp_QL65_.jpg' height='100%' width='100%'></img>
-             <p className='visited-para3'>ELECTRONICS</p>
-          </div>
-          <div className='category-div4'>
-             <img className='visted-img' src='https://m.media-amazon.com/images/I/71Q07iSG7lL._AC_UL480_FMwebp_QL65_.jpg' height='100%' width='100%'></img>
-             <p className='visited-para4'>JEWELERY</p>
-          </div>
-          <div className='category-div5'>
-             <img className='visted-img' src='https://m.media-amazon.com/images/I/71wTOnIlUWL._AC_UL480_FMwebp_QL65_.jpg' height='100%' width='100%'></img>
-             <p className='visited-para5'>ACCESSORIES</p>
-          </div>
-        </div>
+ 
          
         <div className='feature-box-heading' style={{marginTop:'80px'}}>
         <p className='feature-box-par1'>SEE OUR COLLECTION</p>
