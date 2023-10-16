@@ -12,8 +12,9 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import './Slider.css'
 import { red } from '@mui/material/colors';
+import { useNavigate } from 'react-router-dom';
 
-
+import axios from 'axios';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -81,7 +82,32 @@ function SwipeableTextMobileStepper() {
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
+/* ......*/
+const navigate=useNavigate()
+function handleclick(item){
+  navigate('/detail',{state:{item}})
+}
 
+/* ........*/
+let isLoggedIn = sessionStorage.getItem("userName");
+function addtoCart(product){
+      if(isLoggedIn)
+      {
+        product["userId"]=sessionStorage.getItem("userId");
+        product["qty"]=1
+        axios.post(`http://localhost:9000/cart`, product)
+        .then((response)=>{
+          console.log(response);      
+        })
+        .catch((err)=>{
+          console.log(err);
+        })
+        navigate('/cart');
+      }
+      else{
+        navigate('/login');
+      }
+}
   return (
     <Box className="slider-box-main" sx={{ maxWidth: '100%', flexGrow: 1 ,height:710,marginTop:'100px'}}>
 
@@ -116,8 +142,8 @@ function SwipeableTextMobileStepper() {
                         {/* <p className='slider-para1' >COLOR</p>
                         <p className='slider-para2'>ghgvjsfbfdhvffssbfksfjsfbvjkvbfdskjbcjbsfkbslbfjvsdbkdbfbjbsbsj</p> */}
                         <div className='slider-btns'>
-                          <Button className='slider-btn3'>Read More</Button>
-                          <Button className='slider-btn4'>Shop Now</Button>
+                          <Button className='slider-btn3' onClick={()=>{handleclick(step)}}>Read More</Button>
+                          <Button className='slider-btn4' onClick={()=>{addtoCart(step)}}>Shop Now</Button>
                         </div>
                         {/* <div className='offer-class'>60% Off</div> */}
                      </div>

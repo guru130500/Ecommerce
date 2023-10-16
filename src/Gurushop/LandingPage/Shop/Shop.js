@@ -18,6 +18,8 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Tooltip from '@mui/material/Tooltip';
+
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 
@@ -31,6 +33,10 @@ const Shop = () => {
   const[electronics,setElectronics]=useState('')
   const[jewelery,setJewelery]=useState('')
   const[accesories,setAccesories]=useState('')
+
+
+
+  /*..... */
   const navigate=useNavigate();
 
  const men2=[]
@@ -135,25 +141,6 @@ accesories && accesories.forEach((e,i)=>{
     },[])
  
 
-  let isLoggedIn = sessionStorage.getItem("userName");
-  function addtoCart(product){
-        if(isLoggedIn)
-        {
-          product["userId"]=sessionStorage.getItem("userId");
-          product["qty"]=1
-          axios.post(`http://localhost:9000/cart`, product)
-          .then((response)=>{
-            console.log(response);      
-          })
-          .catch((err)=>{
-            console.log(err);
-          })
-          navigate('/cart');
-        }
-        else{
-          navigate('/login');
-        }
-  }
 
   /* slider part*/
   
@@ -174,7 +161,14 @@ accesories && accesories.forEach((e,i)=>{
     setActiveStep(step);
   };
 
+/* .................*/
 
+function gotoCategory(value){
+  
+  navigate('/category',{state:value})
+ 
+
+}
   return (
     <div>
       <Navbar />
@@ -249,8 +243,8 @@ accesories && accesories.forEach((e,i)=>{
         }
       />
     </Box>
-       <Box sx={{width:'93%',margin:'0 auto'}}>
-          <p style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}}>MENS COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
+       <Box sx={{width:'93%',margin:'0 auto'}} >
+          <p  className='shop-sub-category' style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}} onClick={()=>{gotoCategory(`men`)}}>MENS COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
        <p style={{fontSize:'100%',marginTop:'0.5%'}}>We will provide you best Mens collection in our collection</p>
        </Box>
 
@@ -259,7 +253,7 @@ accesories && accesories.forEach((e,i)=>{
                men2 && men2.map((item)=>{
                     
                      return(
-                      <Card1 item={item} addtoCart={addtoCart}   />
+                      <Card1 item={item} />
                      )
                       
                      
@@ -268,7 +262,7 @@ accesories && accesories.forEach((e,i)=>{
        </Box>
          
        <Box sx={{width:'93%',margin:'0 auto'}}>
-          <p style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}}>WOMENS COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
+          <p className='shop-sub-category' style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}} onClick={()=>{gotoCategory(`women`)}}>WOMENS COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
        <p style={{fontSize:'100%',marginTop:'0.5%'}}>We will provide you best Womens collection in our collection</p>
        </Box>
 
@@ -287,7 +281,7 @@ accesories && accesories.forEach((e,i)=>{
        </Box>
              
        <Box sx={{width:'93%',margin:'0 auto'}}>
-          <p style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}}>ELECTRONICS COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
+          <p className='shop-sub-category' style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}} onClick={()=>{gotoCategory(`electronics`)}}>ELECTRONICS COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
        <p style={{fontSize:'100%',marginTop:'0.5%'}}>We will provide you best electronics collection in our collection.</p>
        </Box>
          
@@ -303,7 +297,7 @@ accesories && accesories.forEach((e,i)=>{
        </Box>
 
        <Box sx={{width:'93%',margin:'0 auto'}}>
-          <p style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}}>JEWELERY COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
+          <p className='shop-sub-category' style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}} onClick={()=>{gotoCategory(`jewelery`)}} >JEWELERY COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
        <p style={{fontSize:'100%',marginTop:'0.5%'}}>We will provide you best Jewelery collection in our collection.</p>
        </Box>
           
@@ -319,7 +313,7 @@ accesories && accesories.forEach((e,i)=>{
        </Box>
        
        <Box sx={{width:'93%',margin:'0 auto'}}>
-          <p style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}}> ACCESORIES COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
+          <p className='shop-sub-category' style={{fontSize:'160%',marginBottom:'0.5%',fontWeight:'bold'}} onClick={()=>{gotoCategory(`accessories`)}}> ACCESORIES COLLECTION <ArrowForwardIosIcon sx={{fontSize:'80%'}}/> </p>
        <p style={{fontSize:'100%',marginTop:'0.5%'}}>We will provide you best Accesories collection in our collection.</p>
        </Box>
 

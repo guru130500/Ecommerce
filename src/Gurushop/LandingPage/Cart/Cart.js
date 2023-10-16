@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.css";
-import { Button, colors } from "@mui/material";
+import { Box, Button, colors } from "@mui/material";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import CloseIcon from "@mui/icons-material/Close";
@@ -69,29 +69,10 @@ const Cart = () => {
     <div>
       <div style={{ marginBottom: "100px" }}>
         <Navbar />
+      
       </div>
 
-      <div className='header-cart'>
-          <img className='header-image' src='https://lootlere.com/wp-content/uploads/2023/02/4.png' height='100%' width='100%'></img>
-         
-           <div className='cart-nav'>
-
-            <div className='cart-nav-div1'>
-               {/* <p className={(search=='')?'header-para2-dummy':'header-para2'} onClick={all}><KeyboardBackspaceIcon/></p> */}
-               <p className='cart-header-para1'><span className='cart-header-span1'>SHOPPING CART</span><span className="cart-span-right1"><ArrowRightAltIcon fontSize="80px"/></span><span className="cart-header-span2" onClick={chekout}>CHEKOUT</span><span className="cart-span-right2"><ArrowRightAltIcon fontSize="30px"/></span><span className="cart-header-span2">ORDER COMPLETE</span></p>
-            </div>
-            
-            {/* <div className='header-nav-div2'>
-              <span className={(search==``)?'span5':'sp5'} onClick={all}>All</span>
-              <span className={(search==`men's clothing`)?'span1':'sp1'}  onClick={men}>MEN</span>
-              <span className={(search==` women's clothing`)?'span2':'sp2'} onClick={women}>WOMEN</span>
-              <span className={(search==`jewelery`)?'span3':'sp3'} onClick={jewelery}>JEWELERY</span>
-              <span className={(search==`electronics`)?'span4':'sp4'}  onClick={electronics}>ELECTRONICS</span>
-              </div>*/
-            }
-           </div> 
-       </div>
-
+    
 
 
       <div className="display-div">
@@ -244,7 +225,7 @@ const Cart = () => {
             <p className="total-cart-para1">Total</p>
             <p className="total-cart-para2"><CurrencyRupeeIcon  fontSize="8px"/>{Math.floor(total)+40}.00</p>
           </div>
-           <Button className="total-cart-btn">proceed to chekout</Button>
+           <Button className="total-cart-btn" onClick={chekout}>proceed to chekout</Button>
         </div>
 
       </div>

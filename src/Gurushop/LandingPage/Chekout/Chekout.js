@@ -5,6 +5,8 @@ import axios from 'axios'
 import { json, useParams,useLocation } from 'react-router-dom'
 const Chekout = () => {
   const [total,setTotal]=useState(0)
+    const[user,setUser]=useState([])
+
     const location = useLocation();
  
     const cart = location.state.cart || [];
@@ -28,6 +30,15 @@ const Chekout = () => {
       const { name, value } = e.target;
       setFormData({ ...formData, [name]: value });
     };
+
+    useEffect(()=>{
+      const url="http://localhost:9000/profile/1";
+      axios.get(url)
+      .then((response)=>{
+           setUser(response.data)
+         
+      })
+    },[])
    
     let dummy=0
     useEffect(()=>{
@@ -239,6 +250,8 @@ const Chekout = () => {
     
          <div className='chekout-order-div'>
          <div class="order-summary">
+          <h2>Customer Name:- {user.firstName} {user.lastName}</h2>
+         
         <h2>YOUR ORDER</h2>
         <table class="order-table">
             <thead>
@@ -271,8 +284,8 @@ const Chekout = () => {
                     <td className='order-subtotal'>₹{Math.floor(total)}</td>
                 </tr>
                 <tr>
-                    <td>Shipping</td>
-                    <td ></td>
+                    <td>Shipping to</td>
+                    <td >{user.city} , {user.state}. pincode - {user.pinCode}</td>
                 </tr>
                 <tr class="total-row">
                     <td>Total</td>
@@ -286,7 +299,9 @@ const Chekout = () => {
             <form>
                 <label for="upiAddress">UPI Address *</label>
                 <input className='upi-input' type="text" id="upiAddress" name="upiAddress" required/>
+
                 <button className='upi-submit-btn' type="submit">Pay with UPI QR Code</button>
+                <button className='upi-submit-btn' type="submit">Cash on delivery</button>
             </form>
         </div>
     </div>

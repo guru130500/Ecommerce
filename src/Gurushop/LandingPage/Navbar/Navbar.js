@@ -172,7 +172,13 @@ const handleClick = (event) => {
   function navtoLogin(){
     navigate('/login')
   }
+      
+function gotoCategory(value){
+  
+  navigate('/category',{state:value})
+ 
 
+}
 
 
 
@@ -301,10 +307,10 @@ const handleClick = (event) => {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-        <MenuItem onClick={()=>{handleClose();men();navigate(`/shop`)}}>Mens</MenuItem>
-        <MenuItem onClick={()=>{handleClose();women();navigate('/shop')}}>Womens</MenuItem>
-        <MenuItem onClick={()=>{handleClose();jewelery();navigate('/shop')}}>Electronics</MenuItem>
-        <MenuItem onClick={()=>{handleClose();electronics();navigate('/shop')}}>Jewelery</MenuItem>
+        <MenuItem onClick={()=>{handleClose();gotoCategory(`men`)}}>Mens</MenuItem>
+        <MenuItem onClick={()=>{handleClose();gotoCategory(`women`)}}>Womens</MenuItem>
+        <MenuItem onClick={()=>{handleClose();gotoCategory(`electronics`)}}>Electronics</MenuItem>
+        <MenuItem onClick={()=>{handleClose();gotoCategory(`jewelery`)}}>Jewelery</MenuItem>
       </Menu>
             {/* </Button> */}
             <Button className='navbtns' sx={{color:'black'} } onClick={()=>navigate('/card')}>ABOUT US</Button>

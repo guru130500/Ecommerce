@@ -31,8 +31,10 @@
 
 }
 .product-image-div{
-    height: 90px;
-    width: 190px;
+  
+    padding: 1px;
+    height: 100px;
+    width: 220px;
     margin-left: 6px;
 }
 
@@ -166,7 +168,7 @@
 
     /* header part*/
     .header-cart{
-        background-color: black;
+       
         margin-bottom: 35px;
         height: 250px;
     }
@@ -186,13 +188,13 @@
         font-size: 20px;
     }
     .cart-header-para1{
-        
+         color: black !important;
     }
 
     .cart-header-span1{
            font-size: 20px;
            margin-right: 30px;
-           color: white;
+           color: grey !important;  
            font-weight: 700;
     }
     .cart-header-span2{

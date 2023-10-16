@@ -57,26 +57,49 @@ import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const Card1 = ({item,addtoCart,handleclick}) => {
  const navigate=useNavigate()
   function handleclick(item){
-    navigate('/detail',{item})
+    navigate('/detail',{state:{item}})
+    window.location.href='/detail'
 }
+
+let isLoggedIn = sessionStorage.getItem("userName");
+function addtoCart(product){
+      if(isLoggedIn)
+      {
+        product["userId"]=sessionStorage.getItem("userId");
+        product["qty"]=1
+        axios.post(`http://localhost:9000/cart`, product)
+        .then((response)=>{
+          console.log(response);      
+        })
+        .catch((err)=>{
+          console.log(err);
+        })
+        navigate('/cart');
+      }
+      else{
+        navigate('/login');
+      }
+}
+
   return (
     <div>
-      <div className='main-card-div' onClick={()=>{handleclick(item)}}>
+      <div className='main-card-div' >
           <div className='image-card'>
          
             <img className='image-data' src={item.image} alt='dummy'></img>
             </div>
             <div className='card-content-updated'>
-              <p className='card-content-para1-updated'>{item.title}</p>
+              <p className='card-content-para1-updated' onClick={()=>{handleclick(item)}}>{item.title}</p>
               <p></p>
              
             </div>
             <div className='card-price-updated'>
-                <p className='card-price-para1'>₹ {item.price}.00</p>
-                <Button className='card-shop-btn' onClick={()=>{addtoCart();}} >SHOP NOW</Button>
+                <p className='card-price-para1'>₹ {item.price}</p>
+                <Button className='card-shop-btn' onClick={()=>addtoCart(item)}>SHOP NOW</Button>
               </div>
       </div>
     </div>

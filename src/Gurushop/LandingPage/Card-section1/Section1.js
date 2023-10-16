@@ -4,15 +4,14 @@ import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 const Section1 = () => {
     const navigate=useNavigate()
-    function sectiontoWomen(){
-          navigate('/shop')
-    }
-    function sectiontoMen(){
-        navigate('/shop')
-    }
-    function sectiontoElectronics(){
-        navigate('/shop')
-    }
+  
+    
+function gotoCategory(value){
+  
+    navigate('/category',{state:value})
+   
+  
+  }
   return (
     // <div className='main-card'>
     //     <div className='card-div1' onClick={sectiontoWomen}>
@@ -54,23 +53,23 @@ const Section1 = () => {
 
         <h2 style={{marginLeft:'1.2%'}}>Shop by Category</h2>
         <div className='section-card-main-div'>
-            <div className='section-card1'>
+            <div className='section-card1' onClick={()=>{gotoCategory(`men`)}}>
                 <img className='section-card1-img1' src='https://cdn11.bigcommerce.com/s-d18iepu0cs/product_images/uploaded_images/men-desktop.jpg' alt='' height='300px' width='280px' ></img>
                 <p className='section-card1-para1'>Men</p>
             </div>
-            <div className='section-card2'>
+            <div className='section-card2' onClick={()=>{gotoCategory(`women`)}}>
                 <img className='section-card2-img2' height='300px' width='280px' src='https://cdn11.bigcommerce.com/s-d18iepu0cs/product_images/uploaded_images/women-desktop.jpg' alt=''></img>
                 <p className='section-card2-para2'>Women</p>
             </div>
-            <div className='section-card3'>
+            <div className='section-card3' onClick={()=>{gotoCategory(`electronics`)}}>
                 <img className='section-card3-img3'  height='300px' width='280px' src='https://images.meesho.com/images/products/19780555/y0l1e_400.webp' alt=''></img>
                 <p className='section-card3-para3'>Electronics</p>
             </div>
-            <div className='section-card4'>
+            <div className='section-card4' onClick={()=>{gotoCategory(`jewelery`)}}>
                <img className='section-card4-img4'  height='300px' width='280px' src='https://images.meesho.com/images/products/282596088/l207t_400.webp' alt=''></img>
                 <p className='section-card4-para4'>Jewelery</p>
             </div>
-            <div className='section-card5'>
+            <div className='section-card5' onClick={()=>{gotoCategory(`accessories`)}}>
                <img className='section-card5-img5'  height='300px' width='280px' src='https://images.meesho.com/images/products/205330312/mwgpu_400.webp' alt=''></img>
                 <p className='section-card5-para5'>Accesories</p>
             </div>
