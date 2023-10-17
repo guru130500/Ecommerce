@@ -19,6 +19,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Navbar from '../Navbar/Navbar'
 
 /*table from material ui*/
 
@@ -98,7 +99,7 @@ const Profile = () => {
       setValue(index);
     };
     React.useEffect(()=>{
-        const url="http://localhost:9000/users/1";
+        const url=`http://localhost:9000/users`;
         axios.get(url)
         .then((response)=>{
              setUser(response.data)
@@ -106,7 +107,7 @@ const Profile = () => {
         })
       },[])
     React.useEffect(()=>{
-      axios.get(`http://localhost:9000/profile`)
+      axios.get(`http://localhost:9000/profile/1`)
       .then((res)=>{
         setProfile(res.data)
       })
@@ -129,10 +130,10 @@ const Profile = () => {
    }
   return (
     <div>
-          
+          <Navbar/>
 
-    <Box sx={{ bgcolor: 'background.paper', width: '100%' }}>
-      <AppBar position="static" sx={{bgcolor:'rgb(202, 5, 5)'}}>
+    <Box sx={{ bgcolor: 'background.paper', width: '100%',marginTop:'100px' }}>
+      <AppBar position="static" sx={{bgcolor:'#00cccc'}}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -143,7 +144,7 @@ const Profile = () => {
         >
           <Tab label="My account" {...a11yProps(0)} />
           <Tab label="Edit Profile" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+       
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -158,14 +159,15 @@ const Profile = () => {
                 sx={{
                   width: 300,
                   height: 300,
-                  backgroundColor: 'primary.dark',
+                  border:'1px solid grey',
+                  backgroundColor: 'white',
                   '&:hover': {
                     backgroundColor: 'primary.main',
                     opacity: [0.9, 0.8, 0.7],
                   },
                 }}
               >
-                <img src='' alt='profile-image' height='100%' width='100%'></img>
+                <img src='https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg' alt='profile-image' height='100%' width='100%'></img>
             </Box>
           
           
@@ -174,19 +176,23 @@ const Profile = () => {
                   width: '50%',
                   height: 'auto',
                   display:'flex',
+                  flexDirection:'column',
                   alignItems:'center',
                   justifyContent:'center',
-                  backgroundColor: 'primary.dark',
-                  '&:hover': {
-                    backgroundColor: 'primary.main',
-                    opacity: [0.9, 0.8, 0.7],
-                  },
+                  backgroundColor: 'white',
+                 border:'2px solid grey'
                 }}
               >
-                              
+              <h2 style={{textAlign:'center'}}> Hello, {profile.firstName}   {profile.lastName} </h2>
+              <div className='profile-div'>
+                <p className='profile-order-btn' style={{width:'150px'}}> Your orders</p>
+                <p className='profile-shopmore-btn' style={{width:'150px'}}>Shop More</p>
+              </div>
                </Box>
 
-</div>
+              </div>
+
+
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
    
@@ -244,9 +250,7 @@ const Profile = () => {
 
 
         </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-          Item Three
-        </TabPanel>
+      
       </SwipeableViews>
     </Box>
     

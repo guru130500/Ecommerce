@@ -15,6 +15,7 @@ import Chekout from "./Gurushop/LandingPage/Chekout/Chekout";
 import Profile from "./Gurushop/LandingPage/Forms/Profile";
 import Detail from "./Gurushop/LandingPage/Detail/Detail";
 import Category from "./Gurushop/Pages/Category";
+
 const App = () => {
   return (
     <div>

@@ -314,7 +314,7 @@ function gotoCategory(value){
       </Menu>
             {/* </Button> */}
             <Button className='navbtns' sx={{color:'black'} } onClick={()=>navigate('/card')}>ABOUT US</Button>
-            <Button className='navbtns' sx={{color:'black'}}>CONTACT US</Button>
+            <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/contact')}>CONTACT US</Button>
           </Box>
 
           <Box className='navlist2' sx={{display:{xs:'none',sm:'block'}}}>

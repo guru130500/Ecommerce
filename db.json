@@ -2,9 +2,134 @@
   "users": [
     {
       "userName": "guru",
-      "userEmail": "guru@123",
+      "userEmail": "gurunath@gmail.com",
       "password": "12345",
       "id": 1
+    }
+  ],
+  "orders": [
+    {
+      "firstName": "Gurunath",
+      "lastName": "Kumbhar",
+      "email": "gurunath@gmail.com",
+      "state": "Maharastra",
+      "city": "solapur",
+      "userId": "1",
+      "products": [
+        {
+          "pId": 3,
+          "title": "Mens Cotton Jacket",
+          "price": 55.99,
+          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+          "category": "men",
+          "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+          "rating": {
+            "rate": 4.7,
+            "count": 500
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 1
+        },
+        {
+          "pId": 17,
+          "title": "Striped Climbing Raincoats",
+          "price": 39.99,
+          "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+          "category": "women",
+          "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+          "rating": {
+            "rate": 3.8,
+            "count": 679
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 2
+        }
+      ],
+      "id": 1
+    },
+    {
+      "firstName": "Gurunath",
+      "lastName": "Kumbhar",
+      "email": "gurunath@gmail.com",
+      "state": "Maharastra",
+      "city": "solapur",
+      "userId": "1",
+      "products": [
+        {
+          "pId": 3,
+          "title": "Mens Cotton Jacket",
+          "price": 55.99,
+          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+          "category": "men",
+          "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+          "rating": {
+            "rate": 4.7,
+            "count": 500
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 1
+        },
+        {
+          "pId": 17,
+          "title": "Striped Climbing Raincoats",
+          "price": 39.99,
+          "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+          "category": "women",
+          "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+          "rating": {
+            "rate": 3.8,
+            "count": 679
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 2
+        }
+      ],
+      "id": 2
+    },
+    {
+      "firstName": "Gurunath",
+      "lastName": "Kumbhar",
+      "email": "gurunath@gmail.com",
+      "state": "Maharastra",
+      "city": "solapur",
+      "userId": "1",
+      "products": [
+        {
+          "pId": 3,
+          "title": "Mens Cotton Jacket",
+          "price": 55.99,
+          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+          "category": "men",
+          "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+          "rating": {
+            "rate": 4.7,
+            "count": 500
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 1
+        },
+        {
+          "pId": 17,
+          "title": "Striped Climbing Raincoats",
+          "price": 39.99,
+          "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+          "category": "women",
+          "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+          "rating": {
+            "rate": 3.8,
+            "count": 679
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 2
+        }
+      ],
+      "id": 3
     }
   ],
   "profile": [
@@ -50,32 +175,6 @@
       "userId": "1",
       "qty": 1,
       "id": 2
-    },
-    {
-      "pId": 7,
-      "title": "White Gold Plated Princess",
-      "price": 9.99,
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-      "rating": {
-        "rate": 3,
-        "count": 400
-      },
-      "userId": "1",
-      "qty": 1,
-      "id": 5
-    },
-    {
-      "pId": 2,
-      "title": "OnePlus Pad 29.49cm ",
-      "price": 270,
-      "description": "3K+ Display (11.61-inch/29.49cm), 7:5 read-fit ratio; Display type: IPS LCD",
-      "category": "electronics",
-      "image": "https://m.media-amazon.com/images/I/31JTPECqm-L._SX300_SY300_QL70_FMwebp_.jpg",
-      "userId": "1",
-      "qty": 1,
-      "id": 6
     }
   ],
   "sliders": [

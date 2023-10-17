@@ -26,3 +26,30 @@
     margin-bottom:none !important
 }
 
+.profile-div{
+    height:100px;
+    width: 70%;
+    /* border: 1px solid red; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   justify-content: space-around;
+}
+.profile-order-btn{
+    height: 30px;
+    text-align: center;
+    border: 2px solid rgb(154, 154, 150);
+    border-radius: 20px;
+}
+.profile-shopmore-btn{
+    height: 30px;
+    text-align: center;
+    border: 2px solid rgb(154, 154, 150);
+    border-radius: 20px;
+}
+.profile-order-btn:hover{
+    color: rgb(11, 142, 228);
+}
+.profile-shopmore-btn:hover{
+    color: rgb(11, 142, 228);
+}
