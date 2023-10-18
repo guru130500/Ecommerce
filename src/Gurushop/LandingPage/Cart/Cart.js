@@ -8,7 +8,7 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
-  const [cart, setCart] = useState("");
+  const [cart, setCart] = useState([]);
   const [input, setInput] = useState(1);
   const [total,setTotal]=useState(0)
   const navigate=useNavigate()
@@ -56,7 +56,9 @@ const Cart = () => {
        
         axios.delete(`http://localhost:9000/cart/${item.id}`);
 
-        window.location.href = "/cart";
+        // window.location.href = "/cart";
+        
+        setCart((prevData)=> prevData.filter((item)=> item.id !== product.id))
       }
      
     });

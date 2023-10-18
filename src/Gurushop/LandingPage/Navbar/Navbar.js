@@ -88,7 +88,9 @@ function DrawerAppBar(props) {
     
    
     },[search1])
-
+     React.useEffect(()=>{
+      setLength(sessionStorage.getItem('cartlength'))
+     },[data])
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
       '& .MuiBadge-badge': {
@@ -243,7 +245,7 @@ function gotoCategory(value){
                 </PopupState></Button>
   
             <Button className='navbtns2' sx={{color:'black',m:'2px'}}  onClick={()=>navigate('/cart')}>       <IconButton aria-label="cart">
-                  <StyledBadge badgeContent={sessionStorage.getItem('cartlength')} color="secondary">
+                  <StyledBadge badgeContent={length} color="secondary">
                     <ShoppingCartIcon />
                   </StyledBadge>
                 </IconButton></Button>
@@ -371,9 +373,10 @@ function gotoCategory(value){
                          <PersonOutlinedIcon/>
                        </Button>
                        <Menu {...bindMenu(popupState)}>
-                         <MenuItem onClick={()=>{popupState.close();navigate('/profile')}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>My account</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();logOut()}} >{login==0?'Login':'logout'}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();navigate('/profile')}}>My account</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}} >{login!=0?'':'login'}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();logOut()}} >{login!=0?'logout':''}</MenuItem>
                        </Menu>
                      </React.Fragment>
                    )}

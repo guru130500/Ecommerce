@@ -15,7 +15,7 @@ import Chekout from "./Gurushop/LandingPage/Chekout/Chekout";
 import Profile from "./Gurushop/LandingPage/Forms/Profile";
 import Detail from "./Gurushop/LandingPage/Detail/Detail";
 import Category from "./Gurushop/Pages/Category";
-
+import  Order from '../src/Gurushop/LandingPage/Order/Order'
 const App = () => {
   return (
     <div>
@@ -34,6 +34,7 @@ const App = () => {
           <Route path="/profile"   element={<Profile/>}/>
           <Route path="/detail"   element={<Detail/>}/>
           <Route path="/category"   element={<Category/>}/>
+          <Route path="/order"   element={<Order/>}/>
         </Routes>
       </BrowserRouter>
     </div>

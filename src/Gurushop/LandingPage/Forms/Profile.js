@@ -20,7 +20,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Navbar from '../Navbar/Navbar'
-
+import { useNavigate } from 'react-router-dom';
 /*table from material ui*/
 
 const headings=['FirstName','LastName','Email','Country','State','City','PinCode']
@@ -65,6 +65,7 @@ function a11yProps(index) {
 
 
 const Profile = () => {
+  const navigate=useNavigate()
   const [formData, setFormData] = React.useState({
     firstName: '',
     lastName: '',
@@ -106,11 +107,13 @@ const Profile = () => {
            
         })
       },[])
-    React.useEffect(()=>{
-      axios.get(`http://localhost:9000/profile/1`)
-      .then((res)=>{
-        setProfile(res.data)
-      })
+      React.useEffect(()=>{
+        axios.get(`http://localhost:9000/profile?userId=${sessionStorage.getItem("userId")}`)
+        .then((res)=>{
+          setProfile(res.data)
+          console.log(profile)
+        })
+     
     })
    function updateData(){
   
@@ -183,10 +186,17 @@ const Profile = () => {
                  border:'2px solid grey'
                 }}
               >
-              <h2 style={{textAlign:'center'}}> Hello, {profile.firstName}   {profile.lastName} </h2>
+                {
+                  profile && profile.map((e)=>{
+                    return(
+                      <h2 style={{textAlign:'center'}}> Hello, {e.firstName}   {e.lastName} </h2>
+                    )
+                  })
+                }
+              
               <div className='profile-div'>
-                <p className='profile-order-btn' style={{width:'150px'}}> Your orders</p>
-                <p className='profile-shopmore-btn' style={{width:'150px'}}>Shop More</p>
+                <p className='profile-order-btn' style={{width:'150px'}} onClick={()=>navigate('/order')}> Your orders</p>
+                <p className='profile-shopmore-btn' style={{width:'150px'}} onClick={()=>navigate('/shop')}>Shop More</p>
               </div>
                </Box>
 

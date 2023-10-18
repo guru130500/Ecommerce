@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Checkout.css'
 import Navbar from '../Navbar/Navbar'
 import axios from 'axios'
-import { json, useParams,useLocation } from 'react-router-dom'
+import { json, useParams,useLocation, useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
 import Snackbar from '@mui/material/Snackbar';
 import GooglePayButton from "@google-pay/button-react"
@@ -14,6 +14,7 @@ const Chekout = () => {
   // const[order,setOrder]=useState('')
     const location = useLocation();
     const[open,setOpen]=useState(false)
+    const navigate=useNavigate()
  
     const cart = location.state.cart || [];
     
@@ -22,15 +23,19 @@ const Chekout = () => {
         
     //       console.log(order)
     // })
+    const today = new Date();
+const year = today.getFullYear();
+const month = today.getMonth() + 1; 
+const day = today.getDate();
 
     useEffect(()=>{
-      const url="http://localhost:9000/profile/1";
+      const url=`http://localhost:9000/profile?userId=${sessionStorage.getItem("userId")}`;
       axios.get(url)
       .then((response)=>{
            setUser(response.data)
          
       })
-    },[])
+    })
    
     let dummy=0
     useEffect(()=>{
@@ -72,17 +77,17 @@ const Chekout = () => {
 
        function placebyCod(newState){
           const order={
-            firstName:user.firstName,
-            lastName:user.lastName,
-            email:user.email,
-            state:user.state,
-            city:user.city,
-            userId:user.userId,
-            products:cart
+            userId:sessionStorage.getItem("userId"),
+            products:cart,
+            total:total,
+            date:`${day}/${month}/${year}`
           }
           axios.post(`http://localhost:9000/orders`, order)
           .then((response)=>{
              setOpen(true)
+            setTimeout(()=>{
+              navigate('/order')
+            },2000)
           })
           .catch((err)=>{
             console.log(err);
@@ -138,7 +143,14 @@ const Chekout = () => {
                 </tr>
                 <tr>
                     <td>Shipping to</td>
-                    <td >{user.city} , {user.state}. pincode - {user.pinCode}</td>
+                    {
+                      user.map((e)=>{
+                        return(
+                                  <td >{e.city} , {e.state}. pincode - {e.pinCode}</td> 
+                        )
+                      })
+                    }
+                
                 </tr>
                 <tr class="total-row">
                     <td>Total</td>
