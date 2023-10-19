@@ -16,7 +16,9 @@ import Profile from "./Gurushop/LandingPage/Forms/Profile";
 import Detail from "./Gurushop/LandingPage/Detail/Detail";
 import Category from "./Gurushop/Pages/Category";
 import  Order from '../src/Gurushop/LandingPage/Order/Order'
+import './App.css'
 const App = () => {
+
   return (
     <div>
       {/* <Landing1/> */}

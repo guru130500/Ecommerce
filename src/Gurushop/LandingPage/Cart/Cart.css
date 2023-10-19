@@ -16,24 +16,27 @@
 }
 
 .cart-content-div{
-    height: 120px;
-    width:900px;
+    height:auto;
+    width:100%;
    border-bottom: 1px solid rgb(201, 198, 198);
     display:flex ;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap:100px;
+   gap: 10%;
+   margin-top: 30px;
 }
 .product-heading{
     width: 300px;
-    font-size: 10px;
-    color: rgb(2, 0, 13);
+    font-size: 22px;
+    color: rgb(51, 50, 51);
+    margin-bottom: 10px;
 
 }
 .product-image-div{
   
     padding: 1px;
-    height: 100px;
+    height: 250px;
     width: 220px;
     margin-left: 6px;
 }
@@ -68,7 +71,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-    align-items: center;
+
 }
 
 
@@ -123,16 +126,20 @@
     color: white;
 }
 .product-qty{
+   margin-left: 17%;
+   margin-top: 30px;
+    width: 19.4%;
     display: flex;
-    border: 1px solid rgb(198, 191, 191);
+    border: 1px solid blue;
     
 }
 .product-price{
     text-align: center;
     /* border: 1px solid red; */
-    font-size: 12px;
-    width: 200px;
+    font-size: 25px;
+    width:50%;
     color: rgb(95, 91, 91);
+    font-weight: 700;
     
 }
 .product-subtotal{
@@ -146,13 +153,14 @@
 
 /* free shipping div*/
 .free-shipping-para{
-    font-size: 14px;
+    font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border-bottom: 4px solid rgb(214, 5, 5);
+
    
   
     height: 50%;
-    width: 90%;
+    width: auto;
+    margin: 0 auto;
 }
 .free-shipping-div{
     display: flex;
@@ -292,10 +300,10 @@
     }
     .total-cart-btn{
         width: 100% !important;
-        background-color: rgb(198, 5, 5) !important;
-        color: rgb(247, 227, 227) !important;
+        background-color:#e6b800 !important;
+        color: rgb(16, 15, 15) !important;
         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-        border-radius: 0px!important;
+        border-radius: 4px!important;
     }
     .total-cart-heading{
         font-size: 20px;

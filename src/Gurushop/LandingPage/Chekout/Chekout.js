@@ -35,7 +35,7 @@ const day = today.getDate();
            setUser(response.data)
          
       })
-    })
+    },[])
    
     let dummy=0
     useEffect(()=>{

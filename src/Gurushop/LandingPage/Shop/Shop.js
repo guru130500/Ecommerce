@@ -170,7 +170,7 @@ function gotoCategory(value){
 
 }
   return (
-    <div>
+    <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
       <Navbar />
        
       <Box sx={{ width: '100%', flexGrow: 1 ,maxWidth:'100%',marginTop:'3.5%'}}>

@@ -145,29 +145,7 @@ function validateUser(userInput,passInput){
       <div>
       <Navbar/>
       </div>
-                      
-       <div className='header2'>
-          <img className='header-image' src='https://lootlere.com/wp-content/uploads/2023/02/4.png' height='100%' width='100%'></img>
-         
-           <div className='login-nav'>
-
-            <div className='login-nav-div1'>
-               {/* <p className={(search=='')?'header-para2-dummy':'header-para2'} onClick={all}><KeyboardBackspaceIcon/></p> */}
-               <p className='login-header-para1'>My account</p>
-            </div>
-            <div className='login-spans'>
-              <span className='login-span1' onClick={logintoHome}>Home </span><span className='login-span1'>  / My account</span>
-            </div>
-            {/* <div className='header-nav-div2'>
-              <span className={(search==``)?'span5':'sp5'} onClick={all}>All</span>
-              <span className={(search==`men's clothing`)?'span1':'sp1'}  onClick={men}>MEN</span>
-              <span className={(search==` women's clothing`)?'span2':'sp2'} onClick={women}>WOMEN</span>
-              <span className={(search==`jewelery`)?'span3':'sp3'} onClick={jewelery}>JEWELERY</span>
-              <span className={(search==`electronics`)?'span4':'sp4'}  onClick={electronics}>ELECTRONICS</span>
-              </div>*/
-            }
-           </div> 
-       </div>
+     
     <div className='login-main-div'>
       <div className={(btn=='Login')?'form-div1-updated':'form-div1'}>
 

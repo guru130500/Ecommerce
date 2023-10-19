@@ -68,9 +68,12 @@ function DrawerAppBar(props) {
   const[login,setLogin]=React.useState(0)
   const [open1, setOpen1] = React.useState(false);
   const[length,setLength]=React.useState('')
+  const[cartlength,setCartength]=React.useState([])
   const[search,setSearch]=React.useState('')
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -88,9 +91,17 @@ function DrawerAppBar(props) {
     
    
     },[search1])
+   React.useEffect(()=>{
+      axios.get(`http://localhost:9000/cart?userId=${sessionStorage.getItem("userId")}`)
+      .then((res)=>{
+        setCartength(res.data)
+        
+      })
+   
+  },[])
      React.useEffect(()=>{
-      setLength(sessionStorage.getItem('cartlength'))
-     },[data])
+      setLength(sessionStorage.getItem("cartlength"))
+     },[sessionStorage.getItem("cartlength")])
 
     const StyledBadge = styled(Badge)(({ theme }) => ({
       '& .MuiBadge-badge': {
@@ -155,22 +166,7 @@ const handleClick = (event) => {
   
   }
 
-  function men(){
-    setSearch(`men's clothing`)
-    
-  }
-  function women(){
-    setSearch(`women's clothing`)
-   
-  }
-  function jewelery(){
-     setSearch('jewelery')
   
-  }
-  function electronics(){
-    setSearch('electronics')
-
-  }
   function navtoLogin(){
     navigate('/login')
   }
@@ -244,9 +240,9 @@ function gotoCategory(value){
                    )}
                 </PopupState></Button>
   
-            <Button className='navbtns2' sx={{color:'black',m:'2px'}}  onClick={()=>navigate('/cart')}>       <IconButton aria-label="cart">
+            <Button className='navbtns2' sx={{color:'black',m:'2px'}}  ><IconButton aria-label="cart">
                   <StyledBadge badgeContent={length} color="secondary">
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon onClick={()=>navigate('/cart')}/>
                   </StyledBadge>
                 </IconButton></Button>
       </List>
@@ -255,13 +251,13 @@ function gotoCategory(value){
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
-
+//#ffd9b3
 
   return (
-    <Box>
+    <Box >
       <CssBaseline />
       <AppBar component="nav" >
-        <Toolbar className='navitems' >
+        <Toolbar className='navitems'  sx={{backgroundColor:'#009999',color:'white'}} >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -274,16 +270,16 @@ function gotoCategory(value){
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' },ml:'180px',fontSize:'40px' }}
+            sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' },ml:'180px',fontSize:'38px'}}
          className='navbar-typography' >
            
-            <img className='logo-image' onClick={()=>navigate('/')} src='https://lootlere.com/wp-content/uploads/2023/02/Lootlere-Logo-04-1.png' height='80px' width='200px'></img>
+            <img className='logo-image' onClick={()=>navigate('/')} src='https://img.freepik.com/free-vector/gradient-mobile-store-logo-design_23-2149699842.jpg?w=740&t=st=1697641432~exp=1697642032~hmac=f02419c7da8992964a9e17bb8db899d6e94e253b60d6c283fde52ce2dae888d7' height='80px' width='150px' style={{paddingTop:'10px',borderRadius:'20px'}}></img>
             {/* <Button className='nav-shopping-cart' sx={{color:'black',display:{xs:'block',sm:'none'}}}><ShoppingCartOutlinedIcon/></Button> */}
 
           </Typography>
-          <Box className='navlist1' sx={{ display: { xs: 'none', sm: 'block' },ml:'40px', }}>
-                 <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/')} >HOME</Button>
-                <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/shop')}>SHOP</Button>
+          <Box className='navlist1' sx={{ display: { xs: 'none', sm: 'block' },ml:'80px', marginRight:'200px'}}>
+                 <Button className='navbtns' sx={{color:'white'}} onClick={()=>navigate('/')} >HOME</Button>
+                <Button className='navbtns' sx={{color:'white'}} onClick={()=>navigate('/shop')}>SHOP</Button>
             {/* <Button className='navbtns' sx={{color:'black'}}> */}
 
          <Button
@@ -294,7 +290,7 @@ function gotoCategory(value){
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
        
-        sx={{color:'black'}}
+        sx={{color:'white'}}
       >
         CATEGORIES
         <span className='dashboard-span'><KeyboardArrowDownOutlined  sx={{fontSize:'19px'}}/></span>
@@ -315,12 +311,12 @@ function gotoCategory(value){
         <MenuItem onClick={()=>{handleClose();gotoCategory(`jewelery`)}}>Jewelery</MenuItem>
       </Menu>
             {/* </Button> */}
-            <Button className='navbtns' sx={{color:'black'} } onClick={()=>navigate('/card')}>ABOUT US</Button>
-            <Button className='navbtns' sx={{color:'black'}} onClick={()=>navigate('/contact')}>CONTACT US</Button>
+            <Button className='navbtns' sx={{color:'white'} } onClick={()=>navigate('/card')}>ABOUT US</Button>
+            <Button className='navbtns' sx={{color:'white'}} onClick={()=>navigate('/contact')}>CONTACT US</Button>
           </Box>
 
           <Box className='navlist2' sx={{display:{xs:'none',sm:'block'}}}>
-              <Button className='navbtns2' sx={{color:'black',m:'2px'}} onClick={handleClickOpen} >
+              <Button className='navbtns2' sx={{color:'white',m:'2px'}} onClick={handleClickOpen} >
         <SearchOutlinedIcon/>
       </Button>
         
@@ -370,13 +366,13 @@ function gotoCategory(value){
                    {(popupState) => (
                      <React.Fragment>
                        <Button className='profile-btn' variant="contained" {...bindTrigger(popupState)}>
-                         <PersonOutlinedIcon/>
+                         <PersonOutlinedIcon sx={{backgroundColor:'none'}}/>
                        </Button>
                        <Menu {...bindMenu(popupState)}>
                          <MenuItem onClick={()=>{popupState.close();}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
                          <MenuItem onClick={()=>{popupState.close();navigate('/profile')}}>My account</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}} >{login!=0?'':'login'}</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();logOut()}} >{login!=0?'logout':''}</MenuItem>
+                         <MenuItem className={(sessionStorage.getItem("userName"))?'login-menu':'login-menu2'} onClick={()=>{popupState.close();navtoLogin()}} >Login</MenuItem>
+                         <MenuItem className={(sessionStorage.getItem("userName"))?'logout-menu2':'logout-menu'} onClick={()=>{popupState.close();logOut()}} >Logout</MenuItem>
                        </Menu>
                      </React.Fragment>
                    )}
@@ -384,8 +380,8 @@ function gotoCategory(value){
               
       
                     <IconButton aria-label="cart" onClick={()=>navigate('/cart')}>
-                  <StyledBadge badgeContent={sessionStorage.getItem('cartlength')} color="warning">
-                    <ShoppingCartIcon />
+                  <StyledBadge badgeContent={cartlength.length} color="warning">
+                    <ShoppingCartIcon sx={{color:'white'}} />
                   </StyledBadge>
                 </IconButton>
           </Box>

@@ -6,9 +6,16 @@ import axios from "axios";
 import CloseIcon from "@mui/icons-material/Close";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
+  
   const [cart, setCart] = useState([]);
+  const[item,setItem]=useState([])
+  const[ischecked,setIschecked]=useState([])
   const [input, setInput] = useState(1);
   const [total,setTotal]=useState(0)
   const navigate=useNavigate()
@@ -18,11 +25,20 @@ const Cart = () => {
   {
        dummy=dummy+(cart[i].qty*cart[i].price)
   }
-  console.log("cart Total"+" "+dummy)
+
   setTotal(dummy)
  })
  
-
+  function handleselectitem(e){
+   const select=ischecked.includes(e)
+   if (select) {
+    // If the item is already selected, remove it from the selectedItems array
+    setIschecked(ischecked.filter((id) => id !== e.id));
+  } else {
+    // If the item is not selected, add it to the selectedItems array
+    setIschecked([...ischecked, e.id]);
+  }
+  }
   function handleChange(item,d){
     let arr=cart
     let ind=cart.indexOf(item)
@@ -57,7 +73,7 @@ const Cart = () => {
         axios.delete(`http://localhost:9000/cart/${item.id}`);
 
         // window.location.href = "/cart";
-        
+
         setCart((prevData)=> prevData.filter((item)=> item.id !== product.id))
       }
      
@@ -68,9 +84,9 @@ const Cart = () => {
   }
 
   return (
-    <div>
+    <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
       <div style={{ marginBottom: "100px" }}>
-        <Navbar />
+        <Navbar cartlength={cart.length} />
       
       </div>
 
@@ -81,27 +97,17 @@ const Cart = () => {
         <div className="cart-main-div">
           <div className="header-cart-divs">
             <div className="free-shipping-div">
-              <p className="free-shipping-para">Your order qualifies for free shipping!</p>
+              <p className="free-shipping-para">Shopping Cart</p>
             </div>
-            <div className="cart-heading">
-              <div className="head1">PRODUCT</div>
-              <div className="head2">PRODUCT-NAME</div>
-              <div className="head3">PRICE</div>
-              <div className="head4">QUANTITY</div>
-              <div className="head5">SUBTOTAL</div>
-            </div>
+           
           </div>
 
           {cart &&
             cart.map((e) => {
+              const select=ischecked.includes(e.id)
               return (
                 <div className="cart-content-div">
-                  <button
-                    className="remove-btn"
-                    onClick={() => removeProduct(e)}
-                  >
-                    <CloseIcon sx={{ fontSize: "15 px" }} />
-                  </button>
+                  <div><input type="checkbox" checked={select} onChange={()=>{handleselectitem(e)}}></input></div>
                   <div className="product-image-div">
                     {" "}
                     <img
@@ -112,11 +118,13 @@ const Cart = () => {
                       width={"100%"}
                     ></img>
                   </div>
-                  <div className="product-heading">{e.title}</div>
+                  <div className="product-heading">{e.title}
                   <div className="product-price">
-                    <CurrencyRupeeIcon fontSize="10px" />
-                    {Math.floor(e.price)}.00
+                    
+                  ₹{Math.floor(e.price)}.00
                   </div>
+
+                  
                   <div className="product-qty">
                     <button className="incre-btn" onClick={()=>handleChange(e,+1)}>
                       +
@@ -131,14 +139,25 @@ const Cart = () => {
                     >
                      {e.qty}
                     </span>
+                    
                     <button onClick={()=>handleChange(e,-1)} className="decre-btn">
                       -
                     </button>
+                    
                   </div>
+                  
+{/*                   
                   <div className="product-subtotal">
                     <CurrencyRupeeIcon fontSize="6px" />{" "}
                     {Math.floor(e.price * e.qty)}.00
+                  </div> */}
                   </div>
+                  <button
+                    className="remove-btn"
+                    onClick={() => removeProduct(e)}
+                  >
+                    <CloseIcon sx={{ fontSize: "15 px" }} />
+                  </button>
                 </div>
               );
             })}

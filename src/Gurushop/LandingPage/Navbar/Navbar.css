@@ -2,11 +2,14 @@
 .navlist1{
     /* border: 1px solid red; */
     margin-right: 200px;
+    width: 80%;
+    color: white !important;
 }
 .navlist2{
     /* border: 1px solid red; */
     position: relative;
-    right: 170px;
+    right: 100px;
+    width: 40% !important;
 }
 .navitems{
     display: flex;
@@ -16,7 +19,7 @@
 }
 .navbtns{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: bla;
+  margin-left: 20px !important;
 }
 .navbtns:hover{
     /* background-color: rgb(196, 220, 17) !important; */
@@ -84,10 +87,25 @@
   font-variant: normal !important;
 }
 .profile-btn{
- background-color: rgb(231, 26, 26)!important;
+ background-color:	 #b6ef54!important;
  color: white !important;
+ background-color: transparent !important;
+ box-shadow: none !important;
 }
-
+/* login function*/
+.login-menu{
+    display: none !important;
+}
+.login-menu2{
+    display: block !important;
+}
+/*logout function*/
+.logout-menu{
+    display: none !important;
+}
+.logout-menu2{
+    display: block !important;
+}
 /* pop up*/
 .search-div-popup{
     height: 80px;

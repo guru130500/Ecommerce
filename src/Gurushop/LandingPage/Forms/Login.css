@@ -1,7 +1,8 @@
 .login-body{
-
+    height: 800px;
     display: flex;
     flex-direction: column;
+    background-color: rgb(242, 253, 253);
   
 }
 
@@ -14,7 +15,7 @@
     justify-content: center;
     gap: 25px;
     align-items: center;
-    margin-top:0;
+    margin-top:100px;
     
 }
 .guide-div{
