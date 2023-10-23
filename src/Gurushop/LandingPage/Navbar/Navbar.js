@@ -171,12 +171,12 @@ const handleClick = (event) => {
     navigate('/login')
   }
       
-function gotoCategory(value){
+  function gotoCategory(value){
   
-  navigate('/category',{state:value})
- 
-
-}
+    navigate(`/category/${value}`)
+   
+  
+  }
 
 
 

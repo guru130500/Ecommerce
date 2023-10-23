@@ -6,12 +6,12 @@ const Section1 = () => {
     const navigate=useNavigate()
   
     
-function gotoCategory(value){
+    function gotoCategory(value){
   
-    navigate('/category',{state:value})
-   
-  
-  }
+        navigate(`/category/${value}`)
+       
+      
+      }
   return (
     // <div className='main-card'>
     //     <div className='card-div1' onClick={sectiontoWomen}>

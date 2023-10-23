@@ -16,7 +16,7 @@ const Chekout = () => {
     const[open,setOpen]=useState(false)
     const navigate=useNavigate()
  
-    const cart = location.state.cart || [];
+    const cart = location.state.ischecked || [];
     
     
     // useEffect(()=>{
@@ -110,19 +110,21 @@ const day = today.getDate();
 
     
   return (
-    <div>
+    <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
         <Navbar/>
     <div className='chekout-main-div'>
          <div className='chekout-order-div'>
          <div class="order-summary">
-          <h2>Customer Name:- {user.firstName} {user.lastName}</h2>
+         
          
         <h2>YOUR ORDER</h2>
         <table class="order-table">
-            <thead>
+            <thead >
                 <tr>
                     <th>PRODUCT</th>
+                    <th>PRODUCT NAME</th>
                     <th>SUBTOTAL</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -131,13 +133,20 @@ const day = today.getDate();
                    cart && cart.map((e)=>{
                         return(
                           <tr>
-                              <td className='order-title'>{e.title} × {e.qty}</td>
+                              {/* <td className='order-title'>{e.title} × {e.qty}</td> */}
+                              <td><img className='chekout-item-image'  src={e.image} alt='img' height='120px' width='115px'></img></td>
+                              <td className='chekout-product-title'>{e.title}</td>
                               <td>₹{e.price * e.qty}</td>
                           </tr>
                         )
                     })
                 }
-                <tr>
+             
+            </tbody>
+        </table>
+        <table class="order-table2">
+         <tbody>
+         <tr>
                     <td>Subtotal</td>
                     <td className='order-subtotal'>₹{Math.floor(total)}</td>
                 </tr>
@@ -156,11 +165,13 @@ const day = today.getDate();
                     <td>Total</td>
                     <td className='order-complete-total'>₹{Math.floor(total)+40}.00</td>
                 </tr>
-            </tbody>
+         </tbody>
         </table>
+        <div  className='select-option'>
+           <p style={{fontSize:'15px'}}>Select Below payment option to chekout:</p>
+        </div>
         <div class="payment-info">
-            <h3>Pay with UPI QR Code</h3>
-            <p>It uses UPI apps like BHIM, Paytm, Google Pay, PhonePe, or any Banking UPI app to make payment.</p>
+           
    <form onSubmit={handleSubmit}>
       <label>
         <input

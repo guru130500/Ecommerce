@@ -27,9 +27,9 @@ const Order = () => {
         })
      
     },[])
-    function movetoDetail(item){
-        navigate('/detail',{state:{item}})
-        window.location.href='/detail'
+    function handleclick(id){
+        navigate(`/detail/${id}`)
+     
     }
    
     data && data.map((e)=>{
@@ -88,8 +88,8 @@ const Order = () => {
             e.products.map((k)=>{
                 return(
                     <div className='order-inner-content'>
-                    <img className='order-images' onClick={()=>{movetoDetail(k)}} src={k.image} alt='img' height='100px' width='100px'></img>
-                    <p className='order-names' onClick={()=>{movetoDetail(k)}}>{k.title}</p>
+                    <img className='order-images' onClick={()=>{handleclick(k.pId)}} src={k.image} alt='img' height='100px' width='100px'></img>
+                    <p className='order-names' onClick={()=>{handleclick(k.pId)}}>{k.title}</p>
                     </div>
                 )
             })

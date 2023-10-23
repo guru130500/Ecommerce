@@ -165,10 +165,12 @@ accesories && accesories.forEach((e,i)=>{
 
 function gotoCategory(value){
   
-  navigate('/category',{state:value})
+  navigate(`/category/${value}`)
  
 
 }
+
+
   return (
     <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
       <Navbar />
@@ -290,7 +292,7 @@ function gotoCategory(value){
               electronics2 && electronics2.map((item)=>{
                     
                      return(
-                      <Card1 item={item}/>
+                      <Card1 item={item} />
                      )
                 })
               }
@@ -306,7 +308,7 @@ function gotoCategory(value){
               jewelery2 && jewelery2.map((item)=>{
                     
                      return(
-                      <Card1 item={item}/>
+                      <Card1 item={item} />
                      )
                 })
               }
@@ -323,7 +325,7 @@ function gotoCategory(value){
               accesories2 && accesories2.map((item)=>{
                     
                      return(
-                      <Card1 item={item}/>
+                      <Card1 item={item} />
                      )
                 })
               }

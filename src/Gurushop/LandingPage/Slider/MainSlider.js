@@ -84,8 +84,9 @@ function SwipeableTextMobileStepper() {
   };
 /* ......*/
 const navigate=useNavigate()
-function handleclick(item){
-  navigate('/detail',{state:{item}})
+function handleclick(id){
+  navigate(`/detail/${id}`)
+
 }
 
 /* ........*/
@@ -136,13 +137,13 @@ function addtoCart(product){
                 // />
                 <div className='slider-div1' style={{height:'700px',display:'block',width:'100%'}}>
                      <div className='slider-img-div' style={{height:'700px',display:'block',width:'100%'}}>
-                       <img className='slider-inner-image' src={step.image} alt='step.label' style={{height:'700px',display:'block',width:'90%',overflow:'hidden',marginLeft:'75px'}}></img>
+                       <img className='slider-inner-image' src={step.image[0]} alt='step.label' style={{height:'700px',display:'block',width:'90%',overflow:'hidden',marginLeft:'75px'}}></img>
                      </div>
                      <div className='slider-content'>
                         {/* <p className='slider-para1' >COLOR</p>
                         <p className='slider-para2'>ghgvjsfbfdhvffssbfksfjsfbvjkvbfdskjbcjbsfkbslbfjvsdbkdbfbjbsbsj</p> */}
                         <div className='slider-btns'>
-                          <Button className='slider-btn3' onClick={()=>{handleclick(step)}}>Read More</Button>
+                          <Button className='slider-btn3' onClick={()=>{handleclick(step.pId)}}>Read More</Button>
                           <Button className='slider-btn4' onClick={()=>{addtoCart(step)}}>Shop Now</Button>
                         </div>
                         {/* <div className='offer-class'>60% Off</div> */}

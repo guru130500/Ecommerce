@@ -33,13 +33,24 @@ const Cart = () => {
    const select=ischecked.includes(e)
    if (select) {
     // If the item is already selected, remove it from the selectedItems array
-    setIschecked(ischecked.filter((id) => id !== e.id));
+    setIschecked(ischecked.filter((id) => id !== e));
   } else {
     // If the item is not selected, add it to the selectedItems array
-    setIschecked([...ischecked, e.id]);
+    setIschecked([...ischecked, e]);
   }
+  // console.log("value"+ischecked)
+ 
   }
-  function handleChange(item,d){
+  const totalValue=ischecked.reduce((all,item)=>{
+    const itemTotal=(item.price*item.qty).toFixed(2);
+    return(parseFloat(all)+parseFloat(itemTotal)).toFixed(2)
+  },"0.00")
+  ischecked["totalPrice"]=totalValue;
+  
+    
+
+  
+  function handleChange1(item,d){
     let arr=cart
     let ind=cart.indexOf(item)
     arr[ind].qty+=d
@@ -75,13 +86,30 @@ const Cart = () => {
         // window.location.href = "/cart";
 
         setCart((prevData)=> prevData.filter((item)=> item.id !== product.id))
+        setIschecked((prevData)=>prevData.filter((item)=>item.id!==product.id))
       }
      
     });
   }
   function chekout(){
- navigate('/chekout', { state: { cart } })
+   if(ischecked.length==0)
+   {
+    alert("please select your item")
+   }
+   else
+   {
+    navigate('/chekout', { state: { ischecked } })
+    console.log(ischecked)
+   }
   }
+
+
+  // go to detail
+  function handleclick(id){
+    navigate(`/detail/${id}`)
+ 
+}
+
 
   return (
     <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
@@ -104,10 +132,10 @@ const Cart = () => {
 
           {cart &&
             cart.map((e) => {
-              const select=ischecked.includes(e.id)
+              const select=ischecked.includes(e)
               return (
                 <div className="cart-content-div">
-                  <div><input type="checkbox" checked={select} onChange={()=>{handleselectitem(e)}}></input></div>
+                  <div><input className="checkbox" type="checkbox" onClick={()=>{handleselectitem(e)}}></input></div>
                   <div className="product-image-div">
                     {" "}
                     <img
@@ -116,7 +144,8 @@ const Cart = () => {
                       alt="image"
                       height={"100%"}
                       width={"100%"}
-                    ></img>
+                      onClick={()=>{handleclick(e.pId)}}
+                   ></img>
                   </div>
                   <div className="product-heading">{e.title}
                   <div className="product-price">
@@ -126,7 +155,7 @@ const Cart = () => {
 
                   
                   <div className="product-qty">
-                    <button className="incre-btn" onClick={()=>handleChange(e,+1)}>
+                    <button className="incre-btn" onClick={()=>handleChange1(e,+1)}>
                       +
                     </button>
                     <span
@@ -140,7 +169,7 @@ const Cart = () => {
                      {e.qty}
                     </span>
                     
-                    <button onClick={()=>handleChange(e,-1)} className="decre-btn">
+                    <button onClick={()=>handleChange1(e,-1)} className="decre-btn">
                       -
                     </button>
                     
@@ -166,7 +195,9 @@ const Cart = () => {
             cart.map((e) => {
               return (
                 <div className="cart-content-div-mobile">
+                      <div><input className="checkbox2" type="checkbox" onClick={()=>{handleselectitem(e)}}></input></div>
                   <div className="cart-image-div-mobile">
+              
                     <img
                       className="cart-image"
                       src={e.image}
@@ -202,7 +233,7 @@ const Cart = () => {
                         QUANTITY
                       </span>
                       <span className="div3-span2-mobile">
-                      <button className="incre-btn" onClick={()=>handleChange(e,+1)}>
+                      <button className="incre-btn" onClick={()=>handleChange1(e,+1)}>
                       +
                     </button>
                     <span
@@ -215,7 +246,7 @@ const Cart = () => {
                     >
                      {e.qty}
                     </span>
-                    <button onClick={()=>handleChange(e,-1)} className="decre-btn">
+                    <button onClick={()=>handleChange1(e,-1)} className="decre-btn">
                       -
                     </button>
                       </span>
@@ -232,7 +263,7 @@ const Cart = () => {
 
         <div className="total-cart-div">
           <div className="total-cart-heading">CART TOTAL</div>
-          <div className="total-cart-div1"><p className="subtotal-para1">Subtotal</p><p className="subtotal-para2"><CurrencyRupeeIcon  fontSize="5px"/>{Math.floor(total)}</p></div>
+          <div className="total-cart-div1"><p className="subtotal-para1">Subtotal</p><p className="subtotal-para2"><CurrencyRupeeIcon  fontSize="5px"/>{ischecked.totalPrice}</p></div>
           <div className="total-cart-div2">
             <p className="shipping-para">Shipping</p>
           <div className="total-cart-flat-div">
@@ -244,7 +275,7 @@ const Cart = () => {
           </div>
           <div className="total-cart-div3">
             <p className="total-cart-para1">Total</p>
-            <p className="total-cart-para2"><CurrencyRupeeIcon  fontSize="8px"/>{Math.floor(total)+40}.00</p>
+            <p className="total-cart-para2"><CurrencyRupeeIcon  fontSize="8px"/>{ischecked.totalPrice}</p>
           </div>
            <Button className="total-cart-btn" onClick={chekout}>proceed to chekout</Button>
         </div>

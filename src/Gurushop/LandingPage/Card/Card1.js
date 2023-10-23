@@ -60,9 +60,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const Card1 = ({item,addtoCart,handleclick}) => {
  const navigate=useNavigate()
-  function handleclick(item){
-    navigate('/detail',{state:{item}})
-    window.location.href='/detail'
+  function handleclick(id){
+    navigate(`/detail/${id}`)
+ 
 }
 
 let isLoggedIn = sessionStorage.getItem("userName");
@@ -90,10 +90,10 @@ function addtoCart(product){
       <div className='main-card-div' >
           <div className='image-card'>
          
-            <img className='image-data' src={item.image} alt='dummy'></img>
+            <img className='image-data' onClick={()=>{handleclick(item.pId)}} src={item.image[0]} alt='dummy'></img>
             </div>
             <div className='card-content-updated'>
-              <p className='card-content-para1-updated' onClick={()=>{handleclick(item)}}>{item.title}</p>
+              <p className='card-content-para1-updated' onClick={()=>{handleclick(item.pId)}}>{item.title}</p>
               <p></p>
              
             </div>

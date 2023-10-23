@@ -10,41 +10,46 @@ const Category = () => {
 
   const[data,setData]=useState([])
   const[heading,setHeading]=useState('')
+  const[cat,setCat]=useState('')
+  const value=useParams()
+  useEffect(()=>{
+ setCat(value.category)
+  })
   useEffect(()=>{
  
     
       
-        fetch(`http://localhost:9000/products?category=${value}`)
+        fetch(`http://localhost:9000/products?category=${cat}`)
         .then(res=>res.json())
         .then(data1=>setData(data1))
     
    
-    })
+    },[cat])
 
-    const location=useLocation()
-    const value=location.state
+    // const location=useLocation()
+    // const value=location.state
    useEffect(()=>{
-    if(value=='men')
+    if(value.category=='men')
     {
       setHeading(`MEN'S COLLECTION`)
     }
-    else if(value=='women')
+    else if(value.category=='women')
     {
       setHeading(`WOMEN'S COLLECTION`)
     }
-    else if(value=='electronics')
+    else if(value.category=='electronics')
     {
       setHeading(`ELECTRONICS COLLECTION`)
     }
-    else if(value=='jewelery')
+    else if(value.category=='jewelery')
     {
       setHeading(`JEWELERY COLLECTION`)
     }
-    else if(value=='accessories')
+    else if(value.category=='accessories')
     {
       setHeading(`ACCESSORIES COLLECTION`)
     }
-   })
+   },[value])
   return (
     <div>
       <Navbar/>

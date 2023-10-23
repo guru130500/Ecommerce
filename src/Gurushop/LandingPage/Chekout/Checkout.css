@@ -55,16 +55,27 @@
   }
   .chekout-order-div{
     height:fit-content;
-    width: auto;
+    width: 80%
     /* border: 1px solid red; */
   }
 
+
+/*................*/
+.chekout-product-title{
+  color: rgb(139, 139, 147);
+}
+.chekout-product-title:hover{
+  color: rgb(242, 93, 93);
+}
+.chekout-headings{
+  background-color: #09012c;
+}
 
   /*********/
 
 
 .order-summary {
-    max-width: 600px;
+   width: 80%;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -83,15 +94,27 @@ h2 {
     border-collapse: collapse;
     margin-bottom: 20px;
 }
+.order-table2{
+  width: 80%;
+  border-collapse: collapse;
+ 
+}
 
 .order-table th, .order-table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
+.order-table2 th, .order-table2 td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
 .order-table th {
-    background-color: #f5f5f5;
+    background-color: #00b392;
+ 
+    
 }
 
 .total-row {
@@ -185,3 +208,7 @@ label {
 .Cod2{
   display: none;
 }
+.chekout-item-image:hover{
+  opacity: 0.8;
+}
+
