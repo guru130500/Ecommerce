@@ -114,7 +114,7 @@ const Profile = () => {
           console.log(profile)
         })
      
-    })
+    },[])
    function updateData(){
   
        const data={...formData}
@@ -207,8 +207,8 @@ const Profile = () => {
         <TabPanel value={value} index={1} dir={theme.direction}>
    
 
-               <Box sx={{width:500,height:'auto',padding:'20px'}}>
-               <form method='post' onSubmit={(e)=>{
+               <Box sx={{width:500,height:'auto',padding:'20px',margin:'0 auto'}}>
+               <form className='user-update-form' method='post' onSubmit={(e)=>{
                e.preventDefault();
                updateData()
               }}>

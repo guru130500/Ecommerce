@@ -228,20 +228,22 @@ const handleClick = (event) => {
             <Button className='navbtns2' sx={{color:'black',m:'2px'}} >       <PopupState variant="popover" popupId="demo-popup-menu">
                    {(popupState) => (
                      <React.Fragment>
-                       <Button className='profile-btn' variant="contained" {...bindTrigger(popupState)}>
-                         <PersonOutlinedIcon/>
+                        <Button className='profile-btn' variant="contained" {...bindTrigger(popupState)}>
+                         <PersonOutlinedIcon sx={{backgroundColor:'none',color:'black'}}/>
                        </Button>
                        <Menu {...bindMenu(popupState)}>
-                         <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
-                         {/* <MenuItem onClick={()=>{popupState.close();navtoLogin()}}>My account</MenuItem> */}
-                         <MenuItem onClick={()=>{popupState.close();logOut()}} >{login==0?'Login':'logout'}</MenuItem>
+                        
+                       <MenuItem onClick={()=>{popupState.close();}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();navigate('/profile')}}>My account</MenuItem>
+                         <MenuItem className={(sessionStorage.getItem("userName"))?'login-menu':'login-menu2'} onClick={()=>{popupState.close();navtoLogin()}} >Login</MenuItem>
+                         <MenuItem className={(sessionStorage.getItem("userName"))?'logout-menu2':'logout-menu'} onClick={()=>{popupState.close();logOut()}} >Logout</MenuItem>
                        </Menu>
                      </React.Fragment>
                    )}
                 </PopupState></Button>
   
             <Button className='navbtns2' sx={{color:'black',m:'2px'}}  ><IconButton aria-label="cart">
-                  <StyledBadge badgeContent={length} color="secondary">
+                  <StyledBadge badgeContent={length} color="warning">
                     <ShoppingCartIcon onClick={()=>navigate('/cart')}/>
                   </StyledBadge>
                 </IconButton></Button>

@@ -8,6 +8,15 @@ import Snackbar from '@mui/material/Snackbar';
 import GooglePayButton from "@google-pay/button-react"
 import Box from '@mui/material/Box';
 import Alert from '@mui/material/Alert/Alert'
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 const Chekout = () => {
   const [total,setTotal]=useState(0)
     const[user,setUser]=useState([])
@@ -15,6 +24,24 @@ const Chekout = () => {
     const location = useLocation();
     const[open,setOpen]=useState(false)
     const navigate=useNavigate()
+    const [open1, setOpen1] = useState(false);
+    const [open2,setOpen2]=useState(false)
+
+    const handleClickOpen = () => {
+      setOpen1(true);
+      
+    };
+  
+    const handleClose1 = () => {
+      setOpen1(false);
+
+    };
+  const  handleClickOpen2=()=>{
+    setOpen2(true)
+  }
+  const handleClose2=()=>{
+        setOpen2(false)
+  }
  
     const cart = location.state.ischecked || [];
     
@@ -117,7 +144,7 @@ const day = today.getDate();
          <div class="order-summary">
          
          
-        <h2>YOUR ORDER</h2>
+        <h2 style={{color:'#595959'}}>YOUR ORDERS</h2>
         <table class="order-table">
             <thead >
                 <tr>
@@ -168,32 +195,30 @@ const day = today.getDate();
          </tbody>
         </table>
         <div  className='select-option'>
-           <p style={{fontSize:'15px'}}>Select Below payment option to chekout:</p>
+           <p style={{fontSize:'16px',color:'#8a8a5c'}}>Select Below payment option to chekout:</p>
         </div>
         <div class="payment-info">
            
-   <form onSubmit={handleSubmit}>
+   <form onSubmit={handleSubmit} style={{display:'flex',justifyContent:'flex-start',alignItems:'center',gap:'20px'}}>
       <label>
-        <input
-          type="radio"
-          name="paymentMethod"
-          value="upi"
-          checked={paymentMethod === 'upi'}
-          onChange={handlePaymentChange}
-        />
-        Pay with UPI 
+{/*        
+      <Button variant='outlined' sx={{backgroundColor:"#66ffff",color:'black',boxShadow:'2px 2px 3px 4px solid grey'}} onClick={handleClickOpen2}>
+       Pay by UPI
+      </Button>  */}
+      <button onClick={handleClickOpen2} className='upi-btn'>
+        <span>PAY AND ORDER</span>
+      </button>
       </label>
       <br />
 
       <label>
-        <input
-          type="radio"
-          name="paymentMethod"
-          value="cod"
-          checked={paymentMethod === 'cod'}
-          onChange={handlePaymentChange}
-        />
-        Cash on delivery
+       
+      {/* <Button variant="outlined"  sx={{backgroundColor:'#ddff99',color:'black'}} onClick={handleClickOpen}>
+        Cash on Delivery
+      </Button> */}
+       <button onClick={handleClickOpen} className='cod-btn'>
+        <span>CASH ON DELIVERY</span>
+      </button>
       </label>
       <br />
 
@@ -205,7 +230,7 @@ const day = today.getDate();
          </div>
         
          </div>
-         <div className={(paymentMethod=='upi')?'Upi2':'Upi1'}>
+         {/* <div className={(paymentMethod=='upi')?'Upi2':'Upi1'}>
              <p>Selected Option : <span style={{fontSize:'15px',fontWeight:'700',color:'#a3a375'}}>UPI payment</span></p>
             <h3 style={{paddingLeft:'27px'}}>Order summary</h3>
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto',paddingBottom:'15px'}}><span>Items:</span><span>₹{Math.floor(total)}.00</span></p>
@@ -266,7 +291,100 @@ const day = today.getDate();
         </Snackbar>
         </p>
           
+          </div> */}
+              <Dialog
+        open={open1}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose1}
+        aria-describedby="alert-dialog-slide-description"
+      >
+
+         <div className='Cod1'>
+       
+         <p>Selected Option : <span style={{fontSize:'15px',fontWeight:'700',color:'#a3a375'}}>Cash on Delivery</span></p>
+            <h3 style={{paddingLeft:'27px'}}>Order summary</h3>
+            <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto',paddingBottom:'15px'}}><span>Items:</span><span>₹{Math.floor(total)}.00</span></p>
+            <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto'}}><span>Delivery:</span><span>₹40.00</span></p>
+            <p style={{width:'80%',display:'flex',justifyContent:'space-between',fontSize:'25px',borderTop:'1px solid grey',color:'	 #cc0000',margin:'0 auto'}}><span>Total:</span><span>₹{Math.floor(total)+40}.00</span></p>
+            <p style={{paddingLeft:'30px'}}><Button sx={{backgroundColor:'#ffcc00',color:'black'}} onClick={()=>{placebyCod({ vertical: 'top', horizontal: 'center' })}}>
+             place Order  </Button>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' ,position:'relative',bottom:'550px',left:'250%'}}>
+         Order Placed successfuly
+        </Alert>
+        </Snackbar>
+        </p>
+          
           </div>
+       
+        
+      </Dialog>
+
+
+      <Dialog
+        open={open2}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose2}
+        aria-describedby="alert-dialog-slide-description"
+      >
+         <div className='Upi2'>
+             <p>Selected Option : <span style={{fontSize:'15px',fontWeight:'700',color:'#a3a375'}}>UPI payment</span></p>
+            <h3 style={{paddingLeft:'27px'}}>Order summary</h3>
+            <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto',paddingBottom:'15px'}}><span>Items:</span><span>₹{Math.floor(total)}.00</span></p>
+            <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto'}}><span>Delivery:</span><span>₹40.00</span></p>
+            <p style={{width:'80%',display:'flex',justifyContent:'space-between',fontSize:'25px',borderTop:'1px solid grey',color:'	 #cc0000',margin:'0 auto'}}><span>Total:</span><span>₹{Math.floor(total)+40}.00</span></p>
+            <p style={{paddingLeft:'30px'}}>
+<GooglePayButton
+  environment="TEST"
+  paymentRequest={{
+    apiVersion: 2,
+    apiVersionMinor: 0,
+    allowedPaymentMethods: [
+      {
+        type: 'CARD',
+        parameters: {
+          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
+          allowedCardNetworks: ['MASTERCARD', 'VISA'],
+        },
+        tokenizationSpecification: {
+          type: 'PAYMENT_GATEWAY',
+          parameters: {
+            gateway: 'example',
+            gatewayMerchantId: 'exampleGatewayMerchantId',
+          },
+        },
+      },
+    ],
+    merchantInfo: {
+      merchantId: '12345678901234567890',
+      merchantName: 'Demo Merchant',
+    },
+    transactionInfo: {
+      totalPriceStatus: 'FINAL',
+      totalPriceLabel: 'Total',
+      totalPrice: '100.00',
+      currencyCode: 'USD',
+      countryCode: 'US',
+    },
+  }}
+  onLoadPaymentData={paymentRequest => {
+    console.log('load payment data', paymentRequest);
+  }}
+/>
+</p>
+  </div> 
+        {/* <DialogActions>
+          <Button onClick={handleClose}>Disagree</Button>
+          <Button onClick={handleClose}>Agree</Button>
+        </DialogActions> */}
+      </Dialog>
+
+
+
+
+
     </div>
  
     </div>

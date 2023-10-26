@@ -11,97 +11,15 @@
       "userEmail": "suraj@123",
       "password": "12345",
       "id": 2
-    }
-  ],
-  "orders": [
-    {
-      "userId": "2",
-      "products": [
-        {
-          "pId": 3,
-          "title": "Noise Halo Smartwatch",
-          "price": 140,
-          "description": "1.46 inches (3.7cms) AMOLED display, 466*466px, Always on display ",
-          "category": "accessories",
-          "image": "https://m.media-amazon.com/images/I/71KjTSO8M9L._SL1500_.jpg",
-          "userId": "2",
-          "qty": 1,
-          "id": 12
-        },
-        {
-          "pId": 3,
-          "title": "Mens Cotton Jacket",
-          "price": 55.99,
-          "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-          "category": "men",
-          "image": [
-            "https://m.media-amazon.com/images/I/71CRYTVdAGL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/71bVXXfJkrL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/61IQ3KCFGsL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/61FH1B01kVL._UY741_.jpg"
-          ],
-          "rating": {
-            "rate": 4.7,
-            "count": 500
-          },
-          "userId": "2",
-          "qty": 1,
-          "id": 14
-        }
-      ],
-      "total": 195.99,
-      "date": "23/10/2023",
-      "id": 1
     },
     {
-      "userId": "2",
-      "products": [
-        {
-          "pId": 17,
-          "title": "Striped Climbing Raincoats",
-          "price": 39.99,
-          "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-          "category": "women",
-          "image": [
-            "https://m.media-amazon.com/images/I/71UVTsfStDL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/712naLEp7FL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/71iKapRgB3L._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/71jKgabPWwL._UY741_.jpg"
-          ],
-          "rating": {
-            "rate": 3.8,
-            "count": 679
-          },
-          "userId": "2",
-          "qty": 1,
-          "id": 15
-        },
-        {
-          "pId": 2,
-          "title": "Dennis Lingo Men's Slim t-shirt",
-          "price": 22.3,
-          "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-          "category": "men",
-          "image": [
-            "https://m.media-amazon.com/images/I/514YMziLluL._UX679_.jpg",
-            "https://m.media-amazon.com/images/I/51MLyHKBQQL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/51WB-3u92OL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/51S5ar3VguL._UY741_.jpg"
-          ],
-          "rating": {
-            "rate": 4.1,
-            "count": 259
-          },
-          "userId": "2",
-          "qty": 1,
-          "id": 18
-        }
-      ],
-      "total": 62.290000000000006,
-      "date": "23/10/2023",
-      "id": 2
+      "userName": "mahesh",
+      "userEmail": "mahesh@123",
+      "password": "12345",
+      "id": 3
     }
   ],
+  "orders": [],
   "profile": [
     {
       "firstName": "Gurunath",
@@ -127,36 +45,6 @@
     }
   ],
   "cart": [
-    {
-      "pId": 7,
-      "title": "White Gold Plated Princess",
-      "price": 9.99,
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-      "rating": {
-        "rate": 3,
-        "count": 400
-      },
-      "userId": "1",
-      "qty": 1,
-      "id": 1
-    },
-    {
-      "pId": 17,
-      "title": "Striped Climbing Raincoats",
-      "price": 39.99,
-      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-      "category": "women",
-      "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-      "rating": {
-        "rate": 3.8,
-        "count": 679
-      },
-      "userId": "1",
-      "qty": 1,
-      "id": 10
-    },
     {
       "pId": 3,
       "title": "Noise Halo Smartwatch",
@@ -184,9 +72,9 @@
         "rate": 4.7,
         "count": 500
       },
-      "userId": "2",
+      "userId": "3",
       "qty": 1,
-      "id": 14
+      "id": 16
     },
     {
       "pId": 17,
@@ -204,29 +92,65 @@
         "rate": 3.8,
         "count": 679
       },
-      "userId": "2",
+      "userId": "3",
       "qty": 1,
-      "id": 15
+      "id": 17
     },
     {
-      "pId": 2,
-      "title": "Dennis Lingo Men's Slim t-shirt",
-      "price": 22.3,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "pId": 3,
+      "title": "Mens Cotton Jacket",
+      "price": 55.99,
+      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
       "category": "men",
       "image": [
-        "https://m.media-amazon.com/images/I/514YMziLluL._UX679_.jpg",
-        "https://m.media-amazon.com/images/I/51MLyHKBQQL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/51WB-3u92OL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/51S5ar3VguL._UY741_.jpg"
+        "https://m.media-amazon.com/images/I/71CRYTVdAGL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/71bVXXfJkrL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/61IQ3KCFGsL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/61FH1B01kVL._UY741_.jpg"
       ],
       "rating": {
-        "rate": 4.1,
-        "count": 259
+        "rate": 4.7,
+        "count": 500
       },
-      "userId": "2",
+      "userId": "1",
       "qty": 1,
-      "id": 18
+      "id": 19
+    },
+    {
+      "pId": 1,
+      "title": "Men's Traditional",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men",
+      "image": [
+        "https://m.media-amazon.com/images/I/713G8QY0+LL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/71E59uvYk-L._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/71APG241wsL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/718kPqnZT0L._UY741_.jpg"
+      ],
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "userId": "1",
+      "qty": 1,
+      "id": 20
+    },
+    {
+      "pId": 28,
+      "title": "Fashion Frill",
+      "price": 500,
+      "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
+        "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
+        "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
+        "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
+      ],
+      "userId": "1",
+      "qty": 1,
+      "id": 21
     }
   ],
   "sliders": [
@@ -244,102 +168,6 @@
     },
     {
       "image": "https://rukminim1.flixcart.com/fk-p-flap/1600/270/image/075f1063e550db2e.jpg?q=20"
-    }
-  ],
-  "featuredProducts": [
-    {
-      "pId": 1,
-      "title": "Fossil",
-      "price": 300,
-      "description": "Best watch of Fossil Company for Men",
-      "category": "accessories",
-      "image": [
-        "https://m.media-amazon.com/images/I/81TUMM6wbGL._UX679_.jpg",
-        "https://m.media-amazon.com/images/I/718iipdS3tL._UX679_.jpg",
-        "https://m.media-amazon.com/images/I/71hFsLslf3L._UX679_.jpg",
-        "https://m.media-amazon.com/images/I/913vG9Ock-L._UX679_.jpg"
-      ]
-    },
-    {
-      "pId": 2,
-      "title": "Redmi 11",
-      "price": 200,
-      "description": "Redmi 11 with better battery backup",
-      "category": "accessories",
-      "image": [
-        "https://m.media-amazon.com/images/I/71yTvU9VgdL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71zhX96XQSL._SX679_.jpg",
-        "https://m.media-amazon.com/images/I/61CyDCueU3L._SX679_.jpg",
-        "https://m.media-amazon.com/images/I/61qk6Uz0yDL._SL1500_.jpg"
-      ]
-    },
-    {
-      "pId": 3,
-      "title": "Fashion Frill",
-      "price": 500,
-      "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
-      "category": "accessories",
-      "image": [
-        "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
-        "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
-        "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
-        "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
-      ]
-    },
-    {
-      "pId": 4,
-      "title": "Wings Phantom 340 ",
-      "price": 297,
-      "description": "The Phantom 340 earbuds have four microphone units that use noise-cancelling technology to reduce background noise during calls.",
-      "category": "electronics",
-      "image": [
-        "https://m.media-amazon.com/images/I/51eAgvkYH8L._SL1080_.jpg",
-        "https://m.media-amazon.com/images/I/61sVF6jlDrL._SL1080_.jpg",
-        "https://m.media-amazon.com/images/I/61L35T6fzeL._SL1080_.jpg",
-        "https://m.media-amazon.com/images/I/61I1DTgL5HL._SL1080_.jpg"
-      ]
-    }
-  ],
-  "saleProduct": [
-    {
-      "pId": 1,
-      "title": "Apple 2022 iPad",
-      "price": 340,
-      "description": "Apple M1 chip with Neural Engine",
-      "category": "electronics",
-      "image": [
-        "https://m.media-amazon.com/images/I/41L1Fw2xgOL._AC_SY200_.jpg"
-      ]
-    },
-    {
-      "pId": 2,
-      "title": "OnePlus Pad 29.49cm ",
-      "price": 270,
-      "description": "3K+ Display (11.61-inch/29.49cm), 7:5 read-fit ratio; Display type: IPS LCD",
-      "category": "electronics",
-      "image": [
-        "https://m.media-amazon.com/images/I/31JTPECqm-L._SX300_SY300_QL70_FMwebp_.jpg"
-      ]
-    },
-    {
-      "pId": 3,
-      "title": "Noise Halo Smartwatch",
-      "price": 140,
-      "description": "1.46 inches (3.7cms) AMOLED display, 466*466px, Always on display ",
-      "category": "accessories",
-      "image": [
-        "https://m.media-amazon.com/images/I/71KjTSO8M9L._SL1500_.jpg"
-      ]
-    },
-    {
-      "pId": 4,
-      "title": "layasa Casual Sneaker",
-      "price": 133,
-      "description": "running shoes, gym shoes, outdoor sport shoes, walking shoes, athletic shoes, tennis shoes,jogging shoes, sneakers sole.",
-      "category": "shoes",
-      "image": [
-        "https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
-      ]
     }
   ],
   "products": [
@@ -748,6 +576,98 @@
       "image": [
         "https://m.media-amazon.com/images/I/91F4aTOPIrL._UY695_.jpg",
         ""
+      ]
+    },
+    {
+      "pId": 26,
+      "title": "Fossil",
+      "price": 300,
+      "description": "Best watch of Fossil Company for Men",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/81TUMM6wbGL._UX679_.jpg",
+        "https://m.media-amazon.com/images/I/718iipdS3tL._UX679_.jpg",
+        "https://m.media-amazon.com/images/I/71hFsLslf3L._UX679_.jpg",
+        "https://m.media-amazon.com/images/I/913vG9Ock-L._UX679_.jpg"
+      ]
+    },
+    {
+      "pId": 27,
+      "title": "Redmi 11",
+      "price": 200,
+      "description": "Redmi 11 with better battery backup",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/71yTvU9VgdL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71zhX96XQSL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61CyDCueU3L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61qk6Uz0yDL._SL1500_.jpg"
+      ]
+    },
+    {
+      "pId": 28,
+      "title": "Fashion Frill",
+      "price": 500,
+      "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
+        "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
+        "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
+        "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
+      ]
+    },
+    {
+      "pId": 29,
+      "title": "Wings Phantom 340 ",
+      "price": 297,
+      "description": "The Phantom 340 earbuds have four microphone units that use noise-cancelling technology to reduce background noise during calls.",
+      "category": "electronics",
+      "image": [
+        "https://m.media-amazon.com/images/I/51eAgvkYH8L._SL1080_.jpg",
+        "https://m.media-amazon.com/images/I/61sVF6jlDrL._SL1080_.jpg",
+        "https://m.media-amazon.com/images/I/61L35T6fzeL._SL1080_.jpg",
+        "https://m.media-amazon.com/images/I/61I1DTgL5HL._SL1080_.jpg"
+      ]
+    },
+    {
+      "pId": 30,
+      "title": "Apple 2022 iPad",
+      "price": 340,
+      "description": "Apple M1 chip with Neural Engine",
+      "category": "electronics",
+      "image": [
+        "https://m.media-amazon.com/images/I/41L1Fw2xgOL._AC_SY200_.jpg"
+      ]
+    },
+    {
+      "pId": 31,
+      "title": "OnePlus Pad 29.49cm ",
+      "price": 270,
+      "description": "3K+ Display (11.61-inch/29.49cm), 7:5 read-fit ratio; Display type: IPS LCD",
+      "category": "electronics",
+      "image": [
+        "https://m.media-amazon.com/images/I/31JTPECqm-L._SX300_SY300_QL70_FMwebp_.jpg"
+      ]
+    },
+    {
+      "pId": 32,
+      "title": "Noise Halo Smartwatch",
+      "price": 140,
+      "description": "1.46 inches (3.7cms) AMOLED display, 466*466px, Always on display ",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/71KjTSO8M9L._SL1500_.jpg"
+      ]
+    },
+    {
+      "pId": 34,
+      "title": "layasa Casual Sneaker",
+      "price": 133,
+      "description": "running shoes, gym shoes, outdoor sport shoes, walking shoes, athletic shoes, tennis shoes,jogging shoes, sneakers sole.",
+      "category": "shoes",
+      "image": [
+        "https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.css";
-import { Box, Button, colors } from "@mui/material";
+import { AlertTitle, Box, Button, colors } from "@mui/material";
 import Navbar from "../Navbar/Navbar";
 import axios from "axios";
 import CloseIcon from "@mui/icons-material/Close";
@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Link, useNavigate } from "react-router-dom";
+
 const Cart = () => {
   
   const [cart, setCart] = useState([]);
@@ -94,7 +95,9 @@ const Cart = () => {
   function chekout(){
    if(ischecked.length==0)
    {
-    alert("please select your item")
+   alert('please selet items from cart to checkout')
+    
+ 
    }
    else
    {

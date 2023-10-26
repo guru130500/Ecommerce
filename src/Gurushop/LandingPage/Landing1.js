@@ -22,17 +22,32 @@ const Landing1 = () => {
   const[data,setData]=useState([])
   const[data2,setData2]=useState([])
   const navigate=useNavigate()
+  const feature=[]
+  const sale=[]
   useEffect(()=>{
-    fetch('http://localhost:9000/featuredProducts')
+    fetch('http://localhost:9000/products')
     .then(res=>res.json())
     .then(data1=>setData(data1))
   },[])
 
+  data.forEach((e,i) => {
+    if(i>=26 && i<=29)
+    {
+      feature.push(e)
+    }
+  });
+
   useEffect(()=>{
-    fetch('http://localhost:9000/saleProduct')
+    fetch('http://localhost:9000/products')
     .then(res=>res.json())
     .then(data1=>setData2(data1))
   },[])
+  data2.forEach((e,i)=>{
+    if(i>=30 && i<=34)
+    {
+      sale.push(e)
+    }
+  })
 
    /* Slider part */
    let isLoggedIn = sessionStorage.getItem("userName");
@@ -77,7 +92,7 @@ const Landing1 = () => {
       </div>
         <Box className="feature-box" sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'30px'}}>
               {
-                data.map((item)=>{
+                feature.map((item)=>{
                      return(
                       <Card1 item={item}  addtoCart={addtoCart} />
                      )
@@ -100,7 +115,7 @@ const Landing1 = () => {
 
         <Box className="feature-box" sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'30px'}}>
               {
-                data2.map((item)=>{
+                sale.map((item)=>{
                      return(
                       <Card1 item={item}  addtoCart={addtoCart} />
                      )

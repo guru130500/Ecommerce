@@ -45,12 +45,12 @@
   .chekout-main-div{
     margin-top: 120px;
     height:auto;
-    width: 100%;
+    width: 98%;
     display: flex;
     flex-wrap: wrap;
    justify-content: center;
   align-items: center;
-  justify-content: space-around;
+ 
 /* border: 1px solid yellow; */
   }
   .chekout-order-div{
@@ -193,15 +193,15 @@ label {
  display: none;
 }
 .Upi2{
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 500px;
   border:  2px solid rgb(200, 200, 194);
   padding: 20px;
 }
   
 .Cod1{
-  height: 300px;
-  width: 300px;
+  height: 350px;
+  width: 500px;
   border:  2px solid rgb(200, 200, 194);
   padding: 20px;
 }
@@ -211,4 +211,100 @@ label {
 .chekout-item-image:hover{
   opacity: 0.8;
 }
+.upi-btn{
+  background: transparent;
+  position: relative;
+  padding: 3px 13px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgb(40, 144, 241);
+  border-radius: 10px;
+  outline: none;
+  overflow: hidden;
+  color: rgb(40, 144, 241);
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+}
+.upi-btn span{
+  margin: 10px;
+}
+.upi-btn::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
 
+.upi-btn:hover{
+  color: #fff;
+  border: 1px solid rgb(40, 144, 241);
+  background-color: rgb(40, 144, 241);;
+}
+.upi-btn:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(40, 144, 241);
+}
+
+
+/*    cod  btn   */
+.cod-btn{
+  background: transparent;
+  position: relative;
+  padding: 3px 13px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #FF0072;
+  border-radius: 10px;
+  outline: none;
+  overflow: hidden;
+  color: #FF0072;
+  transition: color 0.3s 0.1s ease-out;
+  text-align: center;
+}
+.cod-btn span{
+  margin: 10px;
+}
+.cod-btn::before{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: '';
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  text-align: center;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.cod-btn:hover{
+  color: #fff;
+  border: 1px solid #FF0072;
+  background-color: #FF0072;
+}
+.cod-btn:hover::before {
+  box-shadow: inset 0 0 0 10em #FF0072;
+}
