@@ -21,6 +21,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Navbar from '../Navbar/Navbar'
 import { useNavigate } from 'react-router-dom';
+import PublicIcon from '@mui/icons-material/Public';
 /*table from material ui*/
 
 const headings=['FirstName','LastName','Email','Country','State','City','PinCode']
@@ -85,7 +86,8 @@ const Profile = () => {
     const[userpass,SetUserpass]=React.useState('')
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
-  
+     
+   
 
     const handleformchange = (e) => {
       console.log(e)
@@ -120,7 +122,7 @@ const Profile = () => {
        const data={...formData}
        data["userId"]=sessionStorage.getItem("userId")
       // console.log(data)
-        axios.post(`http://localhost:9000/profile`, data)
+        axios.post(`http://localhost:9000/address?userId=${sessionStorage.getItem("userId")}`, data)
         .then((response)=>{
           console.log(response)
         })
@@ -132,10 +134,10 @@ const Profile = () => {
      
    }
   return (
-    <div>
+    <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
           <Navbar/>
 
-    <Box sx={{ bgcolor: 'background.paper', width: '100%',marginTop:'100px' }}>
+    <Box sx={{ bgcolor: 'rgb(242, 253, 253)', width: '100%',marginTop:'100px' }}>
       <AppBar position="static" sx={{bgcolor:'#00cccc'}}>
         <Tabs
           value={value}
@@ -146,7 +148,7 @@ const Profile = () => {
           aria-label="full width tabs example"
         >
           <Tab label="My account" {...a11yProps(0)} />
-          <Tab label="Edit Profile" {...a11yProps(1)} />
+          <Tab label="Create Your profile" {...a11yProps(1)} />
        
         </Tabs>
       </AppBar>
@@ -160,8 +162,10 @@ const Profile = () => {
 
           <Box
                 sx={{
-                  width: 300,
-                  height: 300,
+                  width: 200,
+                  height: 200,
+                  borderRadius:'50%',
+
                   border:'1px solid grey',
                   backgroundColor: 'white',
                   '&:hover': {
@@ -170,7 +174,7 @@ const Profile = () => {
                   },
                 }}
               >
-                <img src='https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_1280.jpg' alt='profile-image' height='100%' width='100%'></img>
+                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt='profile-image' height='100%' width='100%' ></img>
             </Box>
           
           
@@ -186,72 +190,80 @@ const Profile = () => {
                  border:'2px solid grey'
                 }}
               >
-                {
-                  profile && profile.map((e)=>{
-                    return(
-                      <h2 style={{textAlign:'center'}}> Hello, {e.firstName}   {e.lastName} </h2>
-                    )
-                  })
-                }
+
+               
+                      {/* <h2 style={{textAlign:'center'}}> Hello, {profile[0].firstName}   {profile[0].lastName} </h2> */}
+                 
               
               <div className='profile-div'>
                 <p className='profile-order-btn' style={{width:'150px'}} onClick={()=>navigate('/order')}> Your orders</p>
+                
+                <p className='address-list' onClick={()=>navigate('/adress')}>Your Addresses </p>
                 <p className='profile-shopmore-btn' style={{width:'150px'}} onClick={()=>navigate('/shop')}>Shop More</p>
               </div>
                </Box>
 
               </div>
+              {/* <div className='adress-head'>
+               <PublicIcon/> Your Addresses
+              </div> */}
+              {/* <div className='address-class'>
+              <div class="adress-card">
+               Click me
+              </div>
+
+              </div> */}
 
 
         </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        <TabPanel  value={value} index={1} dir={theme.direction}>
    
 
-               <Box sx={{width:500,height:'auto',padding:'20px',margin:'0 auto'}}>
+               <Box sx={{width:500,height:'auto',margin:'0 auto',border:'2px solid grey',borderRadius:"15px",backgroundColor:'#ccffff'}}>
                <form className='user-update-form' method='post' onSubmit={(e)=>{
                e.preventDefault();
                updateData()
               }}>
-                  <p className='form-heading'>UPDATE DATA</p>
+                  <p className='form-heading'>CREATE PROFILE</p>
                  <label className='lable1'>
                    First Name <span style={{color:'red'}}>*</span>
                  </label>
                  <br></br>
-                 <input className='input-name-profile' name='firstName' type='text' placeholder='Enter First Name' onChange={handleformchange} required ></input>
+                 <input className='input-name-profile'  name='firstName' type='text' placeholder='Enter First Name' onChange={handleformchange} required ></input>
                  <br></br>
                  <label className='last-name-lable'>Last Name</label>
                  <br></br>
              
-                 <input className='input-last-name' name='lastName'  type='text' placeholder='Enter last name' onChange={handleformchange}></input>
+                 <input className='input-last-name' name='lastName' type='text' placeholder='Enter last name' onChange={handleformchange}></input>
                  <br></br>
                  <label className='lable1' >Email</label>
                  <br></br>
-                 <input className='input-email-profile' name='email' type='email' placeholder='Enter Email Adress' onChange={handleformchange}></input>
+                 <input className='input-email-profile'  name='email' type='email' placeholder='Enter Email Adress' onChange={handleformchange}></input>
                  <br></br>
                  <label className='lable2'>Country  <span style={{color:'red'}}>*</span></label>
                  <br></br>
              
-                 <input type='text' className='input-last-name' name='country' placeholder='Enter your Country' onChange={handleformchange}></input>
+                 <input type='text' className='input-last-name'  name='country' placeholder='Enter your Country' onChange={handleformchange}></input>
                  <br></br>
                  <label className='lable1'>State</label>
                  <br></br>
 
 
-                 <input type='text' className='input-last-name' name='state' placeholder='Enter your State' onChange={handleformchange}></input>
+                 <input type='text' className='input-last-name'  name='state' placeholder='Enter your State' onChange={handleformchange}></input>
                  <br></br>
 
                  <label className='lable1'>city</label>
                  <br></br>
-                 <input type='text' className='input-last-name' name='city' placeholder='Enter your city'onChange={handleformchange}></input>
+                 <input type='text' className='input-last-name'  name='city' placeholder='Enter your city'onChange={handleformchange}></input>
                  <br></br>
 
                  <label className='lable1'>pinCode</label>
                  <br></br>
-                 <input type='text'  className='input-last-name' name='pinCode' placeholder='Enter your Pincode' onChange={handleformchange}></input>
+                 <input type='text'  className='input-last-name'   name='pinCode' placeholder='Enter your Pincode' onChange={handleformchange}></input>
                  <br></br>
 
 
-                 <input className='input3' type='submit' name='submit' value={'Update'} ></input>
+                 <input className='update-btn' type='submit' name='submit' value={'Update'} ></input>
 
                 
                </form>
@@ -260,7 +272,7 @@ const Profile = () => {
 
 
         </TabPanel>
-      
+
       </SwipeableViews>
     </Box>
     

@@ -1,0 +1,23 @@
+.addnew-main-div{
+    width: 30%;
+    height:auto;
+    border: 2px solid rgb(235, 235, 235);
+ 
+    margin: 0 auto;
+padding-left: 20px;
+
+}
+
+.addnewaddress-form{
+    width: 90%;
+    margin-bottom: 30px;
+   
+}
+.addnew-btn{
+    height: 40px;
+    width: 120px;
+    margin-left: 40%;
+    margin-top: 5%;
+    background-color: aquamarine;
+    border: none;
+}

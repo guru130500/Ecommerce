@@ -19,8 +19,118 @@
       "id": 3
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "userId": "1",
+      "products": [
+        {
+          "pId": 1,
+          "title": "Men's Traditional",
+          "price": 109.95,
+          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+          "category": "men",
+          "image": [
+            "https://m.media-amazon.com/images/I/713G8QY0+LL._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/71E59uvYk-L._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/71APG241wsL._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/718kPqnZT0L._UY741_.jpg"
+          ],
+          "rating": {
+            "rate": 3.9,
+            "count": 120
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 20
+        }
+      ],
+      "total": 109.95,
+      "date": "27/10/2023",
+      "address": "Mumbai , Maharastra. pincode - 423232",
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "products": [
+        {
+          "pId": 28,
+          "title": "Fashion Frill",
+          "price": 500,
+          "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
+          "category": "accessories",
+          "image": [
+            "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
+            "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
+            "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
+            "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
+          ],
+          "userId": "1",
+          "qty": 1,
+          "id": 21
+        }
+      ],
+      "total": 500,
+      "date": "27/10/2023",
+      "address": "Vijaypur , Karnataka. pincode - 423212",
+      "id": 2
+    },
+    {
+      "userId": "2",
+      "products": [
+        {
+          "pId": 3,
+          "title": "Noise Halo Smartwatch",
+          "price": 140,
+          "description": "1.46 inches (3.7cms) AMOLED display, 466*466px, Always on display ",
+          "category": "accessories",
+          "image": "https://m.media-amazon.com/images/I/71KjTSO8M9L._SL1500_.jpg",
+          "userId": "2",
+          "qty": 1,
+          "id": 12
+        }
+      ],
+      "total": 140,
+      "date": "27/10/2023",
+      "address": "Junnar , maharastra. pincode - 4311324",
+      "id": 3
+    }
+  ],
   "profile": [
+    {
+      "firstName": "suraj",
+      "lastName": "sukale",
+      "email": "suraj@123",
+      "country": "India",
+      "state": "Maharastra",
+      "city": "junnar",
+      "pinCode": "413345",
+      "userId": "2",
+      "id": 2
+    },
+    {
+      "firstName": "Gurunath",
+      "lastName": "Kumbhar",
+      "email": "gurunath@gmail.com",
+      "country": "India",
+      "state": "Maharastra",
+      "city": "solapur",
+      "pinCode": "413221",
+      "userId": "1",
+      "id": 3
+    },
+    {
+      "firstName": "Gurunath",
+      "lastName": "Kumbhar",
+      "email": "gurunath@gmail.com",
+      "country": "India",
+      "state": "Maharastra",
+      "city": "Pune",
+      "pinCode": "410314",
+      "userId": "1",
+      "id": 3
+    }
+  ],
+  "address": [
     {
       "firstName": "Gurunath",
       "lastName": "Kumbhar",
@@ -33,15 +143,26 @@
       "id": 1
     },
     {
+      "firstName": "Gurunath",
+      "lastName": "Kumbhar",
+      "email": "gurunath@gmail.com",
+      "country": "India",
+      "state": "Karnataka",
+      "city": "Vijaypur",
+      "pinCode": "423212",
+      "userId": "1",
+      "id": 3
+    },
+    {
       "firstName": "suraj",
       "lastName": "sukale",
-      "email": "suraj@123",
-      "country": "India",
-      "state": "Maharastra",
-      "city": "junnar",
-      "pinCode": "413345",
+      "email": "suraj@gmail.com",
+      "country": "india",
+      "state": "maharastra",
+      "city": "Junnar",
+      "pinCode": "4311324",
       "userId": "2",
-      "id": 2
+      "id": 4
     }
   ],
   "cart": [

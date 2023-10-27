@@ -16,6 +16,8 @@ import Profile from "./Gurushop/LandingPage/Forms/Profile";
 import Detail from "./Gurushop/LandingPage/Detail/Detail";
 import Category from "./Gurushop/Pages/Category";
 import  Order from '../src/Gurushop/LandingPage/Order/Order'
+import Adress from "./Gurushop/LandingPage/Forms/Adress";
+import AddAddress from "./Gurushop/LandingPage/Forms/AddAddress";
 import './App.css'
 const App = () => {
 
@@ -37,6 +39,8 @@ const App = () => {
           <Route path="/detail/:id"   element={<Detail/>}/>
           <Route path="/category/:category"   element={<Category/>}/>
           <Route path="/order"   element={<Order/>}/>
+          <Route path="/adress"   element={<Adress/>}/>
+          <Route path="/addnew"   element={<AddAddress/>}/>
         </Routes>
       </BrowserRouter>
     </div>

@@ -7,9 +7,10 @@ const Order = () => {
     const[data,setData]=useState()
     const[total,setTotal]=useState()
     const[date,setDate]=useState('')
-    const[profile,setProfile]=useState()
+    const[profile,setProfile]=useState([])
     const  navigate=useNavigate()
     const sum=[]
+    const name=[]
     var Date1=''
     useEffect(()=>{
         axios.get(`http://localhost:9000/orders?userId=${sessionStorage.getItem("userId")}`)
@@ -51,7 +52,7 @@ const Order = () => {
         setTotal(all)
         setDate(Date1)
     })
-   
+     
 
   return (
     <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
@@ -67,18 +68,10 @@ const Order = () => {
         <p style={{textAlign:'center',fontSize:'12px',marginBottom:'0px'}}>TOTAL</p>
         <p style={{textAlign:'center',marginTop:'0px',marginBottom:'5px'}}>₹{total}</p>
        </div>
-       {
-        profile && profile.map((e)=>{
-            return(
-       <div className='order-div3'>
-        
-       <p style={{textAlign:'center',fontSize:'12px',marginBottom:'0px'}}>SHIP TO</p>
-       <p style={{textAlign:'center',marginTop:'0px',marginBottom:'5px'}}>{e.firstName} </p>
-       </div>
-            )
-        })
-    }
-       
+      
+     
+         
+  
        
    </div>
     <h3 style={{color:' #009900',marginLeft:'5%'}}>Arriving Soon</h3>
@@ -90,6 +83,7 @@ const Order = () => {
                     <div className='order-inner-content'>
                     <img className='order-images' onClick={()=>{handleclick(k.pId)}} src={k.image} alt='img' height='100px' width='100px'></img>
                     <p className='order-names' onClick={()=>{handleclick(k.pId)}}>{k.title}</p>
+                    <p style={{textAlign:'center',marginTop:'0px',marginBottom:'5px'}}><h4>Shipping to</h4> {e.address} </p>
                     </div>
                 )
             })

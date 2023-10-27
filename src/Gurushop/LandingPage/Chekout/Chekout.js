@@ -26,6 +26,7 @@ const Chekout = () => {
     const navigate=useNavigate()
     const [open1, setOpen1] = useState(false);
     const [open2,setOpen2]=useState(false)
+    const[option,setOption]=useState('')
 
     const handleClickOpen = () => {
       setOpen1(true);
@@ -56,7 +57,7 @@ const month = today.getMonth() + 1;
 const day = today.getDate();
 
     useEffect(()=>{
-      const url=`http://localhost:9000/profile?userId=${sessionStorage.getItem("userId")}`;
+      const url=`http://localhost:9000/address?userId=${sessionStorage.getItem("userId")}`;
       axios.get(url)
       .then((response)=>{
            setUser(response.data)
@@ -107,7 +108,8 @@ const day = today.getDate();
             userId:sessionStorage.getItem("userId"),
             products:cart,
             total:total,
-            date:`${day}/${month}/${year}`
+            date:`${day}/${month}/${year}`,
+            address:option
           }
           axios.post(`http://localhost:9000/orders`, order)
           .then((response)=>{
@@ -134,7 +136,9 @@ const day = today.getDate();
        
       };
       
-
+    function handleAddress(e){
+     setOption(e.target.value)
+    }
     
   return (
     <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
@@ -179,13 +183,26 @@ const day = today.getDate();
                 </tr>
                 <tr>
                     <td>Shipping to</td>
-                    {
-                      user.map((e)=>{
-                        return(
-                                  <td >{e.city} , {e.state}. pincode - {e.pinCode}</td> 
-                        )
-                      })
-                    }
+                    
+                     
+                            <div>
+                              <select  onChange={(e)=>{handleAddress(e)}}>
+                                <option value=''>Select an address</option>
+                                {
+                              user.map((e,i)=>{
+                        
+                                return(
+                                <option><td >{e.city} , {e.state}. pincode - {e.pinCode}  </td></option>
+                                )
+                        
+                                })
+                              }
+                              </select>
+                                   
+                            </div>
+                        
+                       
+                    
                 
                 </tr>
                 <tr class="total-row">

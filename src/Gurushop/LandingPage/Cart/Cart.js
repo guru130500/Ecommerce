@@ -12,6 +12,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Link, useNavigate } from "react-router-dom";
 
+console.log("cart Page")
 const Cart = () => {
   
   const [cart, setCart] = useState([]);
