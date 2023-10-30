@@ -53,34 +53,38 @@ const AddAddress = () => {
                    First Name 
                  </label>
              
-                 <input className=''  name='firstName' type='text' placeholder='Enter First Name' onChange={handleformchange} required ></input>
+                 <input className=''  name='firstName' type='text' placeholder='E.g. Ramesh' onChange={handleformchange} required ></input>
                  <br></br>
                  <label className=''>Last Name</label>
                  
              
-                 <input className='' name='lastName' type='text' placeholder='Enter last name' onChange={handleformchange} required></input>
+                 <input className='' name='lastName' type='text' placeholder='E.g. Punekar' onChange={handleformchange} required></input>
              
                  <label className='' >Email</label>
                
-                 <input className=''  name='email' type='email' placeholder='Enter Email Adress' onChange={handleformchange}required></input>
+                 <input className=''  name='email' type='email' placeholder='E.g. Ramesh12@Gmail.com' onChange={handleformchange}required></input>
                 
                  <label className=''>Country  </label>
                  
              
-                 <input type='text' className=''  name='country' placeholder='Enter your Country' onChange={handleformchange} required></input>
+                 <input type='text' className=''  name='country' placeholder='E.g. India' onChange={handleformchange} required></input>
                 
                  <label className=''>State</label>
                 
 
 
-                 <input type='text' className=''  name='state' placeholder='Enter your State' onChange={handleformchange} required></input>
+                 <input type='text' className=''  name='state' placeholder='E.g. Karnataka' onChange={handleformchange} required></input>
                
 
                  <label className=''>city</label>
                
-                 <input type='text' className=''  name='city' placeholder='Enter your city'onChange={handleformchange} required></input>
-                 
-
+                 <input type='text' className=''  name='city' placeholder='E.g. Hubali'onChange={handleformchange} required></input>
+                 <label className=''>Flat,House,Building,Company</label>
+                 <input type='text' className='' name='flat' placeholder='E.g Flat No-13' onChange={handleformchange} required></input>
+                  <label className=''>Area,Street</label>
+                  <input type='text' className='' name='area' placeholder='E.g Nagar road' onChange={handleformchange} required></input>
+                  <label className=''>Landmark</label>
+                  <input type='text' className='' name='landmark' placeholder='E.g near apollo hospital' onChange={handleformchange} required></input>
                  <label className=''>pinCode</label>
                  
                  <input type='text'  className=''   name='pinCode' placeholder='Enter your Pincode' onChange={handleformchange} required></input>

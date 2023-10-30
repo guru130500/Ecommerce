@@ -111,16 +111,23 @@ const day = today.getDate();
             date:`${day}/${month}/${year}`,
             address:option
           }
-          axios.post(`http://localhost:9000/orders`, order)
-          .then((response)=>{
-             setOpen(true)
-            setTimeout(()=>{
-              navigate('/order')
-            },2000)
-          })
-          .catch((err)=>{
-            console.log(err);
-          })
+          if(option=='')
+          {
+            alert("please select address")
+          }
+          else{
+            axios.post(`http://localhost:9000/orders`, order)
+            .then((response)=>{
+               setOpen(true)
+              setTimeout(()=>{
+                navigate('/order')
+              },2000)
+            })
+            .catch((err)=>{
+              console.log(err);
+            })
+          }
+      
           console.log(order)
        }
       
@@ -182,24 +189,22 @@ const day = today.getDate();
                     <td className='order-subtotal'>₹{Math.floor(total)}</td>
                 </tr>
                 <tr>
-                    <td>Shipping to</td>
+                    <td>Shipping Address</td>
                     
                      
-                            <div>
-                              <select  onChange={(e)=>{handleAddress(e)}}>
-                                <option value=''>Select an address</option>
-                                {
-                              user.map((e,i)=>{
-                        
-                                return(
-                                <option><td >{e.city} , {e.state}. pincode - {e.pinCode}  </td></option>
-                                )
-                        
-                                })
-                              }
-                              </select>
-                                   
-                            </div>
+                    <div class="select-option">
+                           <select onChange={(e) => { handleAddress(e) }}>
+                             
+                             {
+                               user.map((e, i) => {
+                                 return (
+                                   <option><td >{e.city} , {e.state}. pincode - {e.pinCode}  </td></option>
+                                 )
+                               })
+                             }
+                             
+                           </select>
+                    </div>
                         
                        
                     
@@ -238,7 +243,9 @@ const day = today.getDate();
       </button>
       </label>
       <br />
-
+     <label>
+      <button className='add-btn' onClick={()=>navigate('/adress')} >ADD NEW ADDRESS</button>
+     </label>
 
     </form>
             
@@ -319,12 +326,12 @@ const day = today.getDate();
 
          <div className='Cod1'>
        
-         <p>Selected Option : <span style={{fontSize:'15px',fontWeight:'700',color:'#a3a375'}}>Cash on Delivery</span></p>
+         <p style={{marginLeft:'15%'}}>Selected Option : <span style={{fontSize:'15px',fontWeight:'700',color:'#a3a375'}}>Cash on Delivery</span></p>
             <h3 style={{paddingLeft:'27px'}}>Order summary</h3>
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto',paddingBottom:'15px'}}><span>Items:</span><span>₹{Math.floor(total)}.00</span></p>
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto'}}><span>Delivery:</span><span>₹40.00</span></p>
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',fontSize:'25px',borderTop:'1px solid grey',color:'	 #cc0000',margin:'0 auto'}}><span>Total:</span><span>₹{Math.floor(total)+40}.00</span></p>
-            <p style={{paddingLeft:'30px'}}><Button sx={{backgroundColor:'#ffcc00',color:'black'}} onClick={()=>{placebyCod({ vertical: 'top', horizontal: 'center' })}}>
+            <p style={{paddingLeft:'30px'}}><Button sx={{backgroundColor:'#ffcc00',color:'black',marginLeft:'17%',height:"40px",width:'60%'}} onClick={()=>{placebyCod({ vertical: 'top', horizontal: 'center' })}}>
              place Order  </Button>
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} >
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' ,position:'relative',bottom:'550px',left:'250%'}}>
@@ -347,7 +354,7 @@ const day = today.getDate();
         aria-describedby="alert-dialog-slide-description"
       >
          <div className='Upi2'>
-             <p>Selected Option : <span style={{fontSize:'15px',fontWeight:'700',color:'#a3a375'}}>UPI payment</span></p>
+             <p style={{marginLeft:'15%'}}>Selected Option : <span style={{fontSize:'15px',fontWeight:'700',color:'#a3a375'}}>UPI payment</span></p>
             <h3 style={{paddingLeft:'27px'}}>Order summary</h3>
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto',paddingBottom:'15px'}}><span>Items:</span><span>₹{Math.floor(total)}.00</span></p>
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto'}}><span>Delivery:</span><span>₹40.00</span></p>

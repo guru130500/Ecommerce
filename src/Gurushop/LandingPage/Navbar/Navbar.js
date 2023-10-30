@@ -71,8 +71,16 @@ function DrawerAppBar(props) {
   const[cartlength,setCartength]=React.useState([])
   const[search,setSearch]=React.useState('')
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const[user,setUser]=React.useState([])
   const open = Boolean(anchorEl);
 
+  const [name]=user.map((e,i)=>{
+      if(i==0)
+      {
+        return e.userfirstName
+      }
+  })
+  
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -99,6 +107,22 @@ function DrawerAppBar(props) {
       })
    
   },[])
+  React.useEffect(()=>{
+    axios.get(`http://localhost:9000/users?userEmail=${sessionStorage.getItem("userName")}`)
+    .then((res)=>{
+      setUser(res.data)
+      
+    })
+ 
+},[])
+  React.useEffect(()=>{
+    axios.get(`http://localhost:9000/cart?userId=${sessionStorage.getItem("userId")}`)
+    .then((res)=>{
+      setCartength(res.data)
+      
+    })
+ 
+},[])
      React.useEffect(()=>{
       setLength(sessionStorage.getItem("cartlength"))
      },[sessionStorage.getItem("cartlength")])
@@ -177,7 +201,26 @@ const handleClick = (event) => {
    
   
   }
-
+  function gotoProfile(){
+      if(sessionStorage.getItem("userName")){
+        navigate('/profile')
+      }
+      else{
+        alert('please login first')
+        navigate('/login')
+      }
+  }
+  function gotoCart()
+  {
+    if(sessionStorage.getItem("userName"))
+    {
+      navigate('/cart')
+    }
+    else{
+      alert("please login to see cart")
+      navigate('/login')
+    }
+  }
 
 
   const drawer = (
@@ -233,8 +276,12 @@ const handleClick = (event) => {
                        </Button>
                        <Menu {...bindMenu(popupState)}>
                         
-                       <MenuItem onClick={()=>{popupState.close();}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();navigate('/profile')}}>My account</MenuItem>
+                       <MenuItem onClick={()=>{popupState.close();}}> Hi,
+                       
+                       {(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userFirstName")}
+                       
+                       </MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();gotoProfile()}}>My account</MenuItem>
                          <MenuItem className={(sessionStorage.getItem("userName"))?'login-menu':'login-menu2'} onClick={()=>{popupState.close();navtoLogin()}} >Login</MenuItem>
                          <MenuItem className={(sessionStorage.getItem("userName"))?'logout-menu2':'logout-menu'} onClick={()=>{popupState.close();logOut()}} >Logout</MenuItem>
                        </Menu>
@@ -371,8 +418,8 @@ const handleClick = (event) => {
                          <PersonOutlinedIcon sx={{backgroundColor:'none'}}/>
                        </Button>
                        <Menu {...bindMenu(popupState)}>
-                         <MenuItem onClick={()=>{popupState.close();}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userName")}</MenuItem>
-                         <MenuItem onClick={()=>{popupState.close();navigate('/profile')}}>My account</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();}}> Hi,{(sessionStorage.getItem("userName")=='')?'Person':sessionStorage.getItem("userFirstName")}</MenuItem>
+                         <MenuItem onClick={()=>{popupState.close();gotoProfile()}}>My account</MenuItem>
                          <MenuItem className={(sessionStorage.getItem("userName"))?'login-menu':'login-menu2'} onClick={()=>{popupState.close();navtoLogin()}} >Login</MenuItem>
                          <MenuItem className={(sessionStorage.getItem("userName"))?'logout-menu2':'logout-menu'} onClick={()=>{popupState.close();logOut()}} >Logout</MenuItem>
                        </Menu>
@@ -381,7 +428,7 @@ const handleClick = (event) => {
                 </PopupState></Button>
               
       
-                    <IconButton aria-label="cart" onClick={()=>navigate('/cart')}>
+                    <IconButton aria-label="cart" onClick={()=>gotoCart()}>
                   <StyledBadge badgeContent={cartlength.length} color="warning">
                     <ShoppingCartIcon sx={{color:'white'}} />
                   </StyledBadge>

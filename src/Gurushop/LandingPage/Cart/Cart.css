@@ -161,11 +161,14 @@
 .free-shipping-para{
     font-size: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 70%;
    
   
     height: 50%;
-    width: auto;
+    width:900px;
     margin: 0 auto;
 }
 .free-shipping-div{
@@ -230,7 +233,7 @@
 
     /*  total cart  */
       .total-cart-div{
-          height: 360px;
+          height: 300px;
           width: 360px;
          border: 3px solid rgb(239, 232, 232);
          padding: 30px;

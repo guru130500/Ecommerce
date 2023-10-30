@@ -11,7 +11,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { Link, useNavigate } from "react-router-dom";
-
+import DeleteIcon from '@mui/icons-material/Delete';
 console.log("cart Page")
 const Cart = () => {
   
@@ -93,6 +93,10 @@ const Cart = () => {
      
     });
   }
+  function emptycart(){
+  
+   
+  }
   function chekout(){
    if(ischecked.length==0)
    {
@@ -133,7 +137,7 @@ const Cart = () => {
             </div>
            
           </div>
-
+        
           {cart &&
             cart.map((e) => {
               const select=ischecked.includes(e)
@@ -271,9 +275,8 @@ const Cart = () => {
           <div className="total-cart-div2">
             <p className="shipping-para">Shipping</p>
           <div className="total-cart-flat-div">
-            <p className="flat-para1">Flat Rate:<span style={{color:'rgb(198, 5, 5)'}}><CurrencyRupeeIcon fontSize="3px"/>40.00</span></p>
-            <p className="flat-para2">shipping to maharastra</p>
-            <p className="flat-para3">change address</p>
+            <p className="flat-para1">Delivery Rate:<span style={{color:'rgb(198, 5, 5)'}}><CurrencyRupeeIcon fontSize="3px"/>40.00</span></p>
+           
           </div>
           
           </div>

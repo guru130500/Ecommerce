@@ -86,7 +86,8 @@ const Profile = () => {
     const[userpass,SetUserpass]=React.useState('')
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
-     
+     const compareData=[formData]
+    
    
 
     const handleformchange = (e) => {
@@ -102,15 +103,15 @@ const Profile = () => {
       setValue(index);
     };
     React.useEffect(()=>{
-        const url=`http://localhost:9000/users`;
+        const url=`http://localhost:9000/users/${sessionStorage.getItem("userId")}`;
         axios.get(url)
         .then((response)=>{
              setUser(response.data)
-           
+             console.log(response.data)
         })
       },[])
       React.useEffect(()=>{
-        axios.get(`http://localhost:9000/profile?userId=${sessionStorage.getItem("userId")}`)
+        axios.get(`http://localhost:9000/users?id=${sessionStorage.getItem("userId")}`)
         .then((res)=>{
           setProfile(res.data)
           console.log(profile)
@@ -122,75 +123,57 @@ const Profile = () => {
        const data={...formData}
        data["userId"]=sessionStorage.getItem("userId")
       // console.log(data)
+      if(compareData==data)
+      {
+        alert("profile alerady created")
+
+      }
+      else
+      {
         axios.post(`http://localhost:9000/address?userId=${sessionStorage.getItem("userId")}`, data)
         .then((response)=>{
           console.log(response)
+          alert("successfuly created profile")
         })
         .catch((err)=>{
           alert(err)
         })
+      }
+        
 
-      console.log(profile)
+      
      
    }
   return (
-    <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
-          <Navbar/>
-
-    <Box sx={{ bgcolor: 'rgb(242, 253, 253)', width: '100%',marginTop:'100px' }}>
-      <AppBar position="static" sx={{bgcolor:'#00cccc'}}>
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="secondary"
-          textColor="inherit"
-          variant="fullWidth"
-          aria-label="full width tabs example"
-        >
-          <Tab label="My account" {...a11yProps(0)} />
-          <Tab label="Create Your profile" {...a11yProps(1)} />
+    <div>
        
-        </Tabs>
+
+    <Box sx={{  width: '100%'}}>
+      <AppBar position="static" sx={{bgcolor:'#00cccc',display:'flex',justifyContent:'center',height:'80px'}}>
+    
+            <h2 style={{margin:'0 auto'}}>Hello,{user.userfirstName} {user.userlastName}</h2>
+       
+       
       </AppBar>
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-      >
-        <TabPanel value={value} index={0} dir={theme.direction}>
+  
         <div style={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'30px',width:'100%',margin:'0 auto'}}>
 
-          <Box
-                sx={{
-                  width: 200,
-                  height: 200,
-                  borderRadius:'50%',
-
-                  border:'1px solid grey',
-                  backgroundColor: 'white',
-                  '&:hover': {
-                    backgroundColor: 'primary.main',
-                    opacity: [0.9, 0.8, 0.7],
-                  },
-                }}
-              >
-                <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' alt='profile-image' height='100%' width='100%' ></img>
-            </Box>
           
           
               <Box
                 sx={{
-                  width: '50%',
+                  width: '70%',
                   height: 'auto',
                   display:'flex',
                   flexDirection:'column',
                   alignItems:'center',
                   justifyContent:'center',
                   backgroundColor: 'white',
-                 border:'2px solid grey'
+                  marginTop:'20px'
+                
                 }}
               >
-
+           
                
                       {/* <h2 style={{textAlign:'center'}}> Hello, {profile[0].firstName}   {profile[0].lastName} </h2> */}
                  
@@ -199,7 +182,8 @@ const Profile = () => {
                 <p className='profile-order-btn' style={{width:'150px'}} onClick={()=>navigate('/order')}> Your orders</p>
                 
                 <p className='address-list' onClick={()=>navigate('/adress')}>Your Addresses </p>
-                <p className='profile-shopmore-btn' style={{width:'150px'}} onClick={()=>navigate('/shop')}>Shop More</p>
+                <p className='profile-shopmore-btn' style={{width:'150px'}} onClick={()=>navigate('/cart')}>Your Cart</p>
+                <p className='profile-shopmore-btn' style={{width:'150px'}} onClick={()=>navigate('/')}>Go to Home</p>
               </div>
                </Box>
 
@@ -214,66 +198,6 @@ const Profile = () => {
 
               </div> */}
 
-
-        </TabPanel>
-        <TabPanel  value={value} index={1} dir={theme.direction}>
-   
-
-               <Box sx={{width:500,height:'auto',margin:'0 auto',border:'2px solid grey',borderRadius:"15px",backgroundColor:'#ccffff'}}>
-               <form className='user-update-form' method='post' onSubmit={(e)=>{
-               e.preventDefault();
-               updateData()
-              }}>
-                  <p className='form-heading'>CREATE PROFILE</p>
-                 <label className='lable1'>
-                   First Name <span style={{color:'red'}}>*</span>
-                 </label>
-                 <br></br>
-                 <input className='input-name-profile'  name='firstName' type='text' placeholder='Enter First Name' onChange={handleformchange} required ></input>
-                 <br></br>
-                 <label className='last-name-lable'>Last Name</label>
-                 <br></br>
-             
-                 <input className='input-last-name' name='lastName' type='text' placeholder='Enter last name' onChange={handleformchange}></input>
-                 <br></br>
-                 <label className='lable1' >Email</label>
-                 <br></br>
-                 <input className='input-email-profile'  name='email' type='email' placeholder='Enter Email Adress' onChange={handleformchange}></input>
-                 <br></br>
-                 <label className='lable2'>Country  <span style={{color:'red'}}>*</span></label>
-                 <br></br>
-             
-                 <input type='text' className='input-last-name'  name='country' placeholder='Enter your Country' onChange={handleformchange}></input>
-                 <br></br>
-                 <label className='lable1'>State</label>
-                 <br></br>
-
-
-                 <input type='text' className='input-last-name'  name='state' placeholder='Enter your State' onChange={handleformchange}></input>
-                 <br></br>
-
-                 <label className='lable1'>city</label>
-                 <br></br>
-                 <input type='text' className='input-last-name'  name='city' placeholder='Enter your city'onChange={handleformchange}></input>
-                 <br></br>
-
-                 <label className='lable1'>pinCode</label>
-                 <br></br>
-                 <input type='text'  className='input-last-name'   name='pinCode' placeholder='Enter your Pincode' onChange={handleformchange}></input>
-                 <br></br>
-
-
-                 <input className='update-btn' type='submit' name='submit' value={'Update'} ></input>
-
-                
-               </form>
-
-               </Box>
-
-
-        </TabPanel>
-
-      </SwipeableViews>
     </Box>
     
     </div>

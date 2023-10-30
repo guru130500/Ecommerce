@@ -17,7 +17,7 @@ const Login = () => {
    const[open1,setOpen1]=useState(false)
    const[open2,setOpen2]=useState(false)
   const[user,setUser]=useState([])
-  const[userName,setUsername]=useState('')
+  const[userEmailaddress,setUserEmailAdress]=useState('')
   const[pass,setPas]=useState('');
 
 // toast
@@ -42,7 +42,8 @@ const handleClose = (event, reason) => {
 
    // useregister
 
-   const[userRegister,SetUserregister]=useState('')
+   const[userFirstName,SetUserFirstName]=useState('')
+   const[userLastName,setUserLastName]=useState('')
    const[userEmail,setUserEmail]=useState('')
    const[userpass,SetUserpass]=useState('')
 
@@ -63,10 +64,11 @@ function validateUser(userInput,passInput){
     // console.log("ApiData : " + e.userName + " "+ e.password);
     // console.log("userData : " + userInput + " "+ passInput);
 
-    if(e.userName===userInput&&e.password===passInput)
+    if(e.userEmail===userInput&&e.password===passInput)
     {
       status=true;
       sessionStorage.setItem("userName", userInput)
+      sessionStorage.setItem("userFirstName",e.userfirstName)
       sessionStorage.setItem("userId", e.id)
       sessionStorage.setItem("qty",1)
     }
@@ -115,10 +117,11 @@ function validateUser(userInput,passInput){
 
 /* User Register*/
 
-   function registerUser(nameInput,emailInput,passInput){
+   function registerUser(FirstnameInput,LastnameInput,emailInput,passInput){
   
     const userData={
-        userName:nameInput,
+        userfirstName:FirstnameInput,
+        userlastName:LastnameInput,
         userEmail:emailInput,
         password:passInput
     }
@@ -151,15 +154,15 @@ function validateUser(userInput,passInput){
 
      <form method='post' onSubmit={(e)=>{
       e.preventDefault();
-      authenticate(userName,pass);
+      authenticate(userEmailaddress,pass);
      }}>
 
         <p className='form-heading'>LOGIN</p>
         <label className='lable1'>
-          Username <span style={{color:'red'}}>*</span>
+          Email <span style={{color:'red'}}>*</span>
         </label>
         <br></br>
-        <input className='input1' type='text' placeholder='Enter user name' onChange={(e)=>setUsername(e.target.value)} ></input>
+        <input className='input1' type='email' placeholder='Enter your Email address' onChange={(e)=>setUserEmailAdress(e.target.value)} ></input>
         <br></br>
         <label className='lable2'>Password</label> <span style={{color:'red'}}>*</span>
         <br></br>
@@ -186,14 +189,20 @@ function validateUser(userInput,passInput){
      <div className={(btn=='Register')?'form-div2-updated':'form-div2'}>
                      <form method='post' onSubmit={(e)=>{
                       e.preventDefault();
-                      registerUser(userRegister,userEmail,userpass)
+                      registerUser(userFirstName,userLastName,userEmail,userpass)
                      }}>
                          <p className='form-heading'>REGISTER</p>
                         <label className='lable1'>
-                          UserName  <span style={{color:'red'}}>*</span>
+                          firstName  <span style={{color:'red'}}>*</span>
                         </label>
                         <br></br>
-                        <input className='input1' type='text' placeholder='Enter user name' onChange={(e)=>SetUserregister(e.target.value)} ></input>
+                        <input className='input1' type='text' placeholder='Enter First Name' onChange={(e)=>SetUserFirstName(e.target.value)} ></input>
+                        <br></br>
+                        <label className='lable1'>
+                          LastName <span style={{color:'red'}}>*</span>
+                        </label>
+                        <br></br>
+                        <input className='input1' type='text' placeholder='Enter Last name' onChange={(e)=>setUserLastName(e.target.value)} ></input>
                         <br></br>
                         <label className='lable1' >Email</label>
                         <br></br>

@@ -16,7 +16,7 @@
     height: auto;
   
     display: flex;
-     border: 1px solid red;
+     /* border: 1px solid red; */
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: center;

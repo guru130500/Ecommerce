@@ -1,22 +1,18 @@
 {
   "users": [
     {
-      "userName": "guru",
-      "userEmail": "gurunath@gmail.com",
+      "userfirstName": "Gurunath",
+      "userlastName": "Kumbhar",
+      "userEmail": "gurunath@123",
       "password": "12345",
       "id": 1
     },
     {
-      "userName": "suraj",
-      "userEmail": "suraj@123",
-      "password": "12345",
-      "id": 2
-    },
-    {
-      "userName": "mahesh",
+      "userfirstName": "mahesh",
+      "userlastName": "khedkar",
       "userEmail": "mahesh@123",
-      "password": "12345",
-      "id": 3
+      "password": "mahesh123",
+      "id": 2
     }
   ],
   "orders": [
@@ -93,53 +89,48 @@
       "date": "27/10/2023",
       "address": "Junnar , maharastra. pincode - 4311324",
       "id": 3
-    }
-  ],
-  "profile": [
+    },
     {
-      "firstName": "suraj",
-      "lastName": "sukale",
-      "email": "suraj@123",
-      "country": "India",
-      "state": "Maharastra",
-      "city": "junnar",
-      "pinCode": "413345",
       "userId": "2",
-      "id": 2
-    },
-    {
-      "firstName": "Gurunath",
-      "lastName": "Kumbhar",
-      "email": "gurunath@gmail.com",
-      "country": "India",
-      "state": "Maharastra",
-      "city": "solapur",
-      "pinCode": "413221",
-      "userId": "1",
-      "id": 3
-    },
-    {
-      "firstName": "Gurunath",
-      "lastName": "Kumbhar",
-      "email": "gurunath@gmail.com",
-      "country": "India",
-      "state": "Maharastra",
-      "city": "Pune",
-      "pinCode": "410314",
-      "userId": "1",
-      "id": 3
+      "products": [
+        {
+          "pId": 7,
+          "title": "White Gold Plated Princess",
+          "price": 9.99,
+          "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+          "category": "jewelery",
+          "image": [
+            "https://m.media-amazon.com/images/I/61-QsKY5TNL._UY695_.jpg",
+            "https://m.media-amazon.com/images/I/616qW5eLQVL._UY695_.jpg",
+            "https://m.media-amazon.com/images/I/51DQhcpebfL._UX695_.jpg",
+            "https://m.media-amazon.com/images/I/71UDbZm+vxL._UL1500_.jpg"
+          ],
+          "rating": {
+            "rate": 3,
+            "count": 400
+          },
+          "userId": "2",
+          "qty": 1,
+          "id": 22
+        }
+      ],
+      "total": 9.99,
+      "date": "29/10/2023",
+      "address": "",
+      "id": 4
     }
   ],
+  "profile": [],
   "address": [
     {
-      "firstName": "Gurunath",
-      "lastName": "Kumbhar",
-      "email": "gurunath@gmail.com",
-      "country": "India",
-      "state": "Maharastra",
+      "firstName": "mahesh",
+      "lastName": "khedkar",
+      "email": "mahesh@123",
+      "country": "Japan",
+      "state": "maharastra",
       "city": "solapur",
-      "pinCode": "413221",
-      "userId": "1",
+      "pinCode": "312324",
+      "userId": "2",
       "id": 1
     },
     {
@@ -147,22 +138,14 @@
       "lastName": "Kumbhar",
       "email": "gurunath@gmail.com",
       "country": "India",
-      "state": "Karnataka",
-      "city": "Vijaypur",
-      "pinCode": "423212",
+      "state": "Maharastra",
+      "city": "solapur",
+      "pinCode": "413221",
+      "area": "Chandan Nagar",
+      "landmark": "near sai mandir",
+      "flat": "83",
       "userId": "1",
-      "id": 3
-    },
-    {
-      "firstName": "suraj",
-      "lastName": "sukale",
-      "email": "suraj@gmail.com",
-      "country": "india",
-      "state": "maharastra",
-      "city": "Junnar",
-      "pinCode": "4311324",
-      "userId": "2",
-      "id": 4
+      "id": 2
     }
   ],
   "cart": [
@@ -176,46 +159,6 @@
       "userId": "2",
       "qty": 1,
       "id": 12
-    },
-    {
-      "pId": 3,
-      "title": "Mens Cotton Jacket",
-      "price": 55.99,
-      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      "category": "men",
-      "image": [
-        "https://m.media-amazon.com/images/I/71CRYTVdAGL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/71bVXXfJkrL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/61IQ3KCFGsL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/61FH1B01kVL._UY741_.jpg"
-      ],
-      "rating": {
-        "rate": 4.7,
-        "count": 500
-      },
-      "userId": "3",
-      "qty": 1,
-      "id": 16
-    },
-    {
-      "pId": 17,
-      "title": "Striped Climbing Raincoats",
-      "price": 39.99,
-      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-      "category": "women",
-      "image": [
-        "https://m.media-amazon.com/images/I/71UVTsfStDL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/712naLEp7FL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/71iKapRgB3L._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/71jKgabPWwL._UY741_.jpg"
-      ],
-      "rating": {
-        "rate": 3.8,
-        "count": 679
-      },
-      "userId": "3",
-      "qty": 1,
-      "id": 17
     },
     {
       "pId": 3,
@@ -258,20 +201,64 @@
       "id": 20
     },
     {
-      "pId": 28,
-      "title": "Fashion Frill",
-      "price": 500,
-      "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
-      "category": "accessories",
+      "pId": 7,
+      "title": "White Gold Plated Princess",
+      "price": 9.99,
+      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+      "category": "jewelery",
       "image": [
-        "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
-        "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
-        "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
-        "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
+        "https://m.media-amazon.com/images/I/61-QsKY5TNL._UY695_.jpg",
+        "https://m.media-amazon.com/images/I/616qW5eLQVL._UY695_.jpg",
+        "https://m.media-amazon.com/images/I/51DQhcpebfL._UX695_.jpg",
+        "https://m.media-amazon.com/images/I/71UDbZm+vxL._UL1500_.jpg"
       ],
+      "rating": {
+        "rate": 3,
+        "count": 400
+      },
+      "userId": "2",
+      "qty": 1,
+      "id": 22
+    },
+    {
+      "pId": 9,
+      "title": "Hard Drive - USB 3.0",
+      "price": 64,
+      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      "category": "electronics",
+      "image": [
+        "https://m.media-amazon.com/images/I/61q5-fuKDJL._SL1200_.jpg",
+        "https://m.media-amazon.com/images/I/61DgMvY4mBL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71nbChhTsBL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71-srzeWCWL._SL1500_.jpg"
+      ],
+      "rating": {
+        "rate": 3.3,
+        "count": 203
+      },
       "userId": "1",
       "qty": 1,
-      "id": 21
+      "id": 23
+    },
+    {
+      "pId": 14,
+      "title": "Samsung Monitor ",
+      "price": 999.99,
+      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+      "category": "electronics",
+      "image": [
+        "https://m.media-amazon.com/images/I/816btzZvneL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/818hHbw0ISL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/816QZ2yjXGL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81i-5EJ4hyL._SL1500_.jpg"
+      ],
+      "rating": {
+        "rate": 2.2,
+        "count": 140
+      },
+      "userId": "1",
+      "qty": 1,
+      "id": 24
     }
   ],
   "sliders": [
