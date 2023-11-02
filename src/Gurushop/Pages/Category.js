@@ -3,7 +3,7 @@ import './pages.css'
 import { Box } from '@mui/material';
 import Card1 from '../LandingPage/Card/Card1';
 import { useParams,useLocation } from 'react-router-dom';
-import Navbar from '../LandingPage/Navbar/Navbar'
+import Nav from '../LandingPage/Nav/Nav'
 
 const Category = () => {
 
@@ -24,7 +24,7 @@ const Category = () => {
         .then(data1=>setData(data1))
     
    
-    },[cat])
+    },[data])
 
     // const location=useLocation()
     // const value=location.state
@@ -52,7 +52,7 @@ const Category = () => {
    },[value])
   return (
     <div>
-      <Navbar/>
+      <Nav/>
       <div className='category-main-div'> 
         <h1 style={{borderBottom:'2px solid grey'}}>{heading}</h1> 
         <Box sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'30px',marginTop:'20px',marginBottom:'60px'}}>

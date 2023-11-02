@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../Navbar/Navbar'
+import Nav from '../Nav/Nav'
 import axios from 'axios'
 import './Login.css'
 import { Navigate, useNavigate } from 'react-router-dom';
@@ -146,7 +146,7 @@ function validateUser(userInput,passInput){
   return (
     <div className='login-body'>
       <div>
-      <Navbar/>
+      <Nav/>
       </div>
      
     <div className='login-main-div'>
@@ -166,7 +166,7 @@ function validateUser(userInput,passInput){
         <br></br>
         <label className='lable2'>Password</label> <span style={{color:'red'}}>*</span>
         <br></br>
-        <input className='input2' type='password' placeholder='Enter password' onChange={(e)=>setPas(e.target.value)}></input>
+        <input className='login-password' type='password' placeholder='Enter password' onChange={(e)=>setPas(e.target.value)}></input>
         <br></br>
         <input className='input3' type='submit' name='submit' value={'LOG IN'}></input>
         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -211,7 +211,7 @@ function validateUser(userInput,passInput){
                         <label className='lable2'>Password  <span style={{color:'red'}}>*</span></label>
                         <br></br>
                     
-                        <input type='password' className='input2'  placeholder='Enter Password' onChange={(e)=>SetUserpass(e.target.value)}></input>
+                        <input type='password' className='login-password'  placeholder='Enter Password' onChange={(e)=>SetUserpass(e.target.value)}></input>
                         <br></br>
                       
                         <input className='input3' type='submit' name='submit' value={'Register'} ></input>

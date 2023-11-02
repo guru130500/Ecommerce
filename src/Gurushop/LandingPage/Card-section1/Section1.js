@@ -51,27 +51,49 @@ const Section1 = () => {
 
     <div className='section-main-div'>
 
-        <h2 style={{marginLeft:'1.2%'}}>Shop by Category</h2>
+        <h2 style={{marginLeft:'5%',color:'rgb(1, 1, 90)'}}>Shop by Category</h2>
         <div className='section-card-main-div'>
             <div className='section-card1' onClick={()=>{gotoCategory(`men`)}}>
-                <img className='section-card1-img1' src='https://cdn11.bigcommerce.com/s-d18iepu0cs/product_images/uploaded_images/men-desktop.jpg' alt='' height='300px' width='280px' ></img>
-                <p className='section-card1-para1'>Men</p>
+              <div className='section-inner-div'>
+               <h4>Men's Collection</h4>
+                <img src='https://m.media-amazon.com/images/I/41jBRaPHRPL._AC_UL480_FMwebp_QL65_.jpg' alt='' ></img>
+              </div>
+               
             </div>
             <div className='section-card2' onClick={()=>{gotoCategory(`women`)}}>
-                <img className='section-card2-img2' height='300px' width='280px' src='https://cdn11.bigcommerce.com/s-d18iepu0cs/product_images/uploaded_images/women-desktop.jpg' alt=''></img>
-                <p className='section-card2-para2'>Women</p>
+            <div className='section-inner-div'>
+               <h4>Women's Collection</h4>
+                <img src='https://m.media-amazon.com/images/I/41YJmU04S7L._AC_UL480_FMwebp_QL65_.jpg' alt='' ></img>
+              </div>
             </div>
+
             <div className='section-card3' onClick={()=>{gotoCategory(`electronics`)}}>
-                <img className='section-card3-img3'  height='300px' width='280px' src='https://images.meesho.com/images/products/19780555/y0l1e_400.webp' alt=''></img>
-                <p className='section-card3-para3'>Electronics</p>
+
+            <div className='section-inner-div'>
+               <h4>Electronics Collection</h4>
+                <img src='https://www.jiomart.com/images/product/original/492850035/oneplus-nord-ce-2-lite-5g-128-gb-6-gb-ram-blue-tide-mobile-phone-digital-o492850035-p591224603-0-202208112007.png?im=Resize=(360,360)' alt='' ></img>
+              </div>
+
+
+
             </div>
             <div className='section-card4' onClick={()=>{gotoCategory(`jewelery`)}}>
-               <img className='section-card4-img4'  height='300px' width='280px' src='https://images.meesho.com/images/products/282596088/l207t_400.webp' alt=''></img>
-                <p className='section-card4-para4'>Jewelery</p>
+
+
+            <div className='section-inner-div'>
+               <h4>Jewelery Collection</h4>
+                <img src='https://www.jiomart.com/images/product/original/30000203/reliance-jewels-22-kt-gold-ring-2-06-g-product-images-o30000203-p601365325-0-202305111325.jpg?im=Resize=(360,360)' alt='' ></img>
+              </div>
+
             </div>
             <div className='section-card5' onClick={()=>{gotoCategory(`accessories`)}}>
-               <img className='section-card5-img5'  height='300px' width='280px' src='https://images.meesho.com/images/products/205330312/mwgpu_400.webp' alt=''></img>
-                <p className='section-card5-para5'>Accesories</p>
+
+
+            <div className='section-inner-div'>
+               <h4>Accesories Collection</h4>
+                <img src='https://www.jiomart.com/images/product/original/rvppndn1t8/piraso-analog-digital-multicolor-dial-multicolor-strap-2-watch-with-sunglasses-for-men-combo-of-3-product-images-rvppndn1t8-0-202307011544.jpg?im=Resize=(330,410)' alt='' ></img>
+              </div>
+           
             </div>
         </div>
     </div>

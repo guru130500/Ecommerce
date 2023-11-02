@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import  Navbar from './Navbar/Navbar'
 import Slider from './Slider/MainSlider'
 import Section1 from './Card-section1/Section1'
-
+import Nav from './Nav/Nav'
 import Shop from './Shop/Shop'
-import About from './About/About'
+
 import Contact from './Contact/Contact'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 
@@ -18,6 +18,7 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Card1 from './Card/Card1'
 import './Landing.css'
+import Nav2 from './Nav/Nav2'
 const Landing1 = () => {
   const[data,setData]=useState([])
   const[data2,setData2]=useState([])
@@ -43,7 +44,7 @@ const Landing1 = () => {
     .then(data1=>setData2(data1))
   },[])
   data2.forEach((e,i)=>{
-    if(i>=30 && i<=34)
+    if(i>=30 && i<=35)
     {
       sale.push(e)
     }
@@ -77,18 +78,18 @@ const Landing1 = () => {
     <div>
 
     
-        <Navbar/>
-  
+        <Nav/>
+        <Nav2/>
   
         <Slider/>
    
   
         <Section1/>
       
-      <div className='feature-box-heading'>
-        <p className='feature-box-par1'>SEE OUR COLLECTION</p>
-        <p className='feature-box-par2'>FEATURED PRODUCTS</p>
-        <p className='feature-box-par3'>Street art salvia irony wolf waistcoat actually lomo meh fap jean shorts.</p>
+      <div className='feature'>
+       
+      <h2 style={{marginLeft:'5%',color:'rgb(1, 1, 90)'}}>Top Deals</h2>
+        
       </div>
         <Box className="feature-box" sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'30px'}}>
               {
@@ -102,15 +103,8 @@ const Landing1 = () => {
               }
        </Box>
             
-
+       <h2 style={{marginLeft:'5%',color:'rgb(1, 1, 90)'}}>On sale products</h2>
  
-         
-        <div className='feature-box-heading' style={{marginTop:'80px'}}>
-        <p className='feature-box-par1'>SEE OUR COLLECTION</p>
-        <p className='feature-box-par2'>ON SALE PRODUCTS   (<span style={{color:'red'}}>60-85% OFF</span>)</p>
-        <p className='feature-box-par3'>Street art salvia irony wolf waistcoat actually lomo meh fap jean shorts.</p>
-        </div>
-
 
 
         <Box className="feature-box" sx={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'30px'}}>
@@ -124,6 +118,8 @@ const Landing1 = () => {
                 })
               }
        </Box>
+
+       
     </div>
   )
 }

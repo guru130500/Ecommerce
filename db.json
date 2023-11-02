@@ -15,124 +15,9 @@
       "id": 2
     }
   ],
-  "orders": [
-    {
-      "userId": "1",
-      "products": [
-        {
-          "pId": 1,
-          "title": "Men's Traditional",
-          "price": 109.95,
-          "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-          "category": "men",
-          "image": [
-            "https://m.media-amazon.com/images/I/713G8QY0+LL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/71E59uvYk-L._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/71APG241wsL._UY741_.jpg",
-            "https://m.media-amazon.com/images/I/718kPqnZT0L._UY741_.jpg"
-          ],
-          "rating": {
-            "rate": 3.9,
-            "count": 120
-          },
-          "userId": "1",
-          "qty": 1,
-          "id": 20
-        }
-      ],
-      "total": 109.95,
-      "date": "27/10/2023",
-      "address": "Mumbai , Maharastra. pincode - 423232",
-      "id": 1
-    },
-    {
-      "userId": "1",
-      "products": [
-        {
-          "pId": 28,
-          "title": "Fashion Frill",
-          "price": 500,
-          "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
-          "category": "accessories",
-          "image": [
-            "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
-            "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
-            "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
-            "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
-          ],
-          "userId": "1",
-          "qty": 1,
-          "id": 21
-        }
-      ],
-      "total": 500,
-      "date": "27/10/2023",
-      "address": "Vijaypur , Karnataka. pincode - 423212",
-      "id": 2
-    },
-    {
-      "userId": "2",
-      "products": [
-        {
-          "pId": 3,
-          "title": "Noise Halo Smartwatch",
-          "price": 140,
-          "description": "1.46 inches (3.7cms) AMOLED display, 466*466px, Always on display ",
-          "category": "accessories",
-          "image": "https://m.media-amazon.com/images/I/71KjTSO8M9L._SL1500_.jpg",
-          "userId": "2",
-          "qty": 1,
-          "id": 12
-        }
-      ],
-      "total": 140,
-      "date": "27/10/2023",
-      "address": "Junnar , maharastra. pincode - 4311324",
-      "id": 3
-    },
-    {
-      "userId": "2",
-      "products": [
-        {
-          "pId": 7,
-          "title": "White Gold Plated Princess",
-          "price": 9.99,
-          "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-          "category": "jewelery",
-          "image": [
-            "https://m.media-amazon.com/images/I/61-QsKY5TNL._UY695_.jpg",
-            "https://m.media-amazon.com/images/I/616qW5eLQVL._UY695_.jpg",
-            "https://m.media-amazon.com/images/I/51DQhcpebfL._UX695_.jpg",
-            "https://m.media-amazon.com/images/I/71UDbZm+vxL._UL1500_.jpg"
-          ],
-          "rating": {
-            "rate": 3,
-            "count": 400
-          },
-          "userId": "2",
-          "qty": 1,
-          "id": 22
-        }
-      ],
-      "total": 9.99,
-      "date": "29/10/2023",
-      "address": "",
-      "id": 4
-    }
-  ],
+  "orders": [],
   "profile": [],
   "address": [
-    {
-      "firstName": "mahesh",
-      "lastName": "khedkar",
-      "email": "mahesh@123",
-      "country": "Japan",
-      "state": "maharastra",
-      "city": "solapur",
-      "pinCode": "312324",
-      "userId": "2",
-      "id": 1
-    },
     {
       "firstName": "Gurunath",
       "lastName": "Kumbhar",
@@ -145,6 +30,20 @@
       "landmark": "near sai mandir",
       "flat": "83",
       "userId": "1",
+      "id": 1
+    },
+    {
+      "firstName": "Mahesh",
+      "lastName": "Khedkar",
+      "email": "mahesh@123.com",
+      "country": "India",
+      "state": "Maharastra",
+      "city": "Nagar",
+      "pinCode": "413221",
+      "area": "Chandan Nagar",
+      "landmark": "near sai mandir",
+      "flat": "79",
+      "userId": "2",
       "id": 2
     }
   ],
@@ -159,86 +58,6 @@
       "userId": "2",
       "qty": 1,
       "id": 12
-    },
-    {
-      "pId": 3,
-      "title": "Mens Cotton Jacket",
-      "price": 55.99,
-      "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-      "category": "men",
-      "image": [
-        "https://m.media-amazon.com/images/I/71CRYTVdAGL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/71bVXXfJkrL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/61IQ3KCFGsL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/61FH1B01kVL._UY741_.jpg"
-      ],
-      "rating": {
-        "rate": 4.7,
-        "count": 500
-      },
-      "userId": "1",
-      "qty": 1,
-      "id": 19
-    },
-    {
-      "pId": 1,
-      "title": "Men's Traditional",
-      "price": 109.95,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "men",
-      "image": [
-        "https://m.media-amazon.com/images/I/713G8QY0+LL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/71E59uvYk-L._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/71APG241wsL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/718kPqnZT0L._UY741_.jpg"
-      ],
-      "rating": {
-        "rate": 3.9,
-        "count": 120
-      },
-      "userId": "1",
-      "qty": 1,
-      "id": 20
-    },
-    {
-      "pId": 7,
-      "title": "White Gold Plated Princess",
-      "price": 9.99,
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-      "category": "jewelery",
-      "image": [
-        "https://m.media-amazon.com/images/I/61-QsKY5TNL._UY695_.jpg",
-        "https://m.media-amazon.com/images/I/616qW5eLQVL._UY695_.jpg",
-        "https://m.media-amazon.com/images/I/51DQhcpebfL._UX695_.jpg",
-        "https://m.media-amazon.com/images/I/71UDbZm+vxL._UL1500_.jpg"
-      ],
-      "rating": {
-        "rate": 3,
-        "count": 400
-      },
-      "userId": "2",
-      "qty": 1,
-      "id": 22
-    },
-    {
-      "pId": 9,
-      "title": "Hard Drive - USB 3.0",
-      "price": 64,
-      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-      "category": "electronics",
-      "image": [
-        "https://m.media-amazon.com/images/I/61q5-fuKDJL._SL1200_.jpg",
-        "https://m.media-amazon.com/images/I/61DgMvY4mBL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71nbChhTsBL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71-srzeWCWL._SL1500_.jpg"
-      ],
-      "rating": {
-        "rate": 3.3,
-        "count": 203
-      },
-      "userId": "1",
-      "qty": 1,
-      "id": 23
     },
     {
       "pId": 14,
@@ -259,6 +78,58 @@
       "userId": "1",
       "qty": 1,
       "id": 24
+    },
+    {
+      "pId": 28,
+      "title": "Fashion Frill",
+      "price": 500,
+      "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
+        "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
+        "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
+        "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
+      ],
+      "userId": "2",
+      "qty": 1,
+      "id": 25
+    },
+    {
+      "pId": 2,
+      "title": "Dennis Lingo Men's Slim t-shirt",
+      "price": 22.3,
+      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "category": "men",
+      "image": [
+        "https://m.media-amazon.com/images/I/514YMziLluL._UX679_.jpg",
+        "https://m.media-amazon.com/images/I/51MLyHKBQQL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/51WB-3u92OL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/51S5ar3VguL._UY741_.jpg"
+      ],
+      "rating": {
+        "rate": 4.1,
+        "count": 259
+      },
+      "userId": "2",
+      "qty": 1,
+      "id": 26
+    },
+    {
+      "pId": 25,
+      "title": "Redmi 11",
+      "price": 200,
+      "description": "Redmi 11 with better battery backup",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/71yTvU9VgdL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71zhX96XQSL._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61CyDCueU3L._SX679_.jpg",
+        "https://m.media-amazon.com/images/I/61qk6Uz0yDL._SL1500_.jpg"
+      ],
+      "userId": "1",
+      "qty": 1,
+      "id": 27
     }
   ],
   "sliders": [
@@ -776,6 +647,19 @@
       "category": "shoes",
       "image": [
         "https://m.media-amazon.com/images/I/71dsmh1-tAL._UY695_.jpg"
+      ]
+    },
+    {
+      "pId": 35,
+      "title": "boAt Immortal Earbuds",
+      "price": 803,
+      "description": "Low Latency- It’s time to hit your gaming zone with the TWS earbuds, Immortal 121 that come equipped with BEAST Mode to offer super low latency of 40ms",
+      "category": "accessories",
+      "image": [
+        "https://m.media-amazon.com/images/I/61q-2yzbBtL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61y3NPa0SUL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/81C4li-v9qL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/61glRpWr99L._SL1500_.jpg"
       ]
     }
   ]

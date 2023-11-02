@@ -5,32 +5,13 @@
 
 
 /* feture box*/
-.feature-box-heading{
-    height: 80px;
-    width: 100%;
-    display: flex;
-  
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 60px
+.feature{
+    margin-top: 40px;
 }
-
-.feature-box-par1{
-    text-align: center;
-    font-size: 13px;
-    margin-bottom: 4px
-}
-.feature-box-par2{
-    margin-top: 7px;
-  text-align: center;
-    margin-bottom: 8px;
-    font-size: 35px;
-    font-weight: 600;
-}
-.feature-box-par3{
-    margin-top: 7px;
-    text-align: center;
+.feature-para1{
+    margin-left: 3.7%;
+    font-size: 18px;
+    font-weight: 700;
 }
 /* Visited Category*/
 

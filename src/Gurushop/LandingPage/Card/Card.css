@@ -28,7 +28,7 @@
     font-size: 19px !important;
     text-align: center !important;
 } */
-.main-card-div{
+/* .main-card-div{
     position: relative;
     height: 550px;
     width: 100%;
@@ -53,10 +53,10 @@
 }
 .main-card-div:hover .card-price-para1{
     color: rgb(241, 21, 21);
-}
-
+} */
+/* 
 .image-card{
-    /* background-color: rgb(202, 194, 194); */
+  
     margin-top: 10px;
     height: 400px;
     width: 330px;
@@ -176,4 +176,86 @@
     .shopping-cart-div{
         font-size: 15px !important;
     }
-}
+} */
+
+/* Styles for the main card container */
+.main-card-div {
+    width: 250px; 
+    height: 350px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles for the image container */
+  .image-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%; 
+  }
+  
+  /* Styles for the image */
+  .image-data {
+    max-width: 100%; 
+    max-height: 100%;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  /* Styles for the card content container */
+  .card-content-updated {
+    width: 100%;
+    height: 50%; 
+    text-align: center;
+    padding: 16px;
+  }
+  
+  /* Styles for the card title */
+  .card-content-para1-updated {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Styles for the card price and shop button container */
+  .card-price-updated {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  /* Styles for the price */
+  .card-price-para1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF5722; 
+  margin-right: 25px;
+  }
+  
+  /* Styles for the "SHOP NOW" button */
+  .card-shop-btn {
+    background-color: #FF5722 !important ;
+    color: #fff !important; /* Button text color */
+    font-weight: bold !important;
+    padding: 8px 16px !important;
+    border: none;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s !important;
+  }
+  
+  .card-shop-btn:hover {
+    background-color: #8d2505 !important; 
+  }
+  

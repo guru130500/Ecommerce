@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './Order.css'
 import {  useNavigate } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar'
+import Nav from '../Nav/Nav'
+import Nav2 from '../Nav/Nav2'
 const Order = () => {
     const[data,setData]=useState()
     const[total,setTotal]=useState()
@@ -55,8 +56,11 @@ const Order = () => {
      
 
   return (
+    <div>
+          <Nav/>
+          <Nav2/>
     <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-  <Navbar/>
+
    <div className='order-div-content'>
    
    <div className='order-div'>
@@ -91,6 +95,7 @@ const Order = () => {
     })}
 
    </div>
+    </div>
     </div>
   )
 }

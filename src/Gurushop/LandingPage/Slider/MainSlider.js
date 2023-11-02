@@ -110,7 +110,7 @@ function addtoCart(product){
       }
 }
   return (
-    <Box className="slider-box-main" sx={{ maxWidth: '100%', flexGrow: 1 ,height:710,marginTop:'100px'}}>
+    <Box className="slider-box-main" sx={{ maxWidth: '100%', flexGrow: 1 ,height:530,marginTop:'35px',marginBottom:'20px'}}>
 
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -135,9 +135,9 @@ function addtoCart(product){
                 //   src={step.imgPath}
                 //   alt={step.label}
                 // />
-                <div className='slider-div1' style={{height:'700px',display:'block',width:'100%'}}>
-                     <div className='slider-img-div' style={{height:'700px',display:'block',width:'100%'}}>
-                       <img className='slider-inner-image' src={step.image[0]} alt='step.label' style={{height:'700px',display:'block',width:'90%',overflow:'hidden',marginLeft:'75px'}}></img>
+                <div className='slider-div1' style={{height:'600px',display:'block',width:'100%'}}>
+                     <div className='slider-img-div' style={{height:'500px',display:'block',width:'100%'}}>
+                       <img className='slider-inner-image' src={step.image[0]} alt='step.label' style={{height:'500px',display:'block',width:'90%',overflow:'hidden',marginLeft:'75px'}}></img>
                      </div>
                      <div className='slider-content'>
                         {/* <p className='slider-para1' >COLOR</p>

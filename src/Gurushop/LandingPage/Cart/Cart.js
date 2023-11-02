@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Cart.css";
 import { AlertTitle, Box, Button, colors } from "@mui/material";
-import Navbar from "../Navbar/Navbar";
+import Nav from '../Nav/Nav'
 import axios from "axios";
 import CloseIcon from "@mui/icons-material/Close";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
@@ -121,8 +121,8 @@ const Cart = () => {
 
   return (
     <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
-      <div style={{ marginBottom: "100px" }}>
-        <Navbar cartlength={cart.length} />
+      <div style={{ marginBottom: "10px" }}>
+        <Nav />
       
       </div>
 
@@ -275,7 +275,7 @@ const Cart = () => {
           <div className="total-cart-div2">
             <p className="shipping-para">Shipping</p>
           <div className="total-cart-flat-div">
-            <p className="flat-para1">Delivery Rate:<span style={{color:'rgb(198, 5, 5)'}}><CurrencyRupeeIcon fontSize="3px"/>40.00</span></p>
+            <p className="flat-para1">Delivery Rate:<span style={{color:'#009900'}}><CurrencyRupeeIcon fontSize="3px"/>40.00</span></p>
            
           </div>
           

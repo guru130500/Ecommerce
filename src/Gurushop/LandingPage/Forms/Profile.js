@@ -1,7 +1,7 @@
 import * as React from 'react';
 import axios from 'axios'
 import { Box } from '@mui/material'
-
+import Nav from '../Nav/Nav'
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
@@ -22,6 +22,30 @@ import Paper from '@mui/material/Paper';
 import Navbar from '../Navbar/Navbar'
 import { useNavigate } from 'react-router-dom';
 import PublicIcon from '@mui/icons-material/Public';
+
+
+
+/* List Items*/
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
+
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import HomeIcon from '@mui/icons-material/Home';
+import DehazeIcon from '@mui/icons-material/Dehaze';
+import FilterHdrIcon from '@mui/icons-material/FilterHdr';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
+import PeopleIcon from '@mui/icons-material/People';
+import PermPhoneMsgIcon from '@mui/icons-material/PermPhoneMsg';
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
+import LogoutIcon from '@mui/icons-material/Logout';
+import Person2Icon from '@mui/icons-material/Person2';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+
 /*table from material ui*/
 
 const headings=['FirstName','LastName','Email','Country','State','City','PinCode']
@@ -67,6 +91,7 @@ function a11yProps(index) {
 
 const Profile = () => {
   const navigate=useNavigate()
+  const[login,setLogin]=React.useState(0)
   const [formData, setFormData] = React.useState({
     firstName: '',
     lastName: '',
@@ -85,6 +110,8 @@ const Profile = () => {
     const[userEmail,setUserEmail]=React.useState('')
     const[userpass,SetUserpass]=React.useState('')
     const theme = useTheme();
+
+
     const [value, setValue] = React.useState(0);
      const compareData=[formData]
     
@@ -102,19 +129,12 @@ const Profile = () => {
     const handleChangeIndex = (index) => {
       setValue(index);
     };
-    React.useEffect(()=>{
-        const url=`http://localhost:9000/users/${sessionStorage.getItem("userId")}`;
-        axios.get(url)
-        .then((response)=>{
-             setUser(response.data)
-             console.log(response.data)
-        })
-      },[])
+   
       React.useEffect(()=>{
-        axios.get(`http://localhost:9000/users?id=${sessionStorage.getItem("userId")}`)
+        axios.get(`http://localhost:9000/users/${sessionStorage.getItem("userId")}`)
         .then((res)=>{
           setProfile(res.data)
-          console.log(profile)
+          
         })
      
     },[])
@@ -144,60 +164,182 @@ const Profile = () => {
       
      
    }
+
+
+   /*functions*/
+   
+
+  /* logout*/
+  function logOut(){
+    sessionStorage.clear();
+     if(login==0)
+     {
+      navigate('/login')
+     }
+     else{
+      navigate('/')
+     }
+    
+  
+  }
+
+
+
+
+/*gotoOrder*/
+function gotoOrder(){
+  
+  if(sessionStorage.getItem("userName"))
+  {
+    navigate('/order')
+  }
+  else{
+    alert("please login to see Your Order")
+    navigate('/login')
+  }
+}
+
+/* go to Adress*/
+function gotoAddress(){
+  if(sessionStorage.getItem("userName"))
+  {
+    navigate('/adress')
+  }
+  else{
+    alert("please login to see Adress")
+    navigate('/login')
+  }
+}
+
   return (
     <div>
        
+  <Nav/>
+    <Box sx={{marginTop:'20px', marginLeft:'10%', width: '70%',display:'flex',justifyContent:'flex-start',alignItems:'center',justifyContent:'space-around',flexWrap:'wrap'}}>
+       <div className='profile-main-div'>
 
-    <Box sx={{  width: '100%'}}>
-      <AppBar position="static" sx={{bgcolor:'#00cccc',display:'flex',justifyContent:'center',height:'80px'}}>
-    
-            <h2 style={{margin:'0 auto'}}>Hello,{user.userfirstName} {user.userlastName}</h2>
+       <h3 style={{fontSize:'25px'}}>My Account</h3>
+
+
+
+
+
+       <div className='profile-div1'>
+      <div className='profile-div-head'>
+      <div className='drawer-left-first-div2'>
+       <Person2Icon sx={{color:'#004d99'}}/>
+       </div>
+       <div className='profile-div-head2'>
+        <div className='profile-heading'>{profile.userfirstName}</div>
+        <div className='profile-email'>{profile.userEmail}</div>
+       </div>
+      </div>
+      <Divider/>
+     <List>
+        
+        <ListItem disablePadding>
+        <ListItemButton onClick={()=>{gotoOrder()}}>
+          <ListItemIcon>
+           <FilterHdrIcon  sx={{color:'#004d99'}} />
+          </ListItemIcon>
+          <ListItemText>
+            My Orders
+          </ListItemText>
+        </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+        <ListItemButton onClick={()=>{gotoAddress()}}>
+          <ListItemIcon>
+           <FmdGoodIcon  sx={{color:'#004d99'}} />
+          </ListItemIcon>
+          <ListItemText>
+            My Addresses
+          </ListItemText>
+        </ListItemButton>
+        </ListItem>
+
+       <Divider/>
+
+         
+        <h4 style={{paddingLeft:'6%'}}> Help and Support</h4>
+        
+        <ListItem disablePadding>
+        <ListItemButton>
+          <ListItemIcon>
+           < PeopleIcon sx={{color:'#004d99'}} />
+          </ListItemIcon>
+          <ListItemText>
+            About us
+          </ListItemText>
+        </ListItemButton>
+        </ListItem>
+
+        <ListItem disablePadding>
+        <ListItemButton onClick={()=>navigate('/slider1')}>
+          <ListItemIcon>
+           <PermPhoneMsgIcon sx={{color:'#004d99'}} />
+          </ListItemIcon>
+          <ListItemText>
+            Contact Us
+          </ListItemText>
+        </ListItemButton>
+        </ListItem>
+        
+
+        <ListItem disablePadding>
+        <ListItemButton>
+          <ListItemIcon>
+           <LiveHelpIcon sx={{color:'#004d99'}} />
+          </ListItemIcon>
+          <ListItemText>
+            Need Help
+          </ListItemText>
+        </ListItemButton>
+        </ListItem>
        
        
-      </AppBar>
+
+        <ListItem disablePadding>
+        <ListItemButton >
+          <ListItemIcon>
+           < Person2Icon sx={{color:'#004d99'}} />
+          </ListItemIcon>
+          <ListItemText>
+          Legal Information
+          </ListItemText>
+        </ListItemButton>
+        </ListItem> 
+
+        <Divider/>
+
+        <ListItem disablePadding>
+        <ListItemButton onClick={logOut}>
+          <ListItemIcon>
+           <PowerSettingsNewIcon sx={{color:'#004d99'}} />
+          </ListItemIcon>
+          <ListItemText>
+            Sign Out
+          </ListItemText>
+        </ListItemButton>
+        </ListItem>
+
+
+      </List>
+     </div>
+       </div>
+   <div>
+    <h3 style={{fontSize:'20px'}}>Account Information</h3>
+   <div className='profile-div2'>
+        <p className='profile-div2-para1'>Full Name</p>
+        <p className='profile-div2-para2'>{profile.userfirstName}  {profile.userlastName}</p>
+
+        <Divider/>
+        <p className='profile-div2-para1'>EmailID</p>
+        <p  className='profile-div2-para2'>{profile.userEmail}</p>
+     </div>
+   </div>
   
-        <div style={{display:'flex',flexWrap:'wrap',justifyContent:'center',alignItems:'center',gap:'30px',width:'100%',margin:'0 auto'}}>
-
-          
-          
-              <Box
-                sx={{
-                  width: '70%',
-                  height: 'auto',
-                  display:'flex',
-                  flexDirection:'column',
-                  alignItems:'center',
-                  justifyContent:'center',
-                  backgroundColor: 'white',
-                  marginTop:'20px'
-                
-                }}
-              >
-           
-               
-                      {/* <h2 style={{textAlign:'center'}}> Hello, {profile[0].firstName}   {profile[0].lastName} </h2> */}
-                 
-              
-              <div className='profile-div'>
-                <p className='profile-order-btn' style={{width:'150px'}} onClick={()=>navigate('/order')}> Your orders</p>
-                
-                <p className='address-list' onClick={()=>navigate('/adress')}>Your Addresses </p>
-                <p className='profile-shopmore-btn' style={{width:'150px'}} onClick={()=>navigate('/cart')}>Your Cart</p>
-                <p className='profile-shopmore-btn' style={{width:'150px'}} onClick={()=>navigate('/')}>Go to Home</p>
-              </div>
-               </Box>
-
-              </div>
-              {/* <div className='adress-head'>
-               <PublicIcon/> Your Addresses
-              </div> */}
-              {/* <div className='address-class'>
-              <div class="adress-card">
-               Click me
-              </div>
-
-              </div> */}
-
     </Box>
     
     </div>

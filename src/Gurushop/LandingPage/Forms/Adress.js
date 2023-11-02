@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Adress.css'
-import Navbar from '../Navbar/Navbar'
+import Nav from '../Nav/Nav'
 import axios from 'axios'
 
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -39,7 +39,7 @@ const Adress = () => {
   return (
 
     <div>
-        <Navbar/>
+        <Nav/>
        <div className='adress-main-div'>
       
          <p>

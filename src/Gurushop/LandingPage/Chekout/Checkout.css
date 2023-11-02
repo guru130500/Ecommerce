@@ -34,7 +34,7 @@ select {
 
 /* Styling for the main checkout page */
 .chekout-main-div {
-  margin-top: 80px;
+  margin-top: 5px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -77,6 +77,7 @@ select {
 
 .order-summary table th {
   background-color: #00b392;
+  color: white;
 }
 
 .order-summary .total-row {

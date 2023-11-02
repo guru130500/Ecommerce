@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import  Navbar from '../Navbar/Navbar'
+import Nav from '../Nav/Nav'
 import './Shop.css'
 import { Box, Card } from '@mui/material'
 import Card1 from '../Card/Card1'
@@ -19,7 +19,7 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Tooltip from '@mui/material/Tooltip';
-
+import Nav2 from '../Nav/Nav2'
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 
@@ -173,9 +173,10 @@ function gotoCategory(value){
 
   return (
     <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
-      <Navbar />
+      <Nav />
+      <Nav2/>
        
-      <Box sx={{ width: '100%', flexGrow: 1 ,maxWidth:'100%',marginTop:'3.5%'}}>
+      <Box sx={{ width: '100%', flexGrow: 1 ,maxWidth:'100%',marginTop:'0px'}} >
       <Paper
         square
         elevation={0}

@@ -41,7 +41,7 @@
 }
 
 .guide-div-btn{
-    background-color: rgba(227, 28, 28, 0.905) !important;
+    background-color: rgb(215, 177, 4)!important;
     color: white !important;
 }
 .form-div1{
@@ -83,27 +83,47 @@
     margin-top: 30px;
 }
 .input1{
-    height: 45px;
-    width: 400px;
+    height: 30px;
+    width: 380px !important;
     margin-bottom: 25px;
     border:0.2px solid rgb(204, 196, 196);
    padding: 20px;
     
 }
-
-.input2{
+.login-password{
     height: 45px;
-    width: 400px;
+    width: 395px;
+    border:0.2px solid rgb(204, 196, 196);
+    margin-bottom: 20px;
+}
+.login-password:focus{
+  outline:1px solid #004d99
+
+}
+.input2{
+    height: 30px;
+    width: 380px !important;
     margin-bottom: 25px;
     border:0.2px solid rgb(204, 196, 196);
     padding: 20px;
 }
+.input2:focus{
+    outline: 1px solid #004d99;
+}
+.input1:focus{
+    outline: 1px solid #004d99;
+}
 .input3{
     height: 45px;
     width: 400px;
-    background-color: rgba(227, 28, 28, 0.905);
+    font-weight: 600;
+    background-color: #2173c6;
     color: white;
     border: none;
+    border-radius: 20px;
+}
+.input3:hover{
+    background-color: #0d4882;
 }
 .lable1,.lable2,.lable3{
        font-size: 14px;
@@ -118,10 +138,11 @@
     font-size: 14px;
 }
 .handle-register-btn{
-    border: 1px solid red !important;
-    color: red !important;
+    border: 1px solid rgb(195, 250, 43) !important;
+    color:white !important;
+    background-color:rgb(215, 177, 4) !important; ;
     font-size: 10px !important;
-    font-weight: 600 !important;
+    font-weight: 9ś00 !important;
    margin-left:170px!important;
 }
 
@@ -160,6 +181,8 @@
   bottom: 300px;
   left: 35%;
 }
+
+
 /* *{
     border: 1px solid red;
 } */

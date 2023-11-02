@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 import { useLocation, useParams } from "react-router-dom";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
-import Navbar from "../Navbar/Navbar";
+import Nav from '../Nav/Nav'
 import Card1 from "../Card/Card1";
 import "./Detail.css";
 import axios from "axios";
@@ -55,7 +55,7 @@ const Detail = () => {
 
   return (
     <div>
-      <Navbar />
+      <Nav />
       <div
         style={{
           display: "flex",
@@ -64,7 +64,7 @@ const Detail = () => {
           gap: "30px",
           width: "100%",
           height: "auto",
-          marginTop: "7%",
+          marginTop: "2%",
         }}
       >
         <div className="image-bundle">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Checkout.css'
-import Navbar from '../Navbar/Navbar'
+import Nav from '../Nav/Nav'
 import axios from 'axios'
 import { json, useParams,useLocation, useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
@@ -113,7 +113,7 @@ const day = today.getDate();
           }
           if(option=='')
           {
-            alert("please select address")
+            console.log(option)
           }
           else{
             axios.post(`http://localhost:9000/orders`, order)
@@ -128,7 +128,7 @@ const day = today.getDate();
             })
           }
       
-          console.log(order)
+          // console.log(order)
        }
       
        /* snakbar*/
@@ -144,12 +144,13 @@ const day = today.getDate();
       };
       
     function handleAddress(e){
+      
      setOption(e.target.value)
     }
     
   return (
     <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
-        <Navbar/>
+        <Nav/>
     <div className='chekout-main-div'>
          <div className='chekout-order-div'>
          <div class="order-summary">

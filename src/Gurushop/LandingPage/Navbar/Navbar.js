@@ -360,7 +360,7 @@ const handleClick = (event) => {
         <MenuItem onClick={()=>{handleClose();gotoCategory(`jewelery`)}}>Jewelery</MenuItem>
       </Menu>
             {/* </Button> */}
-            <Button className='navbtns' sx={{color:'white'} } onClick={()=>navigate('/card')}>ABOUT US</Button>
+            <Button className='navbtns' sx={{color:'white'} } onClick={()=>navigate('/about')}>ABOUT US</Button>
             <Button className='navbtns' sx={{color:'white'}} onClick={()=>navigate('/contact')}>CONTACT US</Button>
           </Box>
 

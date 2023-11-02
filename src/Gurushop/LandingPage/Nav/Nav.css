@@ -1,0 +1,70 @@
+.search-in-navbar:hover{
+   background-color: white !important;
+
+}
+.search-in-navbar{
+    border: none;
+   
+}
+.profile-icon-btn:hover{
+  background-color: #004d99 !important;
+}
+.shopping-icon-btn:hover{
+
+    background-color: #004d99 !important;
+}
+.menu-icon:hover{
+    background-color: #004d99 !important;
+   
+}
+.mymart-logo{
+ 
+    height: 40px;
+    border-radius: 30px !important;
+    width:150px;
+     display: flex !important;
+     justify-content: center !important;
+     align-items: center !important;
+}
+.mymart-logo:hover{
+    background-color: #004d99;
+}
+.drawer-left-first-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    height: 65px;
+    width: 100%;
+    background-color:#004d99
+}
+.drawer-left-first-div1{
+   /* border: 1px solid red; */
+   height: 30px;
+   width: 180px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   justify-content: space-around;
+}
+.drawer-left-first-div2{
+    height:35px;
+    background-color: #d1e0e0;
+    width:35px ;
+    /* border: 1px solid yellow; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-in1{
+    font-size: 20px;
+}
+.sign-in2{
+    display: none;
+}
+@media screen  and (max-width:750px){
+   .menu-icon{
+    margin-left: 5px !important;
+   }
+}
