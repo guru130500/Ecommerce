@@ -3,8 +3,33 @@
     height: auto;
     width: 100%;
     display: flex;
+   
     flex-direction: column;
     justify-content: center;
     align-items: center;
      margin-top: 20px
+}
+.category-div{
+    height: 500px;
+    width: 350px;
+    border:1px solid rgb(168, 162, 162);
+    border-radius: 20px;
+    margin-top: 45px;
+}
+.category-div h4:hover{
+ color: rgb(1, 19, 67);
+}
+.category-parent-div{
+    height: auto;
+    width:'90%';
+    display:'flex';
+     justify-content: center;
+ 
+     justify-content: space-around;
+     margin: 0 auto;
+}
+@media screen  and (max-width:778px){
+    .category-parent-div{
+        flex-direction: column;
+    }
 }

@@ -60,3 +60,8 @@
     /* border: 1px solid red; */
 
 }
+
+.cancelOrderbtn{
+    background-color: rgba(252, 90, 31, 0.962) !important;
+    color: white !important;
+}

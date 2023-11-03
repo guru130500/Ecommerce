@@ -56,12 +56,12 @@ const Adress = () => {
                     return(
                         <div className='address-card'>
                    
-                        <p>{e.firstName} {e.lastName}</p>
+                        <p style={{fontSize:'18px',fontWeight:'600'}}>{e.firstName} {e.lastName}</p>
                         <p>{e.area}  ,  {e.landmark} </p>
                         <p>{e.city} , {e.state}  {e.pinCode}</p>
                         <p>{e.country}.</p>
-                        <p style={{width:'100%',textAlign:'center',marginTop:'10px',marginBottom:'0px',color:'red'}}  onClick={()=>navigate(`/edit/${e.id}`)}>Edit</p>
-                        <p style={{width:'100%',textAlign:'center',marginTop:'10px',marginBottom:'0px',color:'red'}}  onClick={()=>{removeAdress(e.id)}}>Remove</p>
+                        <p style={{width:'100%',textAlign:'center',marginTop:'10px',marginBottom:'0px',color:'Green',fontSize:'15px',fontWeight:'700'}}  onClick={()=>navigate(`/edit/${e.id}`)}>Edit</p>
+                        <p style={{width:'100%',textAlign:'center',marginTop:'10px',marginBottom:'0px',color:'red',fontSize:'18px'}}  onClick={()=>{removeAdress(e.id)}}>Remove</p>
                         
                         </div>
                     )

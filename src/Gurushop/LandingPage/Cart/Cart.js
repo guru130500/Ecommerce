@@ -120,24 +120,23 @@ const Cart = () => {
 
 
   return (
-    <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
+    <div>
       <div style={{ marginBottom: "10px" }}>
         <Nav />
       
       </div>
 
-    
-
-
+      {(cart.length==0)?<h2 style={{marginLeft:'43%',marginTop:'20%',color:'#5c8a8a'}}>Your Cart is empty.....</h2>:
       <div className="display-div">
         <div className="cart-main-div">
           <div className="header-cart-divs">
             <div className="free-shipping-div">
-              <p className="free-shipping-para">Shopping Cart</p>
+              <p>Shopping Cart</p>
             </div>
            
           </div>
-        
+         
+      
           {cart &&
             cart.map((e) => {
               const select=ischecked.includes(e)
@@ -288,6 +287,7 @@ const Cart = () => {
         </div>
 
       </div>
+}
     </div>
   );
 };

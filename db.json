@@ -15,7 +15,120 @@
       "id": 2
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "userId": "2",
+      "products": [
+        {
+          "pId": 4,
+          "title": "Mens Casual Slim Fit",
+          "price": 15.99,
+          "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+          "category": "men",
+          "image": [
+            "https://m.media-amazon.com/images/I/51GzoHNuO9L._UX679_.jpg",
+            "https://m.media-amazon.com/images/I/51Sge544W0L._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/51vYYl7heXL._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/516Pg41zllL._UY741_.jpg"
+          ],
+          "rating": {
+            "rate": 2.1,
+            "count": 430
+          },
+          "userId": "2",
+          "qty": 1,
+          "id": 31
+        }
+      ],
+      "total": 15.99,
+      "date": "2/11/2023",
+      "address": "Nagar , Maharastra. pincode - 413221",
+      "id": 1
+    },
+    {
+      "userId": "1",
+      "products": [
+        {
+          "pId": 25,
+          "title": "Redmi 11",
+          "price": 200,
+          "description": "Redmi 11 with better battery backup",
+          "category": "accessories",
+          "image": [
+            "https://m.media-amazon.com/images/I/71yTvU9VgdL._SL1500_.jpg",
+            "https://m.media-amazon.com/images/I/71zhX96XQSL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61CyDCueU3L._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61qk6Uz0yDL._SL1500_.jpg"
+          ],
+          "userId": "1",
+          "qty": 1,
+          "id": 27
+        }
+      ],
+      "total": 200,
+      "date": "2/11/2023",
+      "address": "solapur , Maharastra. pincode - 413221",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "products": [
+        {
+          "pId": 4,
+          "title": "Mens Casual Slim Fit",
+          "price": 15.99,
+          "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+          "category": "men",
+          "image": [
+            "https://m.media-amazon.com/images/I/51GzoHNuO9L._UX679_.jpg",
+            "https://m.media-amazon.com/images/I/51Sge544W0L._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/51vYYl7heXL._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/516Pg41zllL._UY741_.jpg"
+          ],
+          "rating": {
+            "rate": 2.1,
+            "count": 430
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 35
+        }
+      ],
+      "total": 15.99,
+      "date": "2/11/2023",
+      "address": "Pune , Maharastra. pincode - 421346",
+      "id": 3
+    },
+    {
+      "userId": "1",
+      "products": [
+        {
+          "pId": 4,
+          "title": "Mens Casual Slim Fit",
+          "price": 15.99,
+          "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+          "category": "men",
+          "image": [
+            "https://m.media-amazon.com/images/I/51GzoHNuO9L._UX679_.jpg",
+            "https://m.media-amazon.com/images/I/51Sge544W0L._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/51vYYl7heXL._UY741_.jpg",
+            "https://m.media-amazon.com/images/I/516Pg41zllL._UY741_.jpg"
+          ],
+          "rating": {
+            "rate": 2.1,
+            "count": 430
+          },
+          "userId": "1",
+          "qty": 1,
+          "id": 35
+        }
+      ],
+      "total": 15.99,
+      "date": "3/11/2023",
+      "address": "Pune , Maharastra. pincode - 421346",
+      "id": 4
+    }
+  ],
   "profile": [],
   "address": [
     {
@@ -45,91 +158,118 @@
       "flat": "79",
       "userId": "2",
       "id": 2
+    },
+    {
+      "firstName": "Gurunath",
+      "lastName": "Kumbhar",
+      "email": "gurunath@gmail.com",
+      "country": "India",
+      "state": "Maharastra",
+      "city": "Pune",
+      "pinCode": "421346",
+      "flat": "14",
+      "area": "Ramtekdi",
+      "landmark": "Near St Patrick Town",
+      "userId": "1",
+      "id": 3
     }
   ],
   "cart": [
     {
-      "pId": 3,
-      "title": "Noise Halo Smartwatch",
-      "price": 140,
-      "description": "1.46 inches (3.7cms) AMOLED display, 466*466px, Always on display ",
-      "category": "accessories",
-      "image": "https://m.media-amazon.com/images/I/71KjTSO8M9L._SL1500_.jpg",
-      "userId": "2",
-      "qty": 1,
-      "id": 12
-    },
-    {
-      "pId": 14,
-      "title": "Samsung Monitor ",
-      "price": 999.99,
-      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-      "category": "electronics",
-      "image": [
-        "https://m.media-amazon.com/images/I/816btzZvneL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/818hHbw0ISL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/816QZ2yjXGL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/81i-5EJ4hyL._SL1500_.jpg"
-      ],
-      "rating": {
-        "rate": 2.2,
-        "count": 140
-      },
-      "userId": "1",
-      "qty": 1,
-      "id": 24
-    },
-    {
-      "pId": 28,
-      "title": "Fashion Frill",
-      "price": 500,
-      "description": "Charming Finger Ring For Men Silver King Lion Silver Plated",
-      "category": "accessories",
-      "image": [
-        "https://m.media-amazon.com/images/I/51p-K6CYUUL._UY695_.jpg",
-        "https://m.media-amazon.com/images/I/61T8EGSkxIL.jpg",
-        "https://m.media-amazon.com/images/I/616dLRdGcIL.jpg",
-        "https://m.media-amazon.com/images/I/51IIABGM-LL.jpg"
-      ],
-      "userId": "2",
-      "qty": 1,
-      "id": 25
-    },
-    {
-      "pId": 2,
-      "title": "Dennis Lingo Men's Slim t-shirt",
-      "price": 22.3,
-      "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+      "pId": 4,
+      "title": "Mens Casual Slim Fit",
+      "price": 15.99,
+      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
       "category": "men",
       "image": [
-        "https://m.media-amazon.com/images/I/514YMziLluL._UX679_.jpg",
-        "https://m.media-amazon.com/images/I/51MLyHKBQQL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/51WB-3u92OL._UY741_.jpg",
-        "https://m.media-amazon.com/images/I/51S5ar3VguL._UY741_.jpg"
+        "https://m.media-amazon.com/images/I/51GzoHNuO9L._UX679_.jpg",
+        "https://m.media-amazon.com/images/I/51Sge544W0L._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/51vYYl7heXL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/516Pg41zllL._UY741_.jpg"
       ],
       "rating": {
-        "rate": 4.1,
-        "count": 259
+        "rate": 2.1,
+        "count": 430
       },
       "userId": "2",
       "qty": 1,
-      "id": 26
+      "id": 31
     },
     {
-      "pId": 25,
-      "title": "Redmi 11",
-      "price": 200,
-      "description": "Redmi 11 with better battery backup",
-      "category": "accessories",
+      "pId": 1,
+      "title": "Men's Traditional",
+      "price": 109.95,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men",
       "image": [
-        "https://m.media-amazon.com/images/I/71yTvU9VgdL._SL1500_.jpg",
-        "https://m.media-amazon.com/images/I/71zhX96XQSL._SX679_.jpg",
-        "https://m.media-amazon.com/images/I/61CyDCueU3L._SX679_.jpg",
-        "https://m.media-amazon.com/images/I/61qk6Uz0yDL._SL1500_.jpg"
+        "https://m.media-amazon.com/images/I/713G8QY0+LL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/71E59uvYk-L._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/71APG241wsL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/718kPqnZT0L._UY741_.jpg"
+      ],
+      "rating": {
+        "rate": 3.9,
+        "count": 120
+      },
+      "userId": "2",
+      "qty": 1,
+      "id": 32
+    },
+    {
+      "pId": 15,
+      "title": "Jacket Winter Coats",
+      "price": 56.99,
+      "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+      "category": "women",
+      "image": [
+        "https://m.media-amazon.com/images/I/31jClUxH8IL.jpg",
+        "https://m.media-amazon.com/images/I/71R6ZN95DTL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/71fk3+tElWL._UY741_.jpg",
+        "https://m.media-amazon.com/images/I/71DTVEh8IbL._UY741_.jpg"
+      ],
+      "rating": {
+        "rate": 2.6,
+        "count": 235
+      },
+      "userId": "2",
+      "qty": 1,
+      "id": 33
+    },
+    {
+      "pId": 9,
+      "title": "Hard Drive - USB 3.0",
+      "price": 64,
+      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      "category": "electronics",
+      "image": [
+        "https://m.media-amazon.com/images/I/61q5-fuKDJL._SL1200_.jpg",
+        "https://m.media-amazon.com/images/I/61DgMvY4mBL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71nbChhTsBL._SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/71-srzeWCWL._SL1500_.jpg"
+      ],
+      "rating": {
+        "rate": 3.3,
+        "count": 203
+      },
+      "userId": "2",
+      "qty": 1,
+      "id": 34
+    },
+    {
+      "pId": 29,
+      "title": "Wings Phantom 340 ",
+      "price": 297,
+      "description": "The Phantom 340 earbuds have four microphone units that use noise-cancelling technology to reduce background noise during calls.",
+      "category": "electronics",
+      "image": [
+        "https://m.media-amazon.com/images/I/51eAgvkYH8L._SL1080_.jpg",
+        "https://m.media-amazon.com/images/I/61sVF6jlDrL._SL1080_.jpg",
+        "https://m.media-amazon.com/images/I/61L35T6fzeL._SL1080_.jpg",
+        "https://m.media-amazon.com/images/I/61I1DTgL5HL._SL1080_.jpg"
       ],
       "userId": "1",
       "qty": 1,
-      "id": 27
+      "id": 36
     }
   ],
   "sliders": [
@@ -169,7 +309,7 @@
     },
     {
       "pId": 2,
-      "title": "Dennis Lingo Men's Slim t-shirt",
+      "title": "Dennis Men's Slim t-shirt",
       "price": 22.3,
       "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
       "category": "men",

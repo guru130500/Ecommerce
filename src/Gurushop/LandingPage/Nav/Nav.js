@@ -39,6 +39,15 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios';
 import './Nav.css'
 import { useNavigate } from 'react-router-dom';
+
+
+/* hovers*/
+
+
+
+
+
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -222,7 +231,7 @@ export default function PrimarySearchAppBar() {
       <div className='drawer-left-first-div'>
        <div className='drawer-left-first-div1'>
         
-       <ArrowBackIosIcon sx={{color:'white',fontSize:'20px',width:'25px',height:'25px',display:'flex',justifyContent:'center'}} onClick={toggleDrawer(anchor, false)}/>
+       <ArrowBackIosIcon sx={{color:'white',fontSize:'20px',width:'25px',height:'25px',display:'flex',justifyContent:'center',cursor:'pointer'}} onClick={toggleDrawer(anchor, false)}/>
      <p style={{color:'white',fontWeight:'600'}}>Hello {sessionStorage.getItem("userFirstName")}!</p>
        </div>
        <div className='drawer-left-first-div2'>
@@ -312,7 +321,7 @@ export default function PrimarySearchAppBar() {
         </ListItem>
 
         <ListItem disablePadding>
-        <ListItemButton onClick={()=>navigate('/slider1')}>
+        <ListItemButton onClick={()=>navigate('/contact')} >
           <ListItemIcon>
            <PermPhoneMsgIcon sx={{color:'#004d99'}} />
           </ListItemIcon>
@@ -437,10 +446,11 @@ function gotoAddress(){
             aria-label="open drawer"
             sx={{ ml: '90px' }}
             className='menu-icon'
+           
           >
    {['left'].map((anchor) => (
   <React.Fragment key={anchor}>
-    <span onClick={toggleDrawer(anchor, true)}> <MenuIcon /></span>
+    <span  onClick={toggleDrawer(anchor, true)} > <MenuIcon /></span>
     <SwipeableDrawer
       anchor={anchor}
       open={state[anchor]}

@@ -276,7 +276,7 @@ function gotoAddress(){
         </ListItem>
 
         <ListItem disablePadding>
-        <ListItemButton onClick={()=>navigate('/slider1')}>
+        <ListItemButton>
           <ListItemIcon>
            <PermPhoneMsgIcon sx={{color:'#004d99'}} />
           </ListItemIcon>

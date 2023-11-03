@@ -27,7 +27,7 @@ const Chekout = () => {
     const [open1, setOpen1] = useState(false);
     const [open2,setOpen2]=useState(false)
     const[option,setOption]=useState('')
-
+    const[success,setSuccess]=useState('')
     const handleClickOpen = () => {
       setOpen1(true);
       
@@ -113,7 +113,7 @@ const day = today.getDate();
           }
           if(option=='')
           {
-            console.log(option)
+            alert('Please select address to chekout')
           }
           else{
             axios.post(`http://localhost:9000/orders`, order)
@@ -147,7 +147,74 @@ const day = today.getDate();
       
      setOption(e.target.value)
     }
-    
+
+
+    function handlePayment(){
+      setOpen2(false)
+      if(option=='')
+      {
+        alert('please Select Address')
+      }
+      else{
+       var options={
+        key:'rzp_test_NNYQxMPwp1iwpv',
+        key_secret:'9N55QHv9a77nyi3xtOGAOH7V',
+        amount:total *100,
+        currency:'INR',
+        name:'MyMart',
+        description:'Pay and place Order',
+        handler:function(res){
+          setSuccess(res.razorpay_payment_id);
+          if(success!='')
+          {
+            const order={
+              userId:sessionStorage.getItem("userId"),
+              products:cart,
+              total:total,
+              date:`${day}/${month}/${year}`,
+              address:option
+            }
+            if(option=='')
+            {
+              alert('Please select address to chekout')
+            }
+            else{
+              axios.post(`http://localhost:9000/orders`, order)
+              .then((response)=>{
+                 setOpen(true)
+                setTimeout(()=>{
+                  navigate('/order')
+                },2000)
+              })
+              .catch((err)=>{
+                console.log(err);
+              })
+            }
+        
+          }
+          else{
+            alert("Something went wrong Your money willbe returnes soon..")
+          }
+        },
+        prefill:{
+          name:'Gurunath',
+          email:'kumbhargurunath12@gmail.com',
+          contact:'7972678496'
+        },
+        notes:{
+          address:'MyMart Corporate office'
+        },
+        theme:{
+          color:'#3399cc'
+        }
+       }
+        var pay=window.Razorpay(options);
+        pay.open()
+    }
+
+  
+
+  }
   return (
     <div style={{backgroundColor:'rgb(242, 253, 253)'}}>
         <Nav/>
@@ -175,7 +242,7 @@ const day = today.getDate();
                               {/* <td className='order-title'>{e.title} × {e.qty}</td> */}
                               <td><img className='chekout-item-image'  src={e.image} alt='img' height='120px' width='115px'></img></td>
                               <td className='chekout-product-title'>{e.title}</td>
-                              <td>₹{e.price * e.qty}</td>
+                              <td style={{color:'#5c8a8a',fontSize:'20px',fontWeight:'800'}}>₹{e.price * e.qty}</td>
                           </tr>
                         )
                     })
@@ -195,7 +262,7 @@ const day = today.getDate();
                      
                     <div class="select-option">
                            <select onChange={(e) => { handleAddress(e) }}>
-                             
+                             <option><td>Select an Adress</td></option>
                              {
                                user.map((e, i) => {
                                  return (
@@ -213,7 +280,7 @@ const day = today.getDate();
                 </tr>
                 <tr class="total-row">
                     <td>Total</td>
-                    <td className='order-complete-total'>₹{Math.floor(total)+40}.00</td>
+                    <td className='order-complete-total'>₹{total}</td>
                 </tr>
          </tbody>
         </table>
@@ -361,43 +428,7 @@ const day = today.getDate();
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',margin:'0 auto'}}><span>Delivery:</span><span>₹40.00</span></p>
             <p style={{width:'80%',display:'flex',justifyContent:'space-between',fontSize:'25px',borderTop:'1px solid grey',color:'	 #cc0000',margin:'0 auto'}}><span>Total:</span><span>₹{Math.floor(total)+40}.00</span></p>
             <p style={{paddingLeft:'30px'}}>
-<GooglePayButton
-  environment="TEST"
-  paymentRequest={{
-    apiVersion: 2,
-    apiVersionMinor: 0,
-    allowedPaymentMethods: [
-      {
-        type: 'CARD',
-        parameters: {
-          allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],
-          allowedCardNetworks: ['MASTERCARD', 'VISA'],
-        },
-        tokenizationSpecification: {
-          type: 'PAYMENT_GATEWAY',
-          parameters: {
-            gateway: 'example',
-            gatewayMerchantId: 'exampleGatewayMerchantId',
-          },
-        },
-      },
-    ],
-    merchantInfo: {
-      merchantId: '12345678901234567890',
-      merchantName: 'Demo Merchant',
-    },
-    transactionInfo: {
-      totalPriceStatus: 'FINAL',
-      totalPriceLabel: 'Total',
-      totalPrice: '100.00',
-      currencyCode: 'USD',
-      countryCode: 'US',
-    },
-  }}
-  onLoadPaymentData={paymentRequest => {
-    console.log('load payment data', paymentRequest);
-  }}
-/>
+<button onClick={()=>handlePayment()}>Pay Now</button>
 </p>
   </div> 
         {/* <DialogActions>

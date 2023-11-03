@@ -26,8 +26,8 @@
     box-sizing: border-box;
     width: 250px;
   
-    background: rgba(217, 217, 217, 0.58);
-    border: 1px solid white;
+   
+    border: 1px solid rgb(167, 37, 37);
 
 
     border-radius: 17px;
@@ -39,7 +39,7 @@
    font-size: 13px !important;
    padding: 15px;
   
-
+   box-shadow: 0px 5px 5px  rgb(231, 221, 221);
     
   }
   .add-address-class{
@@ -65,7 +65,9 @@
 
   }
  
-  
+  .address-card p{
+    color: rgb(0, 40, 40);
+  }
   /* .address-card:hover {
     border: 1px solid black;
     transform: scale(1.05);

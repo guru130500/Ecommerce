@@ -4,8 +4,9 @@ import './Order.css'
 import {  useNavigate } from 'react-router-dom'
 import Nav from '../Nav/Nav'
 import Nav2 from '../Nav/Nav2'
+import { Button } from '@mui/material'
 const Order = () => {
-    const[data,setData]=useState()
+    const[data,setData]=useState([])
     const[total,setTotal]=useState()
     const[date,setDate]=useState('')
     const[profile,setProfile]=useState([])
@@ -53,12 +54,26 @@ const Order = () => {
         setTotal(all)
         setDate(Date1)
     })
-     
+       
+
+    /* Function Cancel Order*/
+    function cancelOrder(id){
+        axios.delete(`http://localhost:9000/orders/${id}`);
+
+        // window.location.href = "/cart";
+
+        setData((prevData)=> prevData.filter((item)=> item.id !== id))
+       
+    }
 
   return (
     <div>
           <Nav/>
           <Nav2/>
+
+         
+   {
+    (data.length==0)?<h2 style={{marginLeft:'43%',color:'grey',marginTop:'10%'}}>No Order Placed...!</h2>: 
     <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
 
    <div className='order-div-content'>
@@ -78,7 +93,11 @@ const Order = () => {
   
        
    </div>
-    <h3 style={{color:' #009900',marginLeft:'5%'}}>Arriving Soon</h3>
+
+   {
+    (data.length==0)?'': <h3 style={{color:' #009900',marginLeft:'5%'}}>Arriving Soon</h3>
+   }
+   
 
     {data && data.map((e)=>{
         return(
@@ -88,14 +107,18 @@ const Order = () => {
                     <img className='order-images' onClick={()=>{handleclick(k.pId)}} src={k.image} alt='img' height='100px' width='100px'></img>
                     <p className='order-names' onClick={()=>{handleclick(k.pId)}}>{k.title}</p>
                     <p style={{textAlign:'center',marginTop:'0px',marginBottom:'5px'}}><h4>Shipping to</h4> {e.address} </p>
+               
                     </div>
                 )
             })
         )
     })}
-
+    
    </div>
     </div>
+
+   }
+   
     </div>
   )
 }
